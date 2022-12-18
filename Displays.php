@@ -1,3 +1,7 @@
+<?php
+include "php scripts/Conexión.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -161,16 +165,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Axon 11</td>
-                                            <td>ZTE</td>
-                                            <td>Azul</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td>Original</td>
-                                            <td>NA</td>
-                                        </tr>
+                                        <?php
+                                        $consulta = "SELECT * FROM `displays`";
+                                        $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
+
+                                        while ($columna = mysqli_fetch_array($resultado)) {
+                                            echo "<tr>";
+                                            echo "<td>" . $columna['id_display'] . "</td>";
+                                            echo "<td>" . $columna['modelo_display'] . "</td>";
+                                            echo "<td>" . $columna['marca_display'] . "</td>";
+                                            echo "<td>" . $columna['color_display'] . "</td>";
+                                            echo "<td>" . $columna['cantidad_display'] . "</td>";
+                                            echo "<td>" . $columna['caja_display'] . "</td>";
+                                            echo "<td>" . $columna['calidad_display'] . "</td>";
+                                            echo "<td>" . $columna['versión_display'] . "</td>";
+                                            echo "</tr>";
+                                        }
+                                        ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
