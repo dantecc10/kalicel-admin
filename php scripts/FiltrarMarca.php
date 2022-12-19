@@ -29,6 +29,8 @@ function ConstruirTabla($sql)
   echo "<th>Calidad</th>";
   echo "<th>Versión</th>";
   echo "</tr></thead>";
+  echo "<tbody>";
+
   while ($columna = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>" . $columna['id_display'] . "</td>";
@@ -41,6 +43,7 @@ function ConstruirTabla($sql)
     echo "<td>" . $columna['versión_display'] . "</td>";
     echo "</tr>";
   }
+  echo "</tbody>";
   echo "</table>";
   mysqli_close($conexión);
 };

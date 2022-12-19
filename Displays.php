@@ -155,7 +155,7 @@ include "php scripts/Conexión.php";
                                         <b><label class="form-label">Filtrar
                                             </label></b><br>
                                         <label for="FiltroMarca" class="form-label">Marca</label>
-                                        <select id="FiltroMarca" class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca">
+                                        <select id="FiltroMarca" class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca" onchange="javascript:opcionesModelos();">
                                             <option value="Apple">Apple</option>
                                             <option value="Samsung">Samsung</option>
                                             <option value="Motorola">Motorola</option>
@@ -169,7 +169,7 @@ include "php scripts/Conexión.php";
                                         </select>
 
                                         <label for="FiltroModelo" class="form-label">Modelo</label>
-                                        <select class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo">
+                                        <select id="FiltroModelo" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo">
 
                                         </select>
 
