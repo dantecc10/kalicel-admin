@@ -152,8 +152,11 @@ include "php scripts/Conexión.php";
                                     <div class="text-md-end dataTables_filter" id="dataTable_filter">
 
                                         <label class="form-label">Filtrar
-                                            <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo">
+                                            <label for="FiltroMarca" class="form-label">Marca</label>
                                             <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Marca">
+                                            <label for="FiltroMarca" class="form-label">Modelo</label>
+                                            <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo">
+                                            <label for="FiltroMarca" class="form-label">Color</label>
                                             <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Color">
                                         </label>
                                     </div>
