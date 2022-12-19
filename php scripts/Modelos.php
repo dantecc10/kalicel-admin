@@ -13,13 +13,12 @@ $sql;
 
 $sql = ("SELECT `modelo_display` FROM `displays` WHERE `marca_display` = '" . $Marca . "'");
 
-ConstruirTabla($sql);
+añadirOpciones($sql);
 
-function ConstruirTabla($sql)
+function añadirOpciones($sql)
 {
   require('Conexión.php');
   // echo $sql;
-  echo ("<table class='table my-0' id='dataTable'");
   $result = mysqli_query($conexión, $sql) or die("Error en la consulta a la base de datos");
   echo ("<option value=''></option>");
   while ($columna = mysqli_fetch_array($result)) {
