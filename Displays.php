@@ -151,8 +151,8 @@ include "php scripts/Conexión.php";
                                 <div class="col-md-6">
                                     <div class="text-md-end dataTables_filter" id="dataTable_filter">
 
-                                        <label class="form-label">Filtrar
-                                        </label><br>
+                                        <b><label class="form-label">Filtrar
+                                            </label></b><br>
                                         <label for="FiltroMarca" class="form-label">Marca</label>
                                         <select class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca">
                                             <option value="Apple">Apple</option>
