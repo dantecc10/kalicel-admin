@@ -14,6 +14,7 @@ include "php scripts/Conexión.php";
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <script src="assets/js/Funciones.js"></script>
 </head>
 
 <body id="page-top">
@@ -154,7 +155,7 @@ include "php scripts/Conexión.php";
                                         <b><label class="form-label">Filtrar
                                             </label></b><br>
                                         <label for="FiltroMarca" class="form-label">Marca</label>
-                                        <select class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca">
+                                        <select id="FiltroMarca" class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca">
                                             <option value="Apple">Apple</option>
                                             <option value="Samsung">Samsung</option>
                                             <option value="Motorola">Motorola</option>
@@ -176,6 +177,8 @@ include "php scripts/Conexión.php";
                                         <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Color" name="FiltroColor">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="table-responsive table mt-2" id="tablaFiltrada" role="grid" aria-describedby="dataTable_info">
                             </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                                 <table class="table my-0" id="dataTable">
