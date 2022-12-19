@@ -21,7 +21,7 @@ function ConstruirTabla($sql)
   // echo $sql;
   echo ("<table class='table my-0' id='dataTable'");
   $result = mysqli_query($conexión, $sql) or die("Error en la consulta a la base de datos");
-
+  echo ("<option value=''></option>");
   while ($columna = mysqli_fetch_array($result)) {
     echo "<option value='" . $columna['modelo_display'] . "'>";
     echo ($columna['modelo_display']);
