@@ -154,11 +154,26 @@ include "php scripts/Conexión.php";
                                         <label class="form-label">Filtrar
                                         </label><br>
                                         <label for="FiltroMarca" class="form-label">Marca</label>
-                                        <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Marca">
+                                        <select class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca">
+                                            <option value="Apple">Apple</option>
+                                            <option value="Samsung">Samsung</option>
+                                            <option value="Motorola">Motorola</option>
+                                            <option value="Huawei">Huawei</option>
+                                            <option value="Xiaomi">Xiaomi</option>
+                                            <option value="Alcatel">Alcatel</option>
+                                            <option value="LG">LG</option>
+                                            <option value="ZTE">ZTE</option>
+                                            <option value="Hisense">Hisense</option>
+                                            <option value="M4">M4</option>
+                                        </select>
+
                                         <label for="FiltroModelo" class="form-label">Modelo</label>
-                                        <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo">
+                                        <select class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo">
+
+                                        </select>
+
                                         <label for="FiltroColor" class="form-label">Color</label>
-                                        <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Color">
+                                        <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Color" name="FiltroColor">
                                     </div>
                                 </div>
                             </div>
