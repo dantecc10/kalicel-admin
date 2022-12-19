@@ -3,12 +3,11 @@ function opcionesModelos() {
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "php scripts/Modelos.php";
+        uriPHP = "../../php scripts/Modelos.php";
         urlVariables = ("?Marca=" + Marca);
         urlCompuesta = (uriPHP + urlVariables);
 
         //Petición AJAX
-
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -17,23 +16,20 @@ function opcionesModelos() {
         };
 
         //Procesamiento AJAX
-
         xmlhttp.open("GET", urlCompuesta, true);
         console.log("URL: " + urlCompuesta + "\nURL Variables: " + urlVariables);
         //console.log("ModoFiltro: " + ModoFiltro);
         xmlhttp.send();
 
-        filtrarMarca();
     }
     else {
         document.getElementById("tablaFiltrada").innerHTML = "";
         return;
     }
+    filtrarMarca();
 }
 function filtrarMarca() {
     var Marca = document.getElementById("FiltroMarca").value;
-
-    consulta = ("SELECT `modelo_display` FROM `displays` WHERE `marca_display` = '" + Marca + "'"); //PHP
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
@@ -42,7 +38,6 @@ function filtrarMarca() {
         urlCompuesta = (uriPHP + urlVariables);
 
         //Petición AJAX
-
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -51,7 +46,6 @@ function filtrarMarca() {
         };
 
         //Procesamiento AJAX
-
         xmlhttp.open("GET", urlCompuesta, true);
         console.log("URL: " + urlCompuesta + "\nURL Variables: " + urlVariables);
         //console.log("ModoFiltro: " + ModoFiltro);
