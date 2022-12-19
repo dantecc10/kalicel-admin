@@ -3,7 +3,7 @@ function opcionesModelos() {
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "../../php scripts/Modelos.php";
+        uriPHP = "php scripts/Modelos.php";
         urlVariables = ("?Marca=" + Marca);
         urlCompuesta = (uriPHP + urlVariables);
 
@@ -24,7 +24,6 @@ function opcionesModelos() {
     }
     else {
         document.getElementById("tablaFiltrada").innerHTML = "";
-        return;
     }
     filtrarMarca();
 }
@@ -33,7 +32,7 @@ function filtrarMarca() {
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "../../php scripts/FiltrarMarca.php";
+        uriPHP = "php scripts/FiltrarMarca.php";
         urlVariables = ("?Marca=" + Marca);
         urlCompuesta = (uriPHP + urlVariables);
 
