@@ -1,5 +1,5 @@
 function opcionesModelos() {
-    Marca = document.getElementById("FiltroMarca").value;
+    var Marca = document.getElementById("FiltroMarca").value;
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
@@ -22,6 +22,8 @@ function opcionesModelos() {
         console.log("URL: " + urlCompuesta + "\nURL Variables: " + urlVariables);
         //console.log("ModoFiltro: " + ModoFiltro);
         xmlhttp.send();
+
+        filtrarMarca();
     }
     else {
         document.getElementById("tablaFiltrada").innerHTML = "";
@@ -29,13 +31,13 @@ function opcionesModelos() {
     }
 }
 function filtrarMarca() {
-    Marca = document.getElementById("FiltroMarca").value;
+    var Marca = document.getElementById("FiltroMarca").value;
 
     consulta = ("SELECT `modelo_display` FROM `displays` WHERE `marca_display` = '" + Marca + "'"); //PHP
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "php scripts/FiltrarMarca.php";
+        uriPHP = "../../php scripts/FiltrarMarca.php";
         urlVariables = ("?Marca=" + Marca);
         urlCompuesta = (uriPHP + urlVariables);
 

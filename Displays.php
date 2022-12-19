@@ -172,12 +172,14 @@ include "php scripts/Conexión.php";
                                         </select>
 
                                         <label for="FiltroModelo" class="form-label">Modelo</label>
-                                        <select id="FiltroModelo" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo">
-
+                                        <select id="FiltroModelo" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo" onchange="javascript:opcionesColores();">
+                                            <option value=""></option>
                                         </select>
 
                                         <label for="FiltroColor" class="form-label">Color</label>
-                                        <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Color" name="FiltroColor">
+                                        <select id="FiltroColor" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo" onchange="javascript:opcionesColores();">
+                                            <option value=""></option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
