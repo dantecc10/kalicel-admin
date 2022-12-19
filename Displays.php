@@ -154,9 +154,9 @@ include "php scripts/Conexión.php";
                                         <label class="form-label">Filtrar
                                             <label for="FiltroMarca" class="form-label">Marca</label>
                                             <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Marca">
-                                            <label for="FiltroMarca" class="form-label">Modelo</label>
+                                            <label for="FiltroModelo" class="form-label">Modelo</label>
                                             <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo">
-                                            <label for="FiltroMarca" class="form-label">Color</label>
+                                            <label for="FiltroColor" class="form-label">Color</label>
                                             <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Color">
                                         </label>
                                     </div>
