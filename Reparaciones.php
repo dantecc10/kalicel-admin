@@ -24,7 +24,7 @@
                     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Panel</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
                     <li class="nav-item"><a class="nav-link active" href="Reparaciones.php"><i class="fas fa-table"></i><span>Reparaciones</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="Displays.html"><i class="fas fa-mobile-alt"></i><span>Inventario</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="Inventario.php"><i class="fas fa-mobile-alt"></i><span>Inventario</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php"><i class="far fa-user-circle"></i><span>Inicio de sesión</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Registrarse</span></a></li>
                 </ul>

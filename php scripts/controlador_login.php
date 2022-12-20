@@ -12,7 +12,7 @@ if (!empty($_POST['InicioSesión'])) {
             $_SESSION['Apellidos'] = $datos->apellidos_usuario;
             #$_SESSION['Privilegios'] = $datos->Privilegios;
             $_SESSION['Email'] = $datos->email_usuario;
-            header("location: ../Displays.php");
+            header("location: ../Inventario.php");
         } else {
             #echo "<div>Acceso denegado<div>";
             header("location: https://wa.me/527979773095");
