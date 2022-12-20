@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (empty($_SESSION['ID'])) {
+    header("Location: index.php");
+}
+
 include "php scripts/Conexión.php";
 ?>
 
@@ -167,7 +172,7 @@ include "php scripts/Conexión.php";
                                             <option value="ZTE">ZTE</option>
                                             <option value="Hisense">Hisense</option>
                                             <option value="M4">M4</option>
-                                            <option value="Nokia"></option>
+                                            <option value="Nokia">Nokia</option>
                                             <option value="Oppo / Realme">Oppo / Realme</option>
                                         </select>
 
