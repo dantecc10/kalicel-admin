@@ -20,6 +20,4 @@ if (!empty($_POST['InicioSesión'])) {
     } else {
         echo "Campos vacíos";
     }
-} else {
-    header("location: https://castelancarpinteyro.club");
 }
