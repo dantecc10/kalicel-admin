@@ -4,16 +4,17 @@ if (!empty($_POST['InicioSesión'])) {
     if (!empty($_POST['email']) and !empty($_POST['contraseña'])) {
         $email = $_POST['email'];
         $contraseña = $_POST['contraseña'];
-        $sql = $conexión->query("SELECT * FROM `usuarios` WHERE `email`='$email' AND `Contraseña`='$contraseña'");
+        $sql = $conexión->query("SELECT * FROM `usuarios` WHERE `email`='$email' AND `contraseña`='$contraseña'");
         if ($datos = $sql->fetch_object()) {
-            $_SESSION['ID'] = $datos->ID;
-            $_SESSION['Nombre'] = $datos->Nombre;
-            $_SESSION['Apellidos'] = $datos->Apellidos;
-            $_SESSION['Privilegios'] = $datos->Privilegios;
-            $_SESSION['Email'] = $datos->Email;
+            $_SESSION['ID'] = $datos->id_usuario;
+            $_SESSION['Nombre'] = $datos->nombre_usuario;
+            $_SESSION['Apellidos'] = $datos->apellidos_usuario;
+            #$_SESSION['Privilegios'] = $datos->Privilegios;
+            $_SESSION['Email'] = $datos->email_usuario;
             header("location: /Displays.php");
         } else {
-            echo "<div>Acceso denegado<div>";
+            #echo "<div>Acceso denegado<div>";
+            header("location: https://castelancarpinteyro.club");
         }
     } else {
         echo "Campos vacíos";
