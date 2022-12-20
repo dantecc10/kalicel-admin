@@ -11,11 +11,13 @@ if (!empty($_POST['InicioSesión'])) {
             $_SESSION['Apellidos'] = $datos->Apellidos;
             $_SESSION['Privilegios'] = $datos->Privilegios;
             $_SESSION['Email'] = $datos->Email;
-            header("location: ../Consulta.php");
+            header("location: /Displays.php");
         } else {
             echo "<div>Acceso denegado<div>";
         }
     } else {
         echo "Campos vacíos";
     }
+} else {
+    header("location: https://castelancarpinteyro.club");
 }

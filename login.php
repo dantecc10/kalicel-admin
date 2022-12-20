@@ -27,7 +27,7 @@
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Bienvenido</h4>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="php scripts/controlador_login.php" method="POST">
                                         <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingrese su email" name="email"></div>
                                         <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Contraseña" name="password"></div>
                                         <div class="mb-3">
@@ -41,7 +41,7 @@
                                         include "php scripts/controlador_login.php";
                                         ?>
                                     </form>
-                                    <div class="text-center"><a class="small" href="forgot-password.html">¿Olvidaste la contraseña?</a></div>
+                                    <div class="text-center"><a class="small" href="forgot.php">¿Olvidaste la contraseña?</a></div>
                                     <div class="text-center"><a class="small" href="register.html">Crea un perfil de administrador</a></div>
                                 </div>
                             </div>
