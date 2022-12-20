@@ -3,6 +3,7 @@ if (!empty($_POST['InicioSesión'])) {
     if (!empty($_POST['email']) and !empty($_POST['contraseña'])) {
         $email = $_POST['email'];
         $contraseña = $_POST['contraseña'];
+        include "Conexión.php";
         $sql = $conexión->query("SELECT * FROM `usuarios` WHERE `email`='$email' AND `contraseña`='$contraseña'");
         if ($datos = $sql->fetch_object()) {
             session_start();
