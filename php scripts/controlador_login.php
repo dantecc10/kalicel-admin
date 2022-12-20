@@ -1,11 +1,11 @@
 <?php
-session_start();
 if (!empty($_POST['InicioSesión'])) {
     if (!empty($_POST['email']) and !empty($_POST['contraseña'])) {
         $email = $_POST['email'];
         $contraseña = $_POST['contraseña'];
         $sql = $conexión->query("SELECT * FROM `usuarios` WHERE `email`='$email' AND `contraseña`='$contraseña'");
         if ($datos = $sql->fetch_object()) {
+            session_start();
             $_SESSION['ID'] = $datos->id_usuario;
             $_SESSION['Nombre'] = $datos->nombre_usuario;
             $_SESSION['Apellidos'] = $datos->apellidos_usuario;
