@@ -15,7 +15,7 @@ if (!empty($_POST['InicioSesión'])) {
             header("location: ../Displays.php");
         } else {
             #echo "<div>Acceso denegado<div>";
-            header("location: https://castelancarpinteyro.club");
+            header("location: https://wa.me/527979773095");
         }
     } else {
         echo "Campos vacíos";
