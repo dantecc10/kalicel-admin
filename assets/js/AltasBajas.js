@@ -9,12 +9,14 @@ function bajaAltaCantidad(claveObjetivo, operación) {
     switch (operación) {
         case "alta":
             document.getElementById(spanObjetivo).innerHTML = (cantidadObjetivoActual++);
+            console.log("Se solicitó un alta en la cantidad " + claveObjetivo);
             break;
         case "baja":
             document.getElementById(spanObjetivo).innerHTML = (cantidadObjetivoActual--);
+            console.log("Se solicitó una baja en la cantidad " + claveObjetivo);
             break;
         default:
-            console.error("Error al recibir el valor del parámetro 'operación'.")
+            console.error("Error al recibir el valor del parámetro 'operación'.");
             break;
     }
 }
