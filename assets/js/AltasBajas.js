@@ -5,6 +5,7 @@ function bajaAltaCantidad(claveObjetivo, operación) {
     var cantidadObjetivoActual = 0;
     spanObjetivo = ("cantidad" + claveObjetivo);
     cantidadObjetivoActual = parseInt(document.getElementById(spanObjetivo).outerText);
+    console.log("La cantidad " + claveObjetivo + " actual es de " + cantidadObjetivoActual);
 
     switch (operación) {
         case "alta":
