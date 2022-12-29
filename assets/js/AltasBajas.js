@@ -9,11 +9,11 @@ function bajaAltaCantidad(claveObjetivo, operación) {
         case "alta":
             document.getElementById(spanObjetivo).innerHTML = "";
             document.getElementById(spanObjetivo).innerHTML = (cantidadObjetivoActual++);
-            console.log("Se solicitó un alta en la cantidad " + claveObjetivo + "a " + (cantidadObjetivoActual++));
+            console.log("Se solicitó un alta en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual++));
             break;
         case "baja":
             document.getElementById(spanObjetivo).innerHTML = "";
-            console.log("Se solicitó un alta en la cantidad " + claveObjetivo + "a " + (cantidadObjetivoActual--));
+            console.log("Se solicitó un alta en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual--));
             console.log("Se solicitó una baja en la cantidad " + claveObjetivo);
             break;
         default:
