@@ -1,5 +1,5 @@
-var operación;
-var claveObjetivo;
+// var operación;
+// var claveObjetivo;
 function bajaAltaCantidad(claveObjetivo, operación) {
     var spanObjetivo = "";
     var cantidadObjetivoActual = 0;
