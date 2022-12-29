@@ -216,7 +216,7 @@ include "php scripts/Conexión.php";
                                             echo "<td>" . $columna['modelo_display'] . "</td>";
                                             echo "<td>" . $columna['marca_display'] . "</td>";
                                             echo "<td>" . $columna['color_display'] . "</td>";
-                                            echo "<td>" . $columna['cantidad_display'] . "</td>";
+                                            echo "<td><button class='btn btn-primary btn-baja' type='button'>-</button>" . $columna['cantidad_display'] . "<button class='btn btn-primary btn-alta' type='button'>+</button></td>";
                                             echo "<td>" . $columna['caja_display'] . "</td>";
                                             echo "<td>" . $columna['calidad_display'] . "</td>";
                                             echo "<td>" . $columna['versión_display'] . "</td>";
