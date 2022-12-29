@@ -1,1 +1,1 @@
-:root{--bs-kalicel-rojo:#fe0000!important}.pending-cell{color:var(--bs-warning)}
+:root{--bs-kalicel-rojo:#fe0000!important}.pending-cell{color:var(--bs-warning)}.btn-baja{background-color:var(--bs-kalicel-rojo)}.btn-alta{background-color:var(--bs-success)}.btn-alta: hover{box-shadow:1px 1px #29932d;background-color:var(--bs-success)!important}.btn-alta:hover{background-color:var(--bs-success);box-shadow:1px 1px #29932d}.btn-baja:hover{box-shadow:1px 1px #f12525;background-color:var(--bs-kalicel-rojo)}
