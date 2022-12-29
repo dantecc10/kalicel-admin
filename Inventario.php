@@ -208,6 +208,7 @@ include "php scripts/Conexión.php";
                                     </thead>
                                     <tbody>
                                         <?php
+                                        $comilla = '"';
                                         $consulta = "SELECT * FROM `displays`";
                                         $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
@@ -217,7 +218,7 @@ include "php scripts/Conexión.php";
                                             echo "<td>" . $columna['modelo_display'] . "</td>";
                                             echo "<td>" . $columna['marca_display'] . "</td>";
                                             echo "<td>" . $columna['color_display'] . "</td>";
-                                            echo "<td><button id='baja" . $columna['id_display'] . "' class='btn btn-primary btn-baja' onclick='javascript:bajaCantidad(" . $columna['id_display'] . ");' type='button'>-</button><span id='cantidad" . $columna['id_display'] .  "'>" . $columna['cantidad_display'] . "</span><button id='alta" . $columna['id_display'] . "' class='btn btn-primary btn-alta' type='button'>+</button></td>";
+                                            echo "<td><button id='baja" . $columna['id_display'] . "' class='btn btn-primary btn-baja' onclick='javascript:bajaAltaCantidad(" . $columna['id_display'] . ", " . $comilla . "baja" . $comilla . ");' type='button'>-</button><span id='cantidad" . $columna['id_display'] .  "'>" . $columna['cantidad_display'] . "</span><button id='alta" . $columna['id_display'] . "' class='btn btn-primary btn-alta' type='button'>+</button></td>";
                                             echo "<td>" . $columna['caja_display'] . "</td>";
                                             echo "<td>" . $columna['calidad_display'] . "</td>";
                                             echo "<td>" . $columna['versión_display'] . "</td>";
