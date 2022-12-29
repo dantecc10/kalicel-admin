@@ -2,7 +2,7 @@ function bajaAltaCantidadDebug(claveObjetivo, operación) {
     //var spanObjetivo = "";
     //var cantidadObjetivoActual = 0;
     var spanObjetivo = ("cantidad" + claveObjetivo);
-    var cantidadObjetivoActual = parseInt(document.getElementById(spanObjetivo).outerText);
+    var cantidadObjetivoActual = /*parseInt*/(document.getElementById(spanObjetivo).outerText);
     console.log("La cantidad " + claveObjetivo + " actual es de " + cantidadObjetivoActual);
 
     switch (operación) {
