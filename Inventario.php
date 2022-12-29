@@ -20,6 +20,7 @@ include "php scripts/Conexión.php";
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <script src="assets/js/Funciones.js"></script>
+    <script src="assets/js/AltasBajas.js"></script>
 </head>
 
 <body id="page-top">
