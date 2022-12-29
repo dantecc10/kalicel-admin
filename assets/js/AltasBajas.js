@@ -1,4 +1,4 @@
-function bajaAltaCantidadDebug(claveObjetivo, operación) {
+function bajaAltaCantidad(claveObjetivo, operación) {
     //var spanObjetivo = "";
     //var cantidadObjetivoActual = 0;
     var spanObjetivo = ("cantidad" + claveObjetivo);
