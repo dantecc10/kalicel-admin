@@ -23,6 +23,8 @@ $consulta = ("UPDATE displays SET cantidad_display = $nuevaCantidad WHERE id_dis
 
 # $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
 #mysqli_query($conexión, $consulta);
+
+$conexión->query($consulta);
 echo $consulta;
 
 if ($conexión->connect_error) {
