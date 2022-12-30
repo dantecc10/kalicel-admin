@@ -14,7 +14,7 @@ function bajaAltaCantidad(claveObjetivo, operación) {
             urlCompuesta = (uriPHP + urlVariables);
 
             //Petición AJAX
-            //var xmlhttp = new XMLHttpRequest();
+            var xmlhttp = new XMLHttpRequest();
             //xmlhttp.onreadystatechange = function () {
             //    if (this.readyState == 4 && this.status == 200) {
             //        document.getElementById("FiltroModelo").innerHTML = this.responseText;
@@ -29,7 +29,7 @@ function bajaAltaCantidad(claveObjetivo, operación) {
 
         }
         else {
-            document.getElementById("tablaFiltrada").innerHTML = "¡Error en el AJAX!";
+            document.getElementById(spanObjetivo).innerHTML = "¡Error en el AJAX!";
         }
     }
 
