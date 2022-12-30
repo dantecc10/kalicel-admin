@@ -14,6 +14,7 @@ function Conectarse()
         $resultado = mysqli_query($conexión, $consulta) or die("No funcionó lo de XAMPP");
         $columna = mysqli_fetch_all($resultado);
         echo $columna['id_display'];
+        echo "Está raro";
         exit();
     }
     #if (!mysqli_select_db($nombredb, $link)) {
