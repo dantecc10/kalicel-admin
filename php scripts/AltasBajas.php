@@ -4,8 +4,6 @@ include "php scripts/Conexión.php";
 $id = $_GET['id'];
 $cantidad = $_GET['cantidad'];
 $operación = strval($_GET['operación']);
-//  $ModoFiltro = ($_GET['ModoFiltro']);
-$sql;
 
 switch ($operación) {
     case 'alta':
@@ -22,6 +20,6 @@ switch ($operación) {
 
 $consulta = ("UPDATE `displays` SET `cantidad_display` = '$nuevaCantidad' WHERE `id_display`= '" . $id . "'");
 
-mysqli_query($conexión, $consulta);
+$resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
 
 echo ($nuevaCantidad);
