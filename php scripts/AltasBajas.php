@@ -73,3 +73,4 @@ echo ($nuevaCantidad);
 # $modificaCantidad = ("UPDATE `displays` SET `cantidad_display` = $nuevaCantidad WHERE `id_display`= " . $id);
 # echo $modificaCantidad;
 # $resultado = mysqli_query($conexión, $modificaCantidad) or die("No se ejecutó la çonsulta de actualización...");
+*/
