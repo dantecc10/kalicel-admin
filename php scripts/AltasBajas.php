@@ -24,4 +24,4 @@ $consulta = ("UPDATE `displays` SET `cantidad_display` = '$nuevaCantidad' WHERE 
 
 mysqli_query($conexión, $consulta);
 
-echo "Terminado";
+echo ($nuevaCantidad);
