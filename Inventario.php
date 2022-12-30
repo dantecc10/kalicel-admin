@@ -31,7 +31,7 @@ include "php scripts/Conexión.php";
 <body id="page-top">
     <script lang="javascript">
         if (navigator.online) {
-            //Conexión a internet
+            //Conexión a la red
         } else {
             document.getElementById("mainCSS").href = "assets/css/main.css";
             document.getElementById("funcionesJS").src = "assets/js/Funciones.js";
