@@ -29,9 +29,7 @@ if ($conexión->connect_error) {
     die("Connection failed: " . $conexión->connect_error);
 }
 
-$resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
-
-
+//$resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
 
 if ($conexión->query($consulta) === TRUE) {
     echo "Actualización exitosa";
