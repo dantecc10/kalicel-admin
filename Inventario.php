@@ -140,7 +140,7 @@ include "php scripts/Conexión.php";
                                         }
                                         ?>
 
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las operaciones</a>
                                     </div>
                                 </div>
                                 <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
