@@ -37,14 +37,14 @@ function bajaAltaCantidad(claveObjetivo, operación) {
     switch (operación) {
         case "alta":
             // document.getElementById(spanObjetivo).innerHTML = "";
-            console.log("Se solicitó un alta en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual + 1));
+            console.log("Se solicitó un alta en la cantidad " + claveObjetivo + " a: " + (cantidadObjetivoActual + 1));
             document.getElementById(spanObjetivo).innerHTML = ("" + (cantidadObjetivoActual + 1));
 
             bajaAltaSQL(claveObjetivo, cantidadObjetivoActual, "alta");
             break;
         case "baja":
             // document.getElementById(spanObjetivo).innerHTML = "";
-            console.log("Se solicitó una baja en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual - 1));
+            console.log("Se solicitó una baja en la cantidad " + claveObjetivo + " a: " + (cantidadObjetivoActual - 1));
             document.getElementById(spanObjetivo).innerHTML = ("" + (cantidadObjetivoActual - 1));
 
             bajaAltaSQL(claveObjetivo, cantidadObjetivoActual, "baja");
