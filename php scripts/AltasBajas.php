@@ -23,7 +23,12 @@ while ($columna = mysqli_fetch_array($resultado)) {
     $datosDisplay['Color'] = $columna['color_display'];
 }
 
-/*
+function crearOperación($clave, $acción, $autor, $marca, $modelo, $color)
+{
+    $sql = ("INSERT INTO `operaciones` VALUES ('', '" . ucfirst($acción) . "', 'Baja de $modelo - $marca (display); color " . lcfirst($color) . ".', '$autor', current_timestamp)");
+    return $sql; //"INSERT INTO `operaciones` VALUES('', 'Prueba de script', 'Estoy insertando operaciones de prueba', '$autor', current_timestamp)";
+}
+
 switch ($operación) {
     case 'alta':
         $nuevaCantidad = ($cantidad + 1);
@@ -40,11 +45,6 @@ switch ($operación) {
 // Actualización de la cantidad de displays
 $modificaCantidad = ("UPDATE displays SET cantidad_display = $nuevaCantidad WHERE id_display = $id");
 
-function crearOperación($clave, $acción, $autor, $marca, $modelo, $color)
-{
-    $sql = ("INSERT INTO `operaciones` VALUES ('', '" . ucfirst($acción) . "', 'Baja de $modelo - $marca (display); color " . lcfirst($color) . ".', '$autor', current_timestamp)");
-    return $sql; //"INSERT INTO `operaciones` VALUES('', 'Prueba de script', 'Estoy insertando operaciones de prueba', '$autor', current_timestamp)";
-}
 
 
 $conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
@@ -75,4 +75,3 @@ echo ($nuevaCantidad);
 # $modificaCantidad = ("UPDATE `displays` SET `cantidad_display` = $nuevaCantidad WHERE `id_display`= " . $id);
 # echo $modificaCantidad;
 # $resultado = mysqli_query($conexión, $modificaCantidad) or die("No se ejecutó la çonsulta de actualización...");
-*/
