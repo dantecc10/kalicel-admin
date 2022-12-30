@@ -23,13 +23,15 @@ $consulta = ("UPDATE displays SET cantidad_display = $nuevaCantidad WHERE id_dis
 
 # $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
 #mysqli_query($conexión, $consulta);
-
-$conexión->query($consulta);
-echo $consulta;
+$conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
 
 if ($conexión->connect_error) {
     die("Connection failed: " . $conexión->connect_error);
 }
+
+$conexión->query($consulta);
+echo $consulta;
+
 
 //$resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
 
