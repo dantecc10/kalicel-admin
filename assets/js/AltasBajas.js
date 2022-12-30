@@ -5,6 +5,37 @@ function bajaAltaCantidad(claveObjetivo, operación) {
     var cantidadObjetivoActual = parseInt(document.getElementById(spanObjetivo).innerHTML);
     console.log("La cantidad " + claveObjetivo + " actual es de " + cantidadObjetivoActual);
 
+    function bajaAltaSQL(idDisplay, cantidadActual, operación) {
+        var id = idDisplay;
+        var cantidad = cantidadActual;
+
+        if (id != "" || id != null) {
+            var urlCompuesta, urlVariables = ("?id=" + id + "&cantidad=" + cantidad + "&operación=" + operación), uriPHP = "php scripts/AltasBajas.php";
+            urlCompuesta = (uriPHP + urlVariables);
+
+            //Petición AJAX
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("FiltroModelo").innerHTML = this.responseText;
+                }
+            };
+
+            //Procesamiento AJAX
+            xmlhttp.open("GET", urlCompuesta, true);
+            console.log("URL: " + urlCompuesta + "\nURL Variables: " + urlVariables);
+            //console.log("ModoFiltro: " + ModoFiltro);
+            xmlhttp.send();
+
+        }
+        else {
+            document.getElementById("tablaFiltrada").innerHTML = "";
+        }
+        filtrarMarca();
+    }
+
+    bajaAltaSQL(claveObjetivo, claveObjetivo, operación);
+
     switch (operación) {
         case "alta":
             // document.getElementById(spanObjetivo).innerHTML = "";
