@@ -4,7 +4,7 @@ function Conectarse()
 {
     $host = 'localhost';
     $usuariodb = 'kalicel';
-    $passwdb = 'kalicelrepair';
+    $passwdb = 'kalicelrepai';
     $nombredb = 'kalicel';
 
     if (!($link = mysqli_connect($host, $usuariodb, $passwdb))) {
