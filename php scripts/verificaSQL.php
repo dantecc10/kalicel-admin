@@ -10,6 +10,8 @@ function Conectarse()
     if (!($link = mysqli_connect($host, $usuariodb, $passwdb))) {
         echo "Error conectando a la base de datos. Probemos con XAMPP";
         $conexión = new mysqli("127.0.0.1", "root", "", "kalicel");
+        $consulta = "SELECT * FROM `displays` WHERE `id_display` = 2";
+        $consulta = mysqli_query($conexión, $consulta) or die("No funcionó lo de XAMPP");
         exit();
     }
     #if (!mysqli_select_db($nombredb, $link)) {
