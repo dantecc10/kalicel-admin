@@ -21,7 +21,7 @@ while ($columna = mysqli_fetch_array($resultado)) {
     $datosDisplay['Color'] = $columna['color_display'];
 }
 
-
+/*
 switch ($operación) {
     case 'alta':
         $nuevaCantidad = ($cantidad + 1);
