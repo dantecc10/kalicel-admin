@@ -12,6 +12,8 @@ $operación = strval($_GET['operación']);
 
 $autor = $_SESSION['Nombre'];
 
+$conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
+
 $consulta = "SELECT * FROM `displays` WHERE `id_display` = $id";
 $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
