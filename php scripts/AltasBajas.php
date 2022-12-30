@@ -15,11 +15,11 @@ $autor = $_SESSION['Nombre'];
 $consulta = "SELECT * FROM `displays` WHERE `id_display` = $id";
 $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
-while ($columna = mysqli_fetch_array($resultado)) {
-    $datosDisplay['Marca'] = $columna['modelo_display'];
-    $datosDisplay['Modelo'] = $columna['marca_display'];
-    $datosDisplay['Color'] = $columna['color_display'];
-}
+#while ($columna = mysqli_fetch_array($resultado)) {
+#    $datosDisplay['Marca'] = $columna['modelo_display'];
+#    $datosDisplay['Modelo'] = $columna['marca_display'];
+#    $datosDisplay['Color'] = $columna['color_display'];
+#}
 
 /*
 switch ($operación) {
