@@ -25,7 +25,7 @@ while ($columna = mysqli_fetch_array($resultado)) {
 
 function crearOperación($clave, $acción, $autor, $marca, $modelo, $color)
 {
-    $sql = ("INSERT INTO `operaciones` VALUES ('', '" . ucfirst($acción) . "', 'Baja de $modelo - $marca (display); color " . lcfirst($color) . ".', '$autor', current_timestamp)");
+    $sql = ("INSERT INTO `operaciones` VALUES ('', '" . ucfirst($acción) . "', '" . ucfirst($acción) . " de $modelo - $marca (display); color " . lcfirst($color) . ".', '$autor', current_timestamp)");
     return $sql; //"INSERT INTO `operaciones` VALUES('', 'Prueba de script', 'Estoy insertando operaciones de prueba', '$autor', current_timestamp)";
 }
 
