@@ -22,5 +22,6 @@ switch ($operación) {
 
 $consulta = ("UPDATE `displays` SET `cantidad_display` = '$nuevaCantidad' WHERE `id_display`= '" . $id . "'");
 
-$resultado = mysqli_query($conexión, $consulta) or die("La modificación no se llevó a cabo.");
+mysqli_query($conexión, $consulta);
 
+echo "Terminado";
