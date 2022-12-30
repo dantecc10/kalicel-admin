@@ -101,7 +101,7 @@ include "php scripts/Conexión.php";
                                         <?php
                                         $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
 
-                                        $consulta = "SELECT * FROM `operaciones` ORDER BY `operaciones`.`fecha_operación` ASC";
+                                        $consulta = "SELECT * FROM `operaciones` ORDER BY `operaciones`.`fecha_operación` DESC";
                                         $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
                                         $contador = 0;
