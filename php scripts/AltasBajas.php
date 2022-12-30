@@ -26,7 +26,7 @@ $consulta = ("UPDATE displays SET cantidad_display = " . $nuevaCantidad . " WHER
 echo $consulta;
 
 if ($conexión->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conexión->connect_error);
 }
 
 $resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
