@@ -19,7 +19,7 @@ switch ($operación) {
         break;
 }
 // Actualización de la cantidad de displays
-$consulta = ("UPDATE displays SET cantidad_display = " . $nuevaCantidad . " WHERE id_display= " . $id);
+$consulta = ("UPDATE displays SET cantidad_display = " . $nuevaCantidad . " WHERE id_display = " . $id);
 
 # $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
 mysqli_query($conexión, $consulta);
