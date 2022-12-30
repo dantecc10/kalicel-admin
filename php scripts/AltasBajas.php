@@ -30,15 +30,15 @@ if ($conexión->connect_error) {
 }
 
 $conexión->query($consulta);
-echo $consulta;
+#echo $consulta;
 
 
 //$resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
 
 if ($conexión->query($consulta) === TRUE) {
-    echo "Actualización exitosa";
+    #echo "Actualización exitosa";
 } else {
-    echo "Error en la actualización del registro: : " . $conexión->error;
+    #echo "Error en la actualización del registro: : " . $conexión->error;
 }
 
 $conexión->close();
