@@ -13,6 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="IMG/El Mundo del Regalo - LOGO.png">
     <title>Iniciar sesión</title>
+    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
+    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
+    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
+    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
+    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">    
 </head>
 
 <body>
