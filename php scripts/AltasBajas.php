@@ -4,6 +4,7 @@ include "php scripts/Conexión.php";
 $id = $_GET['id'];
 $cantidad = $_GET['cantidad'];
 $operación = strval($_GET['operación']);
+# $usuario = strval($_GET['usuario']);
 
 switch ($operación) {
     case 'alta':
@@ -17,9 +18,14 @@ switch ($operación) {
         header("location: FallaSwitchActualización.php");
         break;
 }
-
-$consulta = ("UPDATE `displays` SET `cantidad_display` = '$nuevaCantidad' WHERE `id_display`= '" . $id . "'");
-
+// Actualización de la cantidad de displays
+$consulta = ("UPDATE `displays` SET `cantidad_display` = $nuevaCantidad WHERE `id_display`= " . $id);
+echo $consulta;
 $resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
+
+// Registro de edición en la actividad de usuarios (historial de seguridad)
+# $consulta = ("UPDATE `displays` SET `cantidad_display` = $nuevaCantidad WHERE `id_display`= " . $id);
+# echo $consulta;
+# $resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
 
 echo ($nuevaCantidad);
