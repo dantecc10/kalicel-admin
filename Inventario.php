@@ -29,7 +29,7 @@ include "php scripts/Conexión.php";
 </head>
 
 <body id="page-top">
-    <script lang="javascript">
+    <!--<script lang="javascript">
         if (navigator.online) {
             //Conexión a la red
         } else {
@@ -37,7 +37,7 @@ include "php scripts/Conexión.php";
             document.getElementById("funcionesJS").src = "assets/js/Funciones.js";
             document.getElementById("altasBajasJS").src = "assets/js/AltasBajas.js";
         }
-    </script>
+    </script>-->
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: #fe0000;">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
