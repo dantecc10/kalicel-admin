@@ -115,9 +115,7 @@ include "php scripts/Conexión.php";
                                                 case 'Dante':
                                                     $autor = 3;
                                                     break;
-
                                                 default:
-                                                    echo "Error fatal de identificación de usuarios";
                                                     break;
                                             }
                                             echo ("
