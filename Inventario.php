@@ -26,6 +26,7 @@ include "php scripts/Conexión.php";
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <script src="assets/js/Funciones.js"></script>
     <script src="assets/js/AltasBajas.js"></script>
+    
 </head>
 
 <body id="page-top">
