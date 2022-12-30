@@ -18,17 +18,25 @@ include "php scripts/Conexión.php";
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
-    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">    
+    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <meta name="description" content="Sistema de administración web de reparaciones, estados de pedidos, e interacción con el cliente.">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-    <script src="assets/js/Funciones.js"></script>
-    <script src="assets/js/AltasBajas.js"></script>
+    <link id="mainCSS" rel="stylesheet" href="https://kalicel.castelancarpinteyro.club/admin/assets/css/main.css">
+    <script id="funcionesJS" src="https://kalicel.castelancarpinteyro.club/admin/assets/js/Funciones.js"></script>
+    <script id="altasBajasJS" src="https://kalicel.castelancarpinteyro.club/admin/assets/js/AltasBajas.js"></script>
 </head>
 
 <body id="page-top">
+    <script lang="javascript">
+        if (navigator.online) {
+            //Conexión a internet
+        } else {
+            document.getElementById("mainCSS").href = "assets/css/main.css";
+            document.getElementById("funcionesJS").src = "assets/js/Funciones.js";
+            document.getElementById("altasBajasJS").src = "assets/js/AltasBajas.js";
+        }
+    </script>
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: #fe0000;">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
