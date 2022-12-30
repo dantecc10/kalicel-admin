@@ -127,7 +127,7 @@ include "php scripts/Conexión.php";
                                             </div>
                                             <div class='fw-bold'>
                                                 <div class='text-truncate'>
-                                                <span>" . $columna['acción_operación'] . "</span>
+                                                <span>" . $columna['acción_operación'] . ": " . $columna['descripción_operación'] . "</span>
                                                 </div>
                                                 <p class='small text-gray-500 mb-0'>" . $columna['autor_operación'] . " - " . $columna['fecha_operación'] . "</p>
                                                 </div>
