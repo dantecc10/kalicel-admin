@@ -101,10 +101,12 @@ include "php scripts/Conexión.php";
                                         <?php
                                         $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
 
-                                        $consulta = "SELECT * FROM `operaciones`";
+                                        $consulta = "SELECT * FROM `operaciones` ORDER BY `operaciones`.`fecha_operación` ASC";
                                         $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
-                                        while ($columna = mysqli_fetch_array($resultado)) {
+                                        $contador = 0;
+
+                                        while ($columna = mysqli_fetch_array($resultado) && $contador < 6) {
                                             switch ($columna['autor_operación']) {
                                                 case 'Luis Enrique':
                                                     $autor = 1;
@@ -131,10 +133,9 @@ include "php scripts/Conexión.php";
                                                 </div>
                                                 </a>
                                             ");
+                                            $contador++;
                                         }
                                         ?>
-
-
 
                                         <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                     </div>
