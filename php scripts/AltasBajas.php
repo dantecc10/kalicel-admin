@@ -22,7 +22,7 @@ switch ($operación) {
 $consulta = ("UPDATE displays SET cantidad_display = " . $nuevaCantidad . " WHERE id_display= " . $id);
 
 # $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-
+mysqli_query($conexión, $consulta);
 echo $consulta;
 
 if ($conexión->connect_error) {
@@ -39,11 +39,10 @@ if ($conexión->query($consulta) === TRUE) {
 
 $conexión->close();
 
+echo ($nuevaCantidad);
 
 
 // Registro de edición en la actividad de usuarios (historial de seguridad)
 # $consulta = ("UPDATE `displays` SET `cantidad_display` = $nuevaCantidad WHERE `id_display`= " . $id);
 # echo $consulta;
 # $resultado = mysqli_query($conexión, $consulta) or die("No se ejecutó la çonsulta de actualización...");
-
-echo ($nuevaCantidad);
