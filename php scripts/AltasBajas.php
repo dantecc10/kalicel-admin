@@ -45,8 +45,6 @@ switch ($operación) {
 // Actualización de la cantidad de displays
 $modificaCantidad = ("UPDATE displays SET cantidad_display = $nuevaCantidad WHERE id_display = $id");
 
-
-
 $conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
 
 if ($conexión->connect_error) {
