@@ -14,12 +14,12 @@ function bajaAltaCantidad(claveObjetivo, operación) {
             urlCompuesta = (uriPHP + urlVariables);
 
             //Petición AJAX
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("FiltroModelo").innerHTML = this.responseText;
-                }
-            };
+            //var xmlhttp = new XMLHttpRequest();
+            //xmlhttp.onreadystatechange = function () {
+            //    if (this.readyState == 4 && this.status == 200) {
+            //        document.getElementById("FiltroModelo").innerHTML = this.responseText;
+            //    }
+            //};
 
             //Procesamiento AJAX
             xmlhttp.open("GET", urlCompuesta, true);
@@ -29,23 +29,23 @@ function bajaAltaCantidad(claveObjetivo, operación) {
 
         }
         else {
-            document.getElementById("tablaFiltrada").innerHTML = "";
+            document.getElementById("tablaFiltrada").innerHTML = "¡Error en el AJAX!";
         }
-        filtrarMarca();
     }
 
-    bajaAltaSQL(claveObjetivo, claveObjetivo, operación);
 
     switch (operación) {
         case "alta":
             // document.getElementById(spanObjetivo).innerHTML = "";
             console.log("Se solicitó un alta en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual + 1));
+            bajaAltaSQL(claveObjetivo, claveObjetivo, "alta");
 
             document.getElementById(spanObjetivo).innerHTML = ("" + (cantidadObjetivoActual + 1));
             break;
         case "baja":
             // document.getElementById(spanObjetivo).innerHTML = "";
             console.log("Se solicitó una baja en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual - 1));
+            bajaAltaSQL(claveObjetivo, claveObjetivo, "baja");
 
             document.getElementById(spanObjetivo).innerHTML = ("" + (cantidadObjetivoActual - 1));
             break;
