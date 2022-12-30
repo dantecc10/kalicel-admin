@@ -38,16 +38,16 @@ function bajaAltaCantidad(claveObjetivo, operación) {
         case "alta":
             // document.getElementById(spanObjetivo).innerHTML = "";
             console.log("Se solicitó un alta en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual + 1));
-            bajaAltaSQL(claveObjetivo, claveObjetivo, "alta");
-
             document.getElementById(spanObjetivo).innerHTML = ("" + (cantidadObjetivoActual + 1));
+
+            bajaAltaSQL(claveObjetivo, claveObjetivo, "alta");
             break;
         case "baja":
             // document.getElementById(spanObjetivo).innerHTML = "";
             console.log("Se solicitó una baja en la cantidad " + claveObjetivo + "a: " + (cantidadObjetivoActual - 1));
-            bajaAltaSQL(claveObjetivo, claveObjetivo, "baja");
-
             document.getElementById(spanObjetivo).innerHTML = ("" + (cantidadObjetivoActual - 1));
+
+            bajaAltaSQL(claveObjetivo, claveObjetivo, "baja");
             break;
         default:
             console.error("Error al recibir el valor del parámetro 'operación'.");
