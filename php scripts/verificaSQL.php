@@ -8,7 +8,8 @@ function Conectarse()
     $nombredb = 'kalicel';
 
     if (!($link = mysqli_connect($host, $usuariodb, $passwdb))) {
-        echo "Error conectando a la base de datos.";
+        echo "Error conectando a la base de datos. Probemos con XAMPP";
+        $conexión = new mysqli("127.0.0.1", "root", "", "kalicel");
         exit();
     }
     #if (!mysqli_select_db($nombredb, $link)) {
