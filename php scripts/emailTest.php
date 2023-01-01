@@ -1,5 +1,5 @@
 <?php
-$to = 'valecc666@gmail.com'; # Destinatario
+$to = 'dantecc10@gmail.com'; # Destinatario
 
 
 $from = 'notificaciones@kalicel.castelancarpinteyro.club'; # Remitente del correo
