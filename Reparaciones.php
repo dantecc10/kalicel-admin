@@ -92,23 +92,53 @@
                             </li>
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">7</span><i class="fas fa-envelope fa-fw"></i></a>
-                                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">7</span><i class="fas fa-envelope fa-fw"></i></a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6>
-                                        <a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
-                                                <div class="bg-success status-indicator"></div>
+                                        <h6 class="dropdown-header">Operaciones</h6>
+
+                                        <?php
+                                        $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
+
+                                        $consulta = "SELECT * FROM `operaciones` WHERE `autor_operación` != '' ORDER BY `fecha_operación` DESC";
+                                        $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
+
+                                        $contador = 0;
+
+                                        while ($columna = mysqli_fetch_array($resultado)) {
+                                            switch ($columna['autor_operación']) {
+                                                case 'Luis Enrique':
+                                                    $autor = 1;
+                                                    break;
+                                                case 'Rosalba Nazareth':
+                                                    $autor = 2;
+                                                    break;
+                                                case 'Dante':
+                                                    $autor = 3;
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                            echo ("
+                                            <a class='dropdown-item d-flex align-items-center' href='#'>
+                                            <div class='dropdown-list-image me-3'><img class='rounded-circle' src='assets/img/avatars/" . $autor . ".png'>
+                                            <div class='bg-success status-indicator'></div>
                                             </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate">
-                                                    <span>Hi there! I am wondering if you can help me with a problem I've been having.</span>
+                                            <div class='fw-bold'>
+                                                <div class='text-truncate'>
+                                                <span>" . $columna['acción_operación'] . ": " . $columna['descripción_operación'] . "</span>
                                                 </div>
-                                                <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                                <p class='small text-gray-500 mb-0'>" . $columna['autor_operación'] . " - " . $columna['fecha_operación'] . "</p>
+                                                </div>
+                                                </a>
+                                            ");
+                                            $contador++;
+                                            if ($contador > 5) {
+                                                break;
+                                            }
+                                        }
+                                        ?>
+
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las operaciones</a>
                                     </div>
-                                </div>
                                 </div>
                                 <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
                             </li>
