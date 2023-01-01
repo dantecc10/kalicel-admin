@@ -1,8 +1,8 @@
 <?php
-$to = 'jeremy.hdez9@gmail.com'; # Destinatario
+$to = 'valecc666@gmail.com'; # Destinatario
 
 
-$from = 'nerdpizza@equipo1.prog5a.com'; # Remitente del correo
+$from = 'notificaciones@kalicel.castelancarpinteyro.club'; # Remitente del correo
 $fromName = 'Nerd Pizza'; # Remitente del correo (nombre)
 
 $subject = 'Correo electrónico PHP con datos adjuntos de BaulPHP'; # Asunto del email
