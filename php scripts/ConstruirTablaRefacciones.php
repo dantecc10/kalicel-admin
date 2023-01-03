@@ -126,5 +126,6 @@ function ConstruirTablaBúsqueda($búsqueda)
 if ($búsqueda != "" ||  $búsqueda != null) {
     ConstruirTablaBúsqueda($búsqueda);
 } else {
-    echo "Filtro desactivado";
+    ConstruirTablaCarga($búsqueda);
+    #echo "Filtro desactivado";
 }
