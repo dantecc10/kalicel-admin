@@ -33,7 +33,7 @@ function buscarDisplays() {
     console.log("Se busca: '" + búsqueda + "'");
     if (búsqueda != "" || búsqueda != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "Scripts PHP/Filtrarbúsqueda.php";
+        uriPHP = "php scripts/ConstruirTablaRefacciones.php";
         urlVariables = ("?búsqueda=" + búsqueda);
         urlCompuesta = (uriPHP + urlVariables);
 
