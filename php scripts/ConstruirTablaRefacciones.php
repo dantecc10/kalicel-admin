@@ -75,7 +75,7 @@ function ConstruirTablaBúsqueda($búsqueda)
 
 
     $consulta = "SELECT * FROM `displays` $where";
-    echo $consulta;
+    #echo $consulta;
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
     echo ("<table class='table my-0' id='dataTable'>
