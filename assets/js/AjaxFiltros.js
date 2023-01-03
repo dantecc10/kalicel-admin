@@ -31,10 +31,10 @@ function FiltrarProductos() {
 function buscarDisplays() {
     var búsqueda = document.getElementsByName("capturaBúsqueda")[0].value;
     console.log("Se busca: '" + búsqueda + "'");
-    /*if (Nombre != "" || Nombre != null || Nombre != "Todas") {
+    if (búsqueda != "" || búsqueda != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "Scripts PHP/FiltrarNombre.php";
-        urlVariables = ("?Nombre=" + Nombre);
+        uriPHP = "Scripts PHP/Filtrarbúsqueda.php";
+        urlVariables = ("?búsqueda=" + búsqueda);
         urlCompuesta = (uriPHP + urlVariables);
 
         var xmlhttp = new XMLHttpRequest();
@@ -51,5 +51,5 @@ function buscarDisplays() {
     else {
         document.getElementById("DivTablaID").innerHTML = "";
         return;
-    }*/
+    }
 }
