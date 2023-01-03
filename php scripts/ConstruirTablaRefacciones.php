@@ -1,14 +1,6 @@
 <?php
-
 session_start();
-
 $búsqueda = $_GET['Búsqueda'];
-
-if ($búsqueda != "" ||  $búsqueda != null) {
-    echo "Filtro activado";
-} else {
-    echo "Filtro desactivado";
-}
 
 function ConstruirTablaCarga()
 {
@@ -20,7 +12,7 @@ function ConstruirTablaCarga()
     echo ("<table class='table my-0' id='dataTable'>
     <thead>
         <tr>
-            <th>ID</th>
+        <th>ID</th>
             <th>Modelo</th>
             <th>Marca</th>
             <th>Color</th>
@@ -28,8 +20,8 @@ function ConstruirTablaCarga()
             <th>Caja</th>
             <th>Calidad</th>
             <th>Versión</th>
-        </tr>
-    </thead>
+            </tr>
+            </thead>
     <tbody id='cuerpoTabla'>");
     while ($columna = mysqli_fetch_array($resultado)) {
 
@@ -47,7 +39,7 @@ function ConstruirTablaCarga()
     echo ("</tbody>
     <tfoot>
         <tr>
-            <td><strong>ID</strong></td>
+        <td><strong>ID</strong></td>
             <td><strong>Modelo</strong></td>
             <td><strong>Marca</strong></td>
             <td><strong>Color</strong></td>
@@ -55,36 +47,49 @@ function ConstruirTablaCarga()
             <td><strong>Caja</strong></td>
             <td>Calidad</td>
             <td>Versión</td>
-        </tr>
-    </tfoot>
-    </table>");
+            </tr>
+            </tfoot>
+            </table>");
 
     mysqli_close($conexión);
 }
 
 # ConstruirTablaCarga();
 
-// Diseño de lógica de consultas
 
-function ConstruirTablaBúsqueda()
+function ConstruirTablaBúsqueda($búsqueda)
 {
     $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
     $comilla = '"';
-    $consulta = "SELECT * FROM `displays`";
+    $columnas = ["id_display", "modelo_display", "marca_display", "color_display", "cantidad_display", "versión_display", "caja_display"];
+
+    // Diseño de lógica de filtros
+    $where = "WHERE (";
+    $cuenta = count($columnas);
+    for ($i = 0; $i < $cuenta; $i++) {
+        $where .= $columnas[$i] . " LIKE '%" . $búsqueda . "%' OR ";
+    }
+    $where = substr_replace($where, "", -3);
+    $where .= ")";
+
+
+
+    $consulta = "SELECT * FROM `displays` $where";
+    echo $consulta;
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
     echo ("<table class='table my-0' id='dataTable'>
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Modelo</th>
-            <th>Marca</th>
-            <th>Color</th>
+    <tr>
+    <th>ID</th>
+    <th>Modelo</th>
+    <th>Marca</th>
+    <th>Color</th>
             <th>Cantidad</th>
             <th>Caja</th>
             <th>Calidad</th>
             <th>Versión</th>
-        </tr>
+            </tr>
     </thead>
     <tbody id='cuerpoTabla'>");
     while ($columna = mysqli_fetch_array($resultado)) {
@@ -102,18 +107,24 @@ function ConstruirTablaBúsqueda()
     }
     echo ("</tbody>
     <tfoot>
-        <tr>
-            <td><strong>ID</strong></td>
-            <td><strong>Modelo</strong></td>
-            <td><strong>Marca</strong></td>
-            <td><strong>Color</strong></td>
-            <td><strong>Cantidad</strong></td>
-            <td><strong>Caja</strong></td>
-            <td>Calidad</td>
-            <td>Versión</td>
-        </tr>
+    <tr>
+    <td><strong>ID</strong></td>
+    <td><strong>Modelo</strong></td>
+    <td><strong>Marca</strong></td>
+    <td><strong>Color</strong></td>
+    <td><strong>Cantidad</strong></td>
+    <td><strong>Caja</strong></td>
+    <td>Calidad</td>
+    <td>Versión</td>
+    </tr>
     </tfoot>
     </table>");
 
     mysqli_close($conexión);
+}
+
+if ($búsqueda != "" ||  $búsqueda != null) {
+    ConstruirTablaBúsqueda($búsqueda);
+} else {
+    echo "Filtro desactivado";
 }
