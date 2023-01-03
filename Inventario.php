@@ -164,7 +164,7 @@ include "php scripts/Conexión.php";
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-6 text-nowrap">
+                                <div class="col-md-12 text-nowrap">
                                     <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
                                         <label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
                                                 <option value="10" selected="">10</option>
@@ -180,74 +180,73 @@ include "php scripts/Conexión.php";
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-end dataTables_filter" id="dataTable_filter">
+                                <div class="text-md-end dataTables_filter" id="dataTable_filter">
 
-                                        <b><label class="form-label">Filtrar
-                                            </label></b><br>
-                                        <label for="FiltroMarca" class="form-label">Marca</label>
-                                        <select id="FiltroMarca" class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca" onchange="javascript:opcionesModelos();">
-                                            <option value=""></option>
-                                            <option value="Apple">Apple</option>
-                                            <option value="Samsung">Samsung</option>
-                                            <option value="Motorola">Motorola</option>
-                                            <option value="Huawei">Huawei</option>
-                                            <option value="Xiaomi">Xiaomi</option>
-                                            <option value="Alcatel">Alcatel</option>
-                                            <option value="LG">LG</option>
-                                            <option value="ZTE">ZTE</option>
-                                            <option value="Hisense">Hisense</option>
-                                            <option value="M4">M4</option>
-                                            <option value="Nokia">Nokia</option>
-                                            <option value="Oppo / Realme">Oppo / Realme</option>
-                                        </select>
+                                    <b><label class="form-label">Filtrar
+                                        </label></b><br>
+                                    <label for="FiltroMarca" class="form-label">Marca</label>
+                                    <select id="FiltroMarca" class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca" onchange="javascript:opcionesModelos();">
+                                        <option value=""></option>
+                                        <option value="Apple">Apple</option>
+                                        <option value="Samsung">Samsung</option>
+                                        <option value="Motorola">Motorola</option>
+                                        <option value="Huawei">Huawei</option>
+                                        <option value="Xiaomi">Xiaomi</option>
+                                        <option value="Alcatel">Alcatel</option>
+                                        <option value="LG">LG</option>
+                                        <option value="ZTE">ZTE</option>
+                                        <option value="Hisense">Hisense</option>
+                                        <option value="M4">M4</option>
+                                        <option value="Nokia">Nokia</option>
+                                        <option value="Oppo / Realme">Oppo / Realme</option>
+                                    </select>
 
-                                        <label for="FiltroModelo" class="form-label">Modelo</label>
-                                        <select id="FiltroModelo" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo" onchange="javascript:opcionesColores();">
-                                            <option value=""></option>
-                                        </select>
+                                    <label for="FiltroModelo" class="form-label">Modelo</label>
+                                    <select id="FiltroModelo" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo" onchange="javascript:opcionesColores();">
+                                        <option value=""></option>
+                                    </select>
 
-                                        <label for="FiltroColor" class="form-label">Color</label>
-                                        <select id="FiltroColor" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo" onchange="javascript:opcionesColores();">
-                                            <option value=""></option>
-                                        </select>
-                                    </div>
+                                    <label for="FiltroColor" class="form-label">Color</label>
+                                    <select id="FiltroColor" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo" name="FiltroModelo" onchange="javascript:opcionesColores();">
+                                        <option value=""></option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="tablaFiltrada" role="grid" aria-describedby="dataTable_info">
+                        </div>
+                        <div class="table-responsive table mt-2" id="tablaFiltrada" role="grid" aria-describedby="dataTable_info">
+                        </div>
+                        <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                            <?php
+                            include "php scripts/ConstruirTablaRefacciones.php";
+                            ConstruirTablaCarga();
+                            ?>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 align-self-center">
+                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
                             </div>
-                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                <?php
-                                include "php scripts/ConstruirTablaRefacciones.php";
-                                ConstruirTablaCarga();
-                                ?>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                            <div class="col-md-6">
+                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                    <ul class="pagination">
+                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="bg-white sticky-footer">
-                <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Kalicel 2022</span></div>
-                </div>
-            </footer>
-        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+        <footer class="bg-white sticky-footer">
+            <div class="container my-auto">
+                <div class="text-center my-auto copyright"><span>Copyright © Kalicel 2022</span></div>
+            </div>
+        </footer>
+    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
