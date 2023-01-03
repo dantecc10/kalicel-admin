@@ -52,6 +52,6 @@ function ConstruirTablaCarga()
     mysqli_close($conexión);
 }
 
-ConstruirTablaCarga();
+# ConstruirTablaCarga();
 
 // Diseño de lógica de consultas
