@@ -174,16 +174,13 @@ include "php scripts/Conexión.php";
                                             </select>&nbsp;</label>
                                     </div>
                                     <div class="text-md-end dataTables_filter" id="divInputFiltro">
-                                        <label class="form-label text-center d-lg-flex justify-content-lg-start align-items-lg-center" for="capturaBúsqueda">
+                                        <label class="form-label text-left d-lg-flex justify-content-lg-start align-items-lg-center" for="capturaBúsqueda">
                                             Filtrar&nbsp;
                                             <input id="capturaBúsqueda" type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Buscar" name="capturaBúsqueda">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="text-md-end dataTables_filter" id="dataTable_filter">
-
-                                    <b><label class="form-label">Filtrar
-                                        </label></b><br>
                                     <label for="FiltroMarca" class="form-label">Marca</label>
                                     <select id="FiltroMarca" class="form-control form-control-sm" aria-controls="dataTable" name="FiltroMarca" onchange="javascript:opcionesModelos();">
                                         <option value=""></option>
