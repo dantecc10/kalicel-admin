@@ -29,7 +29,7 @@ function FiltrarProductos() {
 }
 
 function buscarDisplays() {
-    var búsqueda = document.getElementsByName("capturaBúsqueda").value;
+    var búsqueda = document.getElementsByName("capturaBúsqueda")[0].value;
     console.log("Se busca: '" + búsqueda + "'");
     /*if (Nombre != "" || Nombre != null || Nombre != "Todas") {
         var urlCompuesta, urlVariables = "", uriPHP;
