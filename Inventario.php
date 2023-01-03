@@ -176,7 +176,7 @@ include "php scripts/Conexión.php";
                                     <div class="text-md-end dataTables_filter" id="divInputFiltro">
                                         <label class="form-label text-center d-lg-flex justify-content-lg-start align-items-lg-center" for="capturaBúsqueda">
                                             Filtrar&nbsp;
-                                            <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Buscar" name="capturaBúsqueda">
+                                            <input id="capturaBúsqueda" type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Buscar" name="capturaBúsqueda">
                                         </label>
                                     </div>
                                 </div>
