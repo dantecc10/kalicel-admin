@@ -2,9 +2,9 @@
 
 session_start();
 
-$filtro = $_GET['Filtro'];
+$búsqueda = $_GET['Búsqueda'];
 
-if ($filtro != "" ||  $filtro != null) {
+if ($búsqueda != "" ||  $búsqueda != null) {
     echo "Filtro activado";
 } else {
     echo "Filtro desactivado";
