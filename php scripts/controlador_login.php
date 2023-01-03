@@ -18,7 +18,8 @@ if (!empty($_POST['InicioSesión'])) {
             $mensajeDante = ("Hola Dante, he intentado iniciar con las siguientes credenciales al administrador de Kalicel y no he podido ingresar; ¿son correctas?:
             - Usuario: $email
             - Contraseña: $password");
-            header("location: https://wa.me/527979773095");
+            $mensajeDante = urlencode($mensajeDante);
+            header("location: https://wa.me/527979773095?text=$mensajeDante");
         }
     } else {
         echo "Campos vacíos";
