@@ -1,6 +1,6 @@
 <?php
 session_start();
-$búsqueda = $_GET['Búsqueda'];
+$búsqueda = $_GET['búsqueda'];
 
 function ConstruirTablaCarga()
 {
