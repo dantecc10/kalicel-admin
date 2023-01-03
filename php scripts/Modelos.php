@@ -1,22 +1,36 @@
 <?php
 
 $Marca = strval($_GET['Marca']);
+$Modelo = strval($_GET['Modelo']);
+$Color = strval($_GET['Color']);
 //  $ModoFiltro = ($_GET['ModoFiltro']);
-$sql;
+
+añadirOpciones($Marca, $Modelo);
+if ($Marca != "" || $Marca != null) {
+} else {
+  # code...
+}
+
+
+
+
 /*
-  Declaración de funciones -------------------------------------------------------------------------------------------------------------------------------------------
-  */
+Declaración de funciones -------------------------------------------------------------------------------------------------------------------------------------------
+*/
 
 // echo ("ID es: " . $ID . "<br>");
 
 #consulta = ("SELECT `modelo_display` FROM `displays` WHERE `marca_display` = '" + Marca + "'"); //PHP
 
-$sql = ("SELECT `modelo_display` FROM `displays` WHERE `marca_display` = '" . $Marca . "'");
 
-añadirOpciones($sql);
-
-function añadirOpciones($sql)
+function añadirOpciones($Marca, $Modelo)
 {
+  if ($Modelo != "" || $Modelo != null) {
+    $sql = ("SELECT `color_display` FROM `displays` WHERE (`marca_display` = '" . $Marca . "' AND `modelo_display` = '" . $Modelo . "')");
+  } else {
+    $sql = ("SELECT `modelo_display` FROM `displays` WHERE `marca_display` = '" . $Marca . "'");
+  }
+
   require('Conexión.php');
   // echo $sql;
   $result = mysqli_query($conexión, $sql) or die("Error en la consulta a la base de datos");
