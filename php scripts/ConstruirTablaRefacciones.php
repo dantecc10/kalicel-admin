@@ -5,6 +5,21 @@ $comilla = '"';
 $consulta = "SELECT * FROM `displays`";
 $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 while ($columna = mysqli_fetch_array($resultado)) {
+    echo ("<table class='table my-0' id='dataTable'>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Color</th>
+            <th>Cantidad</th>
+            <th>Caja</th>
+            <th>Calidad</th>
+            <th>Versión</th>
+        </tr>
+    </thead>
+    <tbody id='cuerpoTabla'>");
+
     echo "<tr>";
     echo "<td>" . $columna['id_display'] . "</td>";
     echo "<td>" . $columna['modelo_display'] . "</td>";
@@ -15,6 +30,21 @@ while ($columna = mysqli_fetch_array($resultado)) {
     echo "<td>" . $columna['calidad_display'] . "</td>";
     echo "<td>" . $columna['versión_display'] . "</td>";
     echo "</tr>";
+
+    echo ("</tbody>
+    <tfoot>
+        <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>Modelo</strong></td>
+            <td><strong>Marca</strong></td>
+            <td><strong>Color</strong></td>
+            <td><strong>Cantidad</strong></td>
+            <td><strong>Caja</strong></td>
+            <td>Calidad</td>
+            <td>Versión</td>
+        </tr>
+    </tfoot>
+</table>");
 }
 
 mysqli_close($conexión);
