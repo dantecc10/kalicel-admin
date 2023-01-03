@@ -252,8 +252,8 @@ include "php scripts/Conexión.php";
                                             <td><strong>Color</strong></td>
                                             <td><strong>Cantidad</strong></td>
                                             <td><strong>Caja</strong></td>
-                                            <td>Calidad</td>
-                                            <td>Versión</td>
+                                            <td><strong>Calidad</strong></td>
+                                            <td><strong>Versión</strong></td>
                                         </tr>
                                     </tfoot>
                                 </table>
