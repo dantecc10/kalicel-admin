@@ -4,7 +4,7 @@ session_start();
 
 $filtro = $_GET['Filtro'];
 
-if ($filtro == true) {
+if ($filtro != "" ||  $filtro != null) {
     echo "Filtro activado";
 } else {
     echo "Filtro desactivado";
