@@ -26,7 +26,7 @@ include "php scripts/Conexión.php";
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <script src="assets/js/Funciones.js"></script>
     <script src="assets/js/AltasBajas.js"></script>
-
+    <script src="assets/js/AjaxFiltros.js"></script>
 </head>
 
 <body id="page-top">
@@ -224,7 +224,7 @@ include "php scripts/Conexión.php";
                                             <th>Versión</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="cuerpoTabla">
                                         <?php
                                         $comilla = '"';
                                         $consulta = "SELECT * FROM `displays`";
