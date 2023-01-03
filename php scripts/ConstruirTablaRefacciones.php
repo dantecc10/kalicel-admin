@@ -1,8 +1,8 @@
 <?php
-$conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
 
-function ConstruirTablaCarga($conexión)
+function ConstruirTablaCarga()
 {
+    $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
     $comilla = '"';
     $consulta = "SELECT * FROM `displays`";
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
@@ -52,4 +52,6 @@ function ConstruirTablaCarga($conexión)
     mysqli_close($conexión);
 }
 
-ConstruirTablaCarga($conexión);
+ConstruirTablaCarga();
+
+// Diseño de lógica de consultas
