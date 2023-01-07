@@ -27,25 +27,23 @@ function crearOperación($clave, $acción, $autor, $marca, $modelo, $color)
 {
     $sql = ("INSERT INTO `operaciones` VALUES ('', '" . ucfirst($acción) . "', '" . ucfirst($acción) . " de $modelo - $marca (display); color " . lcfirst($color) . ".', '$autor', current_timestamp)");
 
-    switch ($autor) {
-        case 'Luis Enrique':
-            $claveAutor = 1;
-            break;
-        case 'Rosalba Nazareth':
-            $claveAutor = 2;
-            break;
-        case 'Dante':
-            $claveAutor = 3;
-            break;
+    #switch ($autor) {
+    #    case 'Luis Enrique':
+    #        $claveAutor = 1;
+    #        break;
+    #    case 'Rosalba Nazareth':
+    #        $claveAutor = 2;
+    #        break;
+    #    case 'Dante':
+    #        $claveAutor = 3;
+    #        break;
+#
+    #    default:
+    #        echo "Fatal al elegir autor de sesión...";
+    #        break;
+    #}
 
-        default:
-            echo "Fatal al elegir autor de sesión...";
-            break;
-    }
-
-
-    include "enviar_email.php";
-
+    #include "enviar_email.php";
 
     return $sql; //"INSERT INTO `operaciones` VALUES('', 'Prueba de script', 'Estoy insertando operaciones de prueba', '$autor', current_timestamp)";
 }
