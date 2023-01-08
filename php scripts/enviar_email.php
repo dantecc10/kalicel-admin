@@ -12,41 +12,41 @@ require '../phpmailer/src/Exception.php';
 
 
 try {
-	//Create an instance; passing `true` enables exceptions
-	$mail = new PHPMailer(true);
-	//Server settings
-	$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-	SMTP::DEBUG_OFF;                   //Enable verbose debug output
-	$mail->isSMTP();                                                             //Send using SMTP
-	$mail->Host = "smtp.ionos.mx"; // GMail
-	$mail->SMTPAuth = true;                                                    //Enable SMTP authentication
-	$mail->Username = 'notificaciones@kalicel.castelancarpinteyro.club';                     //SMTP username
-	$mail->Password = 'kalicelNotificaciones';                               //SMTP password
-	$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-	$mail->Port = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+  //Create an instance; passing `true` enables exceptions
+  $mail = new PHPMailer(true);
+  //Server settings
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+  SMTP::DEBUG_OFF;                   //Enable verbose debug output
+  $mail->isSMTP();                                                             //Send using SMTP
+  $mail->Host = "smtp.ionos.mx"; // GMail
+  $mail->SMTPAuth = true;                                                    //Enable SMTP authentication
+  $mail->Username = 'notificaciones@kalicel.castelancarpinteyro.club';                     //SMTP username
+  $mail->Password = 'kalicelNotificaciones';                               //SMTP password
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+  $mail->Port = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-	//Recipients
-	$mail->setFrom('notificaciones@kalicel.castelancarpinteyro.club', 'Kalicel Admin');
-	$mail->addAddress('lerf435@gmail.com', 'Luis Enrique');     //Add a recipient
-	$mail->addAddress('rosalba.171098@gmail.com', 'Rosalba Nazareth');     //Add a recipient
-	$mail->addAddress('dantecc10@gmail.com', 'Dante');     //Add a recipient
-	$mail->addReplyTo('notificaciones@kalicel.castelancarpinteyro.club', 'Kalicel');
+  //Recipients
+  $mail->setFrom('notificaciones@kalicel.castelancarpinteyro.club', 'Kalicel Admin');
+  #$mail->addAddress('lerf435@gmail.com', 'Luis Enrique');     //Add a recipient
+  #$mail->addAddress('rosalba.171098@gmail.com', 'Rosalba Nazareth');     //Add a recipient
+  $mail->addAddress('dantecc10@gmail.com', 'Dante');     //Add a recipient
+  $mail->addReplyTo('notificaciones@kalicel.castelancarpinteyro.club', 'Kalicel');
 
-	/*
+  /*
     $mail->addReplyTo('info@example.com', 'Information');
     $mail->setFrom('no-reply@prueba-pagos.castelancarpinteyro.club', 'Tienda online');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com'); 
     */
 
-	/*    //Envio de archivos
+  /*    //Envio de archivos
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); */    //Optional name
 
-	//Content
-	$mail->isHTML(true);                                  //Set email format to HTML
-	$mail->Subject = imap_utf8('Alerta de operación');
-	$cuerpo = ("
+  //Content
+  $mail->isHTML(true);                                  //Set email format to HTML
+  $mail->Subject = imap_utf8('Alerta de operación');
+  $cuerpo = ("
     <!DOCTYPE html>
 <html>
 
@@ -4076,13 +4076,13 @@ src:url(../webfonts/fa-solid-900.eot?#iefix) format('embedded-opentype'),url(../
 
 </html>
     ");
-	$mail->Body    = imap_utf8($cuerpo);
-	$mail->AltBody = 'Servicio de notificaciones del panel de administrador de Kalicel.';
+  $mail->Body    = imap_utf8($cuerpo);
+  $mail->AltBody = 'Servicio de notificaciones del panel de administrador de Kalicel.';
 
-	$mail->setLanguage('es', '../phpmailer/language/phpmailer.lang-es.php');
+  $mail->setLanguage('es', '../phpmailer/language/phpmailer.lang-es.php');
 
-	$mail->send();
+  $mail->send();
 } catch (Exception $e) {
-	echo "Error al enviar el correo electrónico de la compra: {$mail->ErrorInfo}";
-	exit;
+  echo "Error al enviar el correo electrónico de la compra: {$mail->ErrorInfo}";
+  exit;
 }
