@@ -1,2 +1,2 @@
 <?php
-$conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
+$conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel"); 
