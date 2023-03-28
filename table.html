@@ -61,106 +61,107 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <div class="container container-personalizado">
-                        <div class="div-vecino-botón-añadir">
-                            <h3 class="text-dark d-lg-flex justify-content-lg-center align-items-lg-center mb-4">Refacciones</h3>
-                        </div>
-                        <div class="div-botón-añadir" style="text-align: right;"><button class="btn btn-primary" type="button">Añadir</button></div>
-                    </div>
+                    <h3 class="text-dark mb-4">Reparaciones</h3>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Displays</p>
+                            <p class="text-primary m-0 fw-bold">Información de reparaciones</p>
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Pendiente</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Listo</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Entregado</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" role="tabpanel" id="tab-1"><div>Custom Code</div></div>
+                                    <div class="tab-pane" role="tabpanel" id="tab-2">
+                                        <p>Content for tab 2.</p>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tab-3">
+                                        <p>Content for tab 3.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 text-nowrap">
-                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
+                                    <div id="dataTable_length-1" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
                                                 <option value="10" selected="">10</option>
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
                                                 <option value="100">100</option>
                                             </select>&nbsp;</label></div>
-                                    <div class="text-md-end dataTables_filter" id="divInputFiltro"><label class="form-label text-center d-lg-flex justify-content-lg-start align-items-lg-center" for="capturaBúsqueda">Filtrar&nbsp;<input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Buscar" name="capturaBúsqueda"></label></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label">Filtrar<input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Modelo"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Marca"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Color"></label><label class="form-label"></label></div>
+                                    <div class="text-md-end dataTables_filter" id="dataTable_filter-1"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Modelo</th>
+                                            <th>Folio</th>
+                                            <th>Nombre</th>
+                                            <th>Teléfono</th>
                                             <th>Marca</th>
-                                            <th>Color</th>
-                                            <th>Cantidad</th>
-                                            <th>Caja</th>
-                                            <th>Calidad</th>
-                                            <th>Versión</th>
+                                            <th>Modelo</th>
+                                            <th>Falla</th>
+                                            <th>Trabajo</th>
+                                            <th>Status</th>
+                                            <th>Cotización</th>
+                                            <th>Abono</th>
+                                            <th>Estado previo</th>
+                                            <th>Email</th>
+                                            <th>Fecha</th>
+                                            <th>Recibió</th>
+                                            <th>Comentarios</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="cuerpoTabla">
+                                    <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Axon 11</td>
-                                            <td>ZTE</td>
-                                            <td>Azul</td>
-                                            <td><button class="btn btn-primary btn-baja" type="button">-</button><span>2</span><button class="btn btn-primary btn-alta" type="button">+</button></td>
-                                            <td>0</td>
-                                            <td>Original</td>
-                                            <td>NA</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Axon 11</td>
-                                            <td>ZTE</td>
-                                            <td>Azul</td>
-                                            <td><button class="btn btn-primary btn-baja" type="button">-</button><span>2</span><button class="btn btn-primary btn-alta" type="button">+</button></td>
-                                            <td>0</td>
-                                            <td>Original</td>
-                                            <td>NA</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td><input type="text" placeholder="Modelo*"></td>
-                                            <td><input type="text" placeholder="Marca*"></td>
-                                            <td><select>
-                                                    <optgroup label="This is a group">
-                                                        <option value="12" selected="">This is item 1</option>
-                                                        <option value="13">This is item 2</option>
-                                                        <option value="14">This is item 3</option>
-                                                    </optgroup>
-                                                </select></td>
-                                            <td><input type="number"></td>
-                                            <td><input type="number"></td>
-                                            <td><select name="Calidad">
-                                                    <optgroup label="This is a group">
-                                                        <option value="12" selected="">This is item 1</option>
-                                                        <option value="13">This is item 2</option>
-                                                        <option value="14">This is item 3</option>
-                                                    </optgroup>
-                                                </select></td>
-                                            <td><input type="text" placeholder="Versión"></td>
+                                            <td>Cedric Kelly</td>
+                                            <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                            <td>Motorola<br></td>
+                                            <td>G7 Play</td>
+                                            <td>No carga</td>
+                                            <td>Centro de carga</td>
+                                            <td class="pending-cell">
+                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button">Listo</button><button class="btn btn-primary btn-status" type="button">Entregado</button><button class="btn btn-primary btn-status" type="button">Entregado</button></div>
+                                            </td>
+                                            <td>$480</td>
+                                            <td>$200</td>
+                                            <td>Apagado</td>
+                                            <td>cliente.orden@kalicel.com</td>
+                                            <td>2022-12-18</td>
+                                            <td>Luis Enrique</td>
+                                            <td>Se colocó centro de carga adaptado.</td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td><strong>ID</strong></td>
-                                            <td><strong>Modelo</strong></td>
+                                            <td><strong>Folio</strong></td>
+                                            <td><strong>Nombre</strong></td>
+                                            <td><strong>Teléfono</strong></td>
+                                            <td><strong>Email</strong></td>
                                             <td><strong>Marca</strong></td>
-                                            <td><strong>Color</strong></td>
-                                            <td><strong>Cantidad</strong></td>
-                                            <td><strong>Caja</strong></td>
-                                            <td>Calidad</td>
-                                            <td>Versión</td>
+                                            <td>Falla</td>
+                                            <td><strong>Trabajo</strong></td>
+                                            <td><strong>Modelo</strong></td>
+                                            <td><strong>Status</strong></td>
+                                            <td><strong>Estado previo</strong></td>
+                                            <td><strong>Cotización</strong></td>
+                                            <td><strong>Abono</strong></td>
+                                            <td><strong>Fecha</strong></td>
+                                            <td><strong>Recibió</strong></td>
+                                            <td><strong>Comentarios</strong></td>
                                         </tr>
                                     </tfoot>
                                 </table>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                                    <p id="dataTable_info-1" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
                                 </div>
                                 <div class="col-md-6">
                                     <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">

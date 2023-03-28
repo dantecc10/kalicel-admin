@@ -1,0 +1,86 @@
+:root {
+  --bs-kalicel-rojo: #fe0000 !important;
+}
+
+.pending-cell {
+  color: var(--bs-warning);
+}
+
+.btn-baja {
+  background-color: var(--bs-kalicel-rojo);
+}
+
+.btn-alta {
+  background-color: var(--bs-success);
+}
+
+.btn-alta:hover {
+  box-shadow: 1px 1px rgb(41,147,45);
+  background-color: var(--bs-success) !important;
+}
+
+.btn-alta:hover {
+  background-color: var(--bs-success);
+  box-shadow: 1px 1px rgb(41,147,45);
+}
+
+.btn-baja:hover {
+  box-shadow: 1px 1px rgb(241,37,37);
+  background-color: var(--bs-kalicel-rojo);
+}
+
+.btn-alta:active {
+  box-shadow: 0 0 0 0.25rem limegreen;
+  border-color: lime;
+  background-color: var(--bs-success);
+}
+
+.btn-baja:active {
+  box-shadow: 0 0 0 0.25rem darkred;
+  border-color: #990909;
+  background-color: var(--bs-kalicel-rojo);
+}
+
+.btn-alta:active:focus {
+  box-shadow: 0 0 0 0.25rem limegreen;
+  border-color: lime;
+  background-color: var(--bs-success);
+}
+
+.dropdown .dropdown-list .dropdown-header {
+  background-color: var(--bs-kalicel-rojo) !important;
+  border: 1px solid var(--bs-kalicel-rojo) !important;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  color: #fff;
+}
+
+.fas.fa-laugh-wink {
+  color: var(--bs-kalicel-rojo) !important;
+}
+
+.sidebar-brand-icon.rotate-n-15 {
+  background-color: #00ff00;
+}
+
+.div-botón-añadir, .div-vecino-botón-añadir {
+  width: 50%;
+  vertical-align: middle;
+}
+
+.container-personalizado {
+  display: flex;
+}
+
+element.style {
+  height: 100%;
+}
+
+.degradado-verdes {
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+}
+
+.btn-alta {
+  background-image: linear-gradient(144deg, #24c835, #07f411 50%, #48a946);
+}
+
