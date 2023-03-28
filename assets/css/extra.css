@@ -76,11 +76,15 @@ element.style {
   height: 100%;
 }
 
-.degradado-verdes {
-  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+.btn-baja {
+  background-image: linear-gradient(144deg, #9f1212, #ee0505 50%, #e70a0a);
 }
 
 .btn-alta {
   background-image: linear-gradient(144deg, #24c835, #07f411 50%, #48a946);
+}
+
+.sidebar.sidebar-dark.accordion.bg-gradient-primary {
+  background-image: linear-gradient(144deg, #430703, #bb0f0f 50%, #c91206) !important;
 }
 
