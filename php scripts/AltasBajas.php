@@ -37,7 +37,7 @@ function crearOperación($clave, $acción, $autor, $marca, $modelo, $color)
     #    case 'Dante':
     #        $claveAutor = 3;
     #        break;
-#
+    #
     #    default:
     #        echo "Fatal al elegir autor de sesión...";
     #        break;
@@ -52,43 +52,52 @@ switch ($operación) {
     case 'alta':
         $nuevaCantidad = ($cantidad + 1);
         $registraOperación = crearOperación($id, "alta", $autor, $datosDisplay['Marca'], $datosDisplay['Modelo'], $datosDisplay['Color']);
+        modificacionesRegistros($nuevaCantidad, $id, $registraOperación);
         break;
     case 'baja':
         $nuevaCantidad = ($cantidad - 1);
         $registraOperación = crearOperación($id, "baja", $autor, $datosDisplay['Marca'], $datosDisplay['Modelo'], $datosDisplay['Color']);
+        modificacionesRegistros($nuevaCantidad, $id, $registraOperación);
         break;
     default:
         header("location: FallaSwitchActualización.php");
         break;
 }
-// Actualización de la cantidad de displays
-$modificaCantidad = ("UPDATE displays SET cantidad_display = $nuevaCantidad WHERE id_display = $id");
 
-$conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
+//Esta función busca preparar este archivo de PHP [backend] para poder no sólo realizar las bajas y
+//bajas de productos manuales con botones, sino también dar la opción de reciclar este script para
+//crear nuevos registros en la base de datos de refacciones
+function modificacionesRegistros($nuevaCantidad, $id, $registraOperación)
+{
+    // Actualización de la cantidad de displays
+    $modificaCantidad = ("UPDATE displays SET cantidad_display = $nuevaCantidad WHERE id_display = $id");
 
-if ($conexión->connect_error) {
-    die("Connection failed: " . $conexión->connect_error);
+    $conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
+
+    if ($conexión->connect_error) {
+        die("Connection failed: " . $conexión->connect_error);
+    }
+
+    $conexión->query($modificaCantidad);
+    $conexión->query($registraOperación);
+    #echo $modificaCantidad;
+
+
+    //$resultado = mysqli_query($conexión, $modificaCantidad) or die("No se ejecutó la çonsulta de actualización...");
+
+    if ($conexión->query($modificaCantidad) === TRUE) {
+        #echo "Actualización exitosa";
+    } else {
+        #echo "Error en la actualización del registro: : " . $conexión->error;
+    }
+
+    $conexión->close();
+
+    echo ($nuevaCantidad);
+
+
+    // Registro de edición en la actividad de usuarios (historial de seguridad)
+    # $modificaCantidad = ("UPDATE `displays` SET `cantidad_display` = $nuevaCantidad WHERE `id_display`= " . $id);
+    # echo $modificaCantidad;
+    # $resultado = mysqli_query($conexión, $modificaCantidad) or die("No se ejecutó la çonsulta de actualización...");
 }
-
-$conexión->query($modificaCantidad);
-$conexión->query($registraOperación);
-#echo $modificaCantidad;
-
-
-//$resultado = mysqli_query($conexión, $modificaCantidad) or die("No se ejecutó la çonsulta de actualización...");
-
-if ($conexión->query($modificaCantidad) === TRUE) {
-    #echo "Actualización exitosa";
-} else {
-    #echo "Error en la actualización del registro: : " . $conexión->error;
-}
-
-$conexión->close();
-
-echo ($nuevaCantidad);
-
-
-// Registro de edición en la actividad de usuarios (historial de seguridad)
-# $modificaCantidad = ("UPDATE `displays` SET `cantidad_display` = $nuevaCantidad WHERE `id_display`= " . $id);
-# echo $modificaCantidad;
-# $resultado = mysqli_query($conexión, $modificaCantidad) or die("No se ejecutó la çonsulta de actualización...");
