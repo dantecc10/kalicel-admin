@@ -80,9 +80,19 @@
                                     <div class="col">
                                         <p><strong>Marca</strong>&nbsp;<span class="text-danger">*</span></p><select class="form-select" name="marca" required="">
                                             <optgroup label="This is a group">
-                                                <option value="12" selected="">This is item 1</option>
-                                                <option value="13">This is item 2</option>
-                                                <option value="14">This is item 3</option>
+                                                <option value="Motorola" selected="">Motorola</option>
+                                                <option value="Xiaomi">Xiaomi</option>
+                                                <option value="Poco">Poco</option>
+                                                <option value="Apple">Apple</option>
+                                                <option value="Samsung">Samsung</option>
+                                                <option value="ZTE">ZTE</option>
+                                                <option value="Huawei">Huawei</option>
+                                                <option value="Alcatel"></option>
+                                                <option value="Ulefón"></option>
+                                                <option value="Nokia">Nokia</option>
+                                                <option value="Lenovo"></option>
+                                                <option value=""></option>
+                                                <option value=""></option>
                                             </optgroup>
                                         </select>
                                     </div>
