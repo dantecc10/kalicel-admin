@@ -1,1 +1,1 @@
-describe `displays`
+select * from `displays`

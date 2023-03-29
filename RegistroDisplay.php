@@ -67,7 +67,7 @@
                 <section>
                     <h1 class="text-center text-capitalize">Displays</h1>
                     <div class="container">
-                        <form id="application-form">
+                        <form id="application-form" action="php scripts/registrarDisplay.php" method="post">
                             <div class="form-group mb-3">
                                 <div class="row">
                                     <div class="col">
@@ -113,7 +113,7 @@
                             </div>
                             <div class="justify-content-center d-flex form-group mb-3">
                                 <div id="submit-btn">
-                                    <div class="row"><button class="btn btn-primary btn-light m-0 rounded-pill px-4 submit-formulario" type="button" style="min-width: 500px;" action="php scripts/registrarDisplay.php" method="post">Registrar display</button></div>
+                                    <div class="row"><input type="submit" class="btn btn-primary btn-light m-0 rounded-pill px-4 submit-formulario" type="button" style="min-width: 500px;" value="Registrar display" /></div>
                                 </div>
                             </div>
                         </form>
