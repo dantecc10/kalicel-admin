@@ -90,9 +90,10 @@
                                                 <option value="Alcatel"></option>
                                                 <option value="Ulefón"></option>
                                                 <option value="Nokia">Nokia</option>
-                                                <option value="Lenovo"></option>
-                                                <option value="M4"></option>
-                                                <option value="Lanix"></option>
+                                                <option value="Lenovo">Lenovo</option>
+                                                <option value="M4">M4</option>
+                                                <option value="Lanix">Lanix</option>
+                                                <option value="Otra">Otra</option>
                                             </optgroup>
                                         </select>
                                     </div>
