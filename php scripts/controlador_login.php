@@ -3,8 +3,8 @@ if (!empty($_POST['InicioSesión'])) {
     if (!empty($_POST['email']) and !empty($_POST['password'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        include "php scripts/Conexión.php";
-
+        #include "php scripts/Conexión.php";
+        $conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel"); 
         $sql = $conexión->query("SELECT * FROM `usuarios` WHERE `email_usuario`='$email' AND `contraseña_usuario`='$password'");
         if ($datos = $sql->fetch_object()) {
             session_start();
