@@ -91,8 +91,8 @@
                                                 <option value="Ulefón"></option>
                                                 <option value="Nokia">Nokia</option>
                                                 <option value="Lenovo"></option>
-                                                <option value=""></option>
-                                                <option value=""></option>
+                                                <option value="M4"></option>
+                                                <option value="Lanix"></option>
                                             </optgroup>
                                         </select>
                                     </div>
