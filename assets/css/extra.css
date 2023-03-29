@@ -88,3 +88,11 @@ element.style {
   background-image: linear-gradient(144deg, #430703, #bb0f0f 50%, #c91206) !important;
 }
 
+.submit-formulario {
+  background-color: #8b0000;
+}
+
+.submit-formulario:hover {
+  background-color: #e41c1c;
+}
+

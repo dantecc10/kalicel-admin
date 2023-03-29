@@ -161,7 +161,7 @@ include "php scripts/Conexión.php";
                         <div class="div-vecino-botón-añadir">
                             <h3 class="text-dark d-lg-flex justify-content-lg-center align-items-lg-center mb-4">Refacciones</h3>
                         </div>
-                        <div class="div-botón-añadir" style="text-align: right;"><button class="btn btn-primary" type="button">Añadir</button></div>
+                        <div class="div-botón-añadir" style="text-align: right;"><a href="RegistroDisplay.php"><button class="btn btn-primary btn-alta" type="button">Añadir</button></a></div>
                     </div>
                     <div class="card shadow">
                         <div class="card-header py-3">
