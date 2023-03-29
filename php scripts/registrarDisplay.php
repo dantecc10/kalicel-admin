@@ -14,3 +14,4 @@ $versión = $_POST['versión'];
 
 $conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
 $sql = $conexión->query("INSERT INTO `displays` VALUES('', '$modelo', '$marca', '$color', $cantidad, '$calidad', '$versión', $caja)");
+header("Location: ../Inventario.php");
