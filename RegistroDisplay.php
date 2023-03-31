@@ -50,7 +50,7 @@ include "php scripts/Conexión.php";
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid">
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"></a>
+                        <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="me-auto navbar-search w-100">
                                         <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
@@ -59,6 +59,87 @@ include "php scripts/Conexión.php";
                                     </form>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 12, 2019</span>
+                                                <p>A new monthly report is ready to download!</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 7, 2019</span>
+                                                <p>$290.29 has been deposited into your account!</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 2, 2019</span>
+                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">7</span><i class="fas fa-envelope fa-fw"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">Operaciones</h6>
+
+                                        <?php
+                                        $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
+
+                                        $consulta = "SELECT * FROM `operaciones` WHERE `autor_operación` != '' ORDER BY `fecha_operación` DESC";
+                                        $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
+
+                                        $contador = 0;
+
+                                        while ($columna = mysqli_fetch_array($resultado)) {
+                                            switch ($columna['autor_operación']) {
+                                                case 'Luis Enrique':
+                                                    $autor = 1;
+                                                    break;
+                                                case 'Rosalba Nazareth':
+                                                    $autor = 2;
+                                                    break;
+                                                case 'Dante':
+                                                    $autor = 3;
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                            echo ("
+                                            <a class='dropdown-item d-flex align-items-center' href='#'>
+                                            <div class='dropdown-list-image me-3'><img class='rounded-circle' src='assets/img/avatars/" . $autor . ".png'>
+                                            <div class='bg-success status-indicator'></div>
+                                            </div>
+                                            <div class='fw-bold'>
+                                                <div class='text-truncate'>
+                                                <span>" . $columna['acción_operación'] . ": " . $columna['descripción_operación'] . "</span>
+                                                </div>
+                                                <p class='small text-gray-500 mb-0'>" . $columna['autor_operación'] . " - " . $columna['fecha_operación'] . "</p>
+                                                </div>
+                                                </a>
+                                            ");
+                                            $contador++;
+                                            if ($contador > 5) {
+                                                break;
+                                            }
+                                        }
+                                        ?>
+
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las operaciones</a>
+                                    </div>
+                                </div>
+                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                            </li>
+                            <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small"><?php echo ($_SESSION['Nombre']); ?></span><img class="rounded-circle img-fluid border img-profile" src="<?php echo ("assets/img/avatars/" . $_SESSION['ID'] . ".png"); ?>"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a><a class="dropdown-item" href="Perfil.php"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Configuraciones</a><a class="dropdown-item" href="Actividad.php"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Actividad</a>
