@@ -9,12 +9,12 @@
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
-    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">    
+    <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <meta name="description" content="Sistema de administración web de reparaciones, estados de pedidos, e interacción con el cliente.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body id="page-top">
@@ -158,76 +158,105 @@
                     <div class="card shadow">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 fw-bold">Información de reparaciones</p>
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Pendiente</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Listo</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Entregado</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="tab-1" class="tab-pane active" role="tabpanel">
+                                        <div>Custom Code</div>
+                                    </div>
+                                    <div id="tab-2" class="tab-pane" role="tabpanel">
+                                        <p>Content for tab 2.</p>
+                                    </div>
+                                    <div id="tab-3" class="tab-pane" role="tabpanel">
+                                        <p>Content for tab 3.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 text-nowrap">
-                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
-                                                <option value="10" selected="">10</option>
+                                    <div id="dataTable_length-1" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show <select class="d-inline-block form-select form-select-sm">
+                                                <option value="10" selected>10</option>
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
                                                 <option value="100">100</option>
-                                            </select>&nbsp;</label></div>
+                                            </select></label></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                    <div id="dataTable_filter-1" class="text-md-end dataTables_filter"><label class="form-label"><input class="form-control form-control-sm" type="search" aria-controls="dataTable" placeholder="Search" /></label></div>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
+                            <div id="dataTable-1" class="table-responsive table mt-2" role="grid" aria-describedby="dataTable_info">
+                                <table id="dataTable" class="table my-0">
                                     <thead>
                                         <tr>
                                             <th>Folio</th>
                                             <th>Nombre</th>
                                             <th>Teléfono</th>
-                                            <th>Email</th>
                                             <th>Marca</th>
                                             <th>Modelo</th>
+                                            <th>Falla</th>
+                                            <th>Trabajo</th>
+                                            <th>Status</th>
+                                            <th>Cotización</th>
+                                            <th>Abono</th>
                                             <th>Estado previo</th>
-                                            <th>Column 8</th>
-                                            <th>Column 9</th>
-                                            <th>Column 10</th>
-                                            <th>Column 11</th>
-                                            <th>Column 12</th>
+                                            <th>Email</th>
+                                            <th>Fecha</th>
+                                            <th>Recibió</th>
+                                            <th>Comentarios</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Cedric Kelly</td>
+                                            <td>Cedric Kelly</td>
                                             <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                            <td>22</td>
-                                            <td>Motorola<br></td>
+                                            <td>Motorola<br /></td>
                                             <td>G7 Play</td>
-                                            <td>Encendido</td>
-                                            <td>Cell 8</td>
-                                            <td>Cell 9</td>
-                                            <td>Cell 10</td>
-                                            <td>Cell 11</td>
-                                            <td>Cell 12</td>
+                                            <td>No carga</td>
+                                            <td>Centro de carga</td>
+                                            <td class="pending-cell">
+                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button">Listo</button><button class="btn btn-primary btn-status" type="button">Entregado</button><button class="btn btn-primary btn-status" type="button">Entregado</button></div>
+                                            </td>
+                                            <td>$480</td>
+                                            <td>$200</td>
+                                            <td>Apagado</td>
+                                            <td>cliente.orden@kalicel.com</td>
+                                            <td>2022-12-18</td>
+                                            <td>Luis Enrique</td>
+                                            <td>Se colocó centro de carga adaptado.</td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td><strong>Name</strong></td>
-                                            <td><strong>Position</strong></td>
-                                            <td><strong>Office</strong></td>
-                                            <td><strong>Age</strong></td>
-                                            <td><strong>Start date</strong></td>
-                                            <td><strong>Salary</strong></td>
-                                            <td>Summary 7</td>
-                                            <td>Summary 8</td>
-                                            <td>Summary 9</td>
-                                            <td>Summary 10</td>
-                                            <td>Summary 11</td>
-                                            <td>Summary 12</td>
+                                            <td><strong>Folio</strong></td>
+                                            <td><strong>Nombre</strong></td>
+                                            <td><strong>Teléfono</strong></td>
+                                            <td><strong>Email</strong></td>
+                                            <td><strong>Marca</strong></td>
+                                            <td>Falla</td>
+                                            <td><strong>Trabajo</strong></td>
+                                            <td><strong>Modelo</strong></td>
+                                            <td><strong>Status</strong></td>
+                                            <td><strong>Estado previo</strong></td>
+                                            <td><strong>Cotización</strong></td>
+                                            <td><strong>Abono</strong></td>
+                                            <td><strong>Fecha</strong></td>
+                                            <td><strong>Recibió</strong></td>
+                                            <td><strong>Comentarios</strong></td>
                                         </tr>
                                     </tfoot>
                                 </table>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                                    <p id="dataTable_info-1" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
                                 </div>
                                 <div class="col-md-6">
                                     <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
