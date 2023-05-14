@@ -27,12 +27,12 @@ $mail = new PHPMailer;
 //$mail->SMTPDebug    = 3;
 
 $mail->IsSMTP();
-$mail->Host = "kalicel.castelancarpinteyro.club";#'classicandsacrum.com';   /*Servidor SMTP no pongas la ip, pon el nombre de la dns inversa*/																		
+$mail->Host = "castelancarpinteyro.com";#'classicandsacrum.com';   /*Servidor SMTP no pongas la ip, pon el nombre de la dns inversa*/																		
 $mail->SMTPSecure = 'TLS';   /*Protocolo SSL o TLS*/
 $mail->Port = 587;   /*Puerto de conexión al servidor SMTP*/
 $mail->SMTPAuth = true;   /*Para habilitar o deshabilitar la autenticación*/
-$mail->Username = "notificaciones@kalicel.castelancarpinteyro.club";#'academia@classicandsacrum.com';   /*Usuario, normalmente el correo electrónico*/
-$mail->Password = "notificaKalicel";   /*Tu contraseña*/
-$mail->From = "notificaciones@kalicel.castelancarpinteyro.club";#'academia@classicandsacrum.com';   /*Correo electrónico que estamos autenticando*/
+$mail->Username = "kalicel@castelancarpinteyro.com";#'academia@classicandsacrum.com';   /*Usuario, normalmente el correo electrónico*/
+$mail->Password = "$contraseñaScripts";   /*Tu contraseña*/
+$mail->From = "kalicel@castelancarpinteyro.com";#'academia@classicandsacrum.com';   /*Correo electrónico que estamos autenticando*/
 $mail->FromName = 'Kalicel Notificador';   /*Puedes poner tu nombre, el de tu empresa, nombre de tu web, etc.*/
 $mail->CharSet = 'UTF-8';   /*Codificación del mensaje*/
