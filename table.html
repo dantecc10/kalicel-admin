@@ -68,150 +68,540 @@
                             <p class="text-primary m-0 fw-bold">Información de reparaciones</p>
                             <div>
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Pendiente</a></li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Listo</a></li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Entregado</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Todas</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Pendiente</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Listo</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Entregado</a></li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane active" role="tabpanel" id="tab-1"><div>Custom Code</div></div>
+                                    <div class="tab-pane active" role="tabpanel" id="tab-1">
+                                        <div class="row">
+                                            <div class="col-md-6 text-nowrap">
+                                                <div id="dataTable_length-1" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
+                                                            <option value="10" selected="">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select>&nbsp;</label></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-1"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                            <table class="table my-0" id="dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Folio</th>
+                                                        <th>Nombre</th>
+                                                        <th>Teléfono</th>
+                                                        <th>Marca</th>
+                                                        <th>Modelo</th>
+                                                        <th>Falla</th>
+                                                        <th>Trabajo</th>
+                                                        <th>Status</th>
+                                                        <th>Cotización</th>
+                                                        <th>Abono</th>
+                                                        <th>Estado previo</th>
+                                                        <th>Email</th>
+                                                        <th>Fecha</th>
+                                                        <th>Recibió</th>
+                                                        <th>Comentarios</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);"><span id="status1" class="status-pendiente">Pendiente</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, &#39;listo&#39;);" onmouseout="javascript:resetText(2, &#39;listo&#39;);"><span id="status2" class="status-listo">Listo</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, &#39;entregado&#39;);" onmouseout="javascript:resetText(3, &#39;entregado&#39;);"><span id="status3" class="status-entregado">Entregado</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td><strong>Folio</strong></td>
+                                                        <td><strong>Nombre</strong></td>
+                                                        <td><strong>Teléfono</strong></td>
+                                                        <td><strong>Email</strong></td>
+                                                        <td><strong>Marca</strong></td>
+                                                        <td>Falla</td>
+                                                        <td><strong>Trabajo</strong></td>
+                                                        <td><strong>Modelo</strong></td>
+                                                        <td><strong>Status</strong></td>
+                                                        <td><strong>Estado previo</strong></td>
+                                                        <td><strong>Cotización</strong></td>
+                                                        <td><strong>Abono</strong></td>
+                                                        <td><strong>Fecha</strong></td>
+                                                        <td><strong>Recibió</strong></td>
+                                                        <td><strong>Comentarios</strong></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 align-self-center">
+                                                <p id="dataTable_info-1" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="tab-pane" role="tabpanel" id="tab-2">
-                                        <p>Content for tab 2.</p>
+                                        <div class="row">
+                                            <div class="col-md-6 text-nowrap">
+                                                <div id="dataTable_length-2" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
+                                                            <option value="10" selected="">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select>&nbsp;</label></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-2"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
+                                            <table class="table my-0" id="dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Folio</th>
+                                                        <th>Nombre</th>
+                                                        <th>Teléfono</th>
+                                                        <th>Marca</th>
+                                                        <th>Modelo</th>
+                                                        <th>Falla</th>
+                                                        <th>Trabajo</th>
+                                                        <th>Status</th>
+                                                        <th>Cotización</th>
+                                                        <th>Abono</th>
+                                                        <th>Estado previo</th>
+                                                        <th>Email</th>
+                                                        <th>Fecha</th>
+                                                        <th>Recibió</th>
+                                                        <th>Comentarios</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);"><span id="status-1" class="status-pendiente">Pendiente</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, &#39;listo&#39;);" onmouseout="javascript:resetText(2, &#39;listo&#39;);"><span id="status-2" class="status-listo">Listo</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, &#39;entregado&#39;);" onmouseout="javascript:resetText(3, &#39;entregado&#39;);"><span id="status-3" class="status-entregado">Entregado</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td><strong>Folio</strong></td>
+                                                        <td><strong>Nombre</strong></td>
+                                                        <td><strong>Teléfono</strong></td>
+                                                        <td><strong>Email</strong></td>
+                                                        <td><strong>Marca</strong></td>
+                                                        <td>Falla</td>
+                                                        <td><strong>Trabajo</strong></td>
+                                                        <td><strong>Modelo</strong></td>
+                                                        <td><strong>Status</strong></td>
+                                                        <td><strong>Estado previo</strong></td>
+                                                        <td><strong>Cotización</strong></td>
+                                                        <td><strong>Abono</strong></td>
+                                                        <td><strong>Fecha</strong></td>
+                                                        <td><strong>Recibió</strong></td>
+                                                        <td><strong>Comentarios</strong></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 align-self-center">
+                                                <p id="dataTable_info-2" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="tab-pane" role="tabpanel" id="tab-3">
-                                        <p>Content for tab 3.</p>
+                                        <div class="row">
+                                            <div class="col-md-6 text-nowrap">
+                                                <div id="dataTable_length-3" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
+                                                            <option value="10" selected="">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select>&nbsp;</label></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-3"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive table mt-2" id="dataTable-3" role="grid" aria-describedby="dataTable_info">
+                                            <table class="table my-0" id="dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Folio</th>
+                                                        <th>Nombre</th>
+                                                        <th>Teléfono</th>
+                                                        <th>Marca</th>
+                                                        <th>Modelo</th>
+                                                        <th>Falla</th>
+                                                        <th>Trabajo</th>
+                                                        <th>Status</th>
+                                                        <th>Cotización</th>
+                                                        <th>Abono</th>
+                                                        <th>Estado previo</th>
+                                                        <th>Email</th>
+                                                        <th>Fecha</th>
+                                                        <th>Recibió</th>
+                                                        <th>Comentarios</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);"><span id="status-4" class="status-pendiente">Pendiente</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, &#39;listo&#39;);" onmouseout="javascript:resetText(2, &#39;listo&#39;);"><span id="status-5" class="status-listo">Listo</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, &#39;entregado&#39;);" onmouseout="javascript:resetText(3, &#39;entregado&#39;);"><span id="status-6" class="status-entregado">Entregado</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td><strong>Folio</strong></td>
+                                                        <td><strong>Nombre</strong></td>
+                                                        <td><strong>Teléfono</strong></td>
+                                                        <td><strong>Email</strong></td>
+                                                        <td><strong>Marca</strong></td>
+                                                        <td>Falla</td>
+                                                        <td><strong>Trabajo</strong></td>
+                                                        <td><strong>Modelo</strong></td>
+                                                        <td><strong>Status</strong></td>
+                                                        <td><strong>Estado previo</strong></td>
+                                                        <td><strong>Cotización</strong></td>
+                                                        <td><strong>Abono</strong></td>
+                                                        <td><strong>Fecha</strong></td>
+                                                        <td><strong>Recibió</strong></td>
+                                                        <td><strong>Comentarios</strong></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 align-self-center">
+                                                <p id="dataTable_info-3" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 text-nowrap">
-                                    <div id="dataTable_length-1" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
-                                                <option value="10" selected="">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>&nbsp;</label></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-end dataTables_filter" id="dataTable_filter-1"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
-                                </div>
-                            </div>
-                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Folio</th>
-                                            <th>Nombre</th>
-                                            <th>Teléfono</th>
-                                            <th>Marca</th>
-                                            <th>Modelo</th>
-                                            <th>Falla</th>
-                                            <th>Trabajo</th>
-                                            <th>Status</th>
-                                            <th>Cotización</th>
-                                            <th>Abono</th>
-                                            <th>Estado previo</th>
-                                            <th>Email</th>
-                                            <th>Fecha</th>
-                                            <th>Recibió</th>
-                                            <th>Comentarios</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Cedric Kelly</td>
-                                            <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                            <td>Motorola<br></td>
-                                            <td>G7 Play</td>
-                                            <td>No carga</td>
-                                            <td>Centro de carga</td>
-                                            <td class="pending-cell">
-                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" id="status1" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);"><span class="status-pendiente">Pendiente</span></button></div>
-                                            </td>
-                                            <td>$480</td>
-                                            <td>$200</td>
-                                            <td>Apagado</td>
-                                            <td>cliente.orden@kalicel.com</td>
-                                            <td>2022-12-18</td>
-                                            <td>Luis Enrique</td>
-                                            <td>Se colocó centro de carga adaptado.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Cedric Kelly</td>
-                                            <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                            <td>Motorola<br></td>
-                                            <td>G7 Play</td>
-                                            <td>No carga</td>
-                                            <td>Centro de carga</td>
-                                            <td class="pending-cell">
-                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" id="status2" type="button" onmouseover="javascript:changeText(2, &#39;listo&#39;);" onmouseout="javascript:resetText(2, &#39;listo&#39;);"><span class="status-listo">Listo</span></button></div>
-                                            </td>
-                                            <td>$480</td>
-                                            <td>$200</td>
-                                            <td>Apagado</td>
-                                            <td>cliente.orden@kalicel.com</td>
-                                            <td>2022-12-18</td>
-                                            <td>Luis Enrique</td>
-                                            <td>Se colocó centro de carga adaptado.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Cedric Kelly</td>
-                                            <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                            <td>Motorola<br></td>
-                                            <td>G7 Play</td>
-                                            <td>No carga</td>
-                                            <td>Centro de carga</td>
-                                            <td class="pending-cell">
-                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, &#39;entregado&#39;);" onmouseout="javascript:resetText(3, &#39;entregado&#39;);"><span class="status-entregado">Entregado</span></button></div>
-                                            </td>
-                                            <td>$480</td>
-                                            <td>$200</td>
-                                            <td>Apagado</td>
-                                            <td>cliente.orden@kalicel.com</td>
-                                            <td>2022-12-18</td>
-                                            <td>Luis Enrique</td>
-                                            <td>Se colocó centro de carga adaptado.</td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td><strong>Folio</strong></td>
-                                            <td><strong>Nombre</strong></td>
-                                            <td><strong>Teléfono</strong></td>
-                                            <td><strong>Email</strong></td>
-                                            <td><strong>Marca</strong></td>
-                                            <td>Falla</td>
-                                            <td><strong>Trabajo</strong></td>
-                                            <td><strong>Modelo</strong></td>
-                                            <td><strong>Status</strong></td>
-                                            <td><strong>Estado previo</strong></td>
-                                            <td><strong>Cotización</strong></td>
-                                            <td><strong>Abono</strong></td>
-                                            <td><strong>Fecha</strong></td>
-                                            <td><strong>Recibió</strong></td>
-                                            <td><strong>Comentarios</strong></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info-1" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                        </ul>
-                                    </nav>
+                                    <div class="tab-pane" role="tabpanel" id="tab-4">
+                                        <div class="row">
+                                            <div class="col-md-6 text-nowrap">
+                                                <div id="dataTable_length-4" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
+                                                            <option value="10" selected="">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select>&nbsp;</label></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-4"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive table mt-2" id="dataTable-4" role="grid" aria-describedby="dataTable_info">
+                                            <table class="table my-0" id="dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Folio</th>
+                                                        <th>Nombre</th>
+                                                        <th>Teléfono</th>
+                                                        <th>Marca</th>
+                                                        <th>Modelo</th>
+                                                        <th>Falla</th>
+                                                        <th>Trabajo</th>
+                                                        <th>Status</th>
+                                                        <th>Cotización</th>
+                                                        <th>Abono</th>
+                                                        <th>Estado previo</th>
+                                                        <th>Email</th>
+                                                        <th>Fecha</th>
+                                                        <th>Recibió</th>
+                                                        <th>Comentarios</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);"><span id="status-7" class="status-pendiente">Pendiente</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, &#39;listo&#39;);" onmouseout="javascript:resetText(2, &#39;listo&#39;);"><span id="status-8" class="status-listo">Listo</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Cedric Kelly</td>
+                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                                        <td>Motorola<br></td>
+                                                        <td>G7 Play</td>
+                                                        <td>No carga</td>
+                                                        <td>Centro de carga</td>
+                                                        <td class="pending-cell">
+                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, &#39;entregado&#39;);" onmouseout="javascript:resetText(3, &#39;entregado&#39;);"><span id="status-9" class="status-entregado">Entregado</span></button></div>
+                                                        </td>
+                                                        <td>$480</td>
+                                                        <td>$200</td>
+                                                        <td>Apagado</td>
+                                                        <td>cliente.orden@kalicel.com</td>
+                                                        <td>2022-12-18</td>
+                                                        <td>Luis Enrique</td>
+                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td><strong>Folio</strong></td>
+                                                        <td><strong>Nombre</strong></td>
+                                                        <td><strong>Teléfono</strong></td>
+                                                        <td><strong>Email</strong></td>
+                                                        <td><strong>Marca</strong></td>
+                                                        <td>Falla</td>
+                                                        <td><strong>Trabajo</strong></td>
+                                                        <td><strong>Modelo</strong></td>
+                                                        <td><strong>Status</strong></td>
+                                                        <td><strong>Estado previo</strong></td>
+                                                        <td><strong>Cotización</strong></td>
+                                                        <td><strong>Abono</strong></td>
+                                                        <td><strong>Fecha</strong></td>
+                                                        <td><strong>Recibió</strong></td>
+                                                        <td><strong>Comentarios</strong></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 align-self-center">
+                                                <p id="dataTable_info-4" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

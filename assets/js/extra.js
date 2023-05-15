@@ -2,15 +2,15 @@
 function changeText(idsql, estado) {
     switch (estado) {
         case 'pendiente':
-            var span = document.querySelector('#status' + idsql + '.btn-status .status-pendiente');
+            var span = document.getElementById('status' + idsql);
             span.textContent = "Listo";
             break;
         case 'listo':
-            var span = document.querySelector('#status' + idsql + '.btn-status .status-pendiente');
+            var span = document.getElementById('status' + idsql);
             span.textContent = "Entregado";
             break;
         case 'entregado':
-            var span = document.querySelector('#status' + idsql + '.btn-status .status-pendiente');
+            var span = document.getElementById('status' + idsql);
             span.textContent = "Pendiente";
             break;
 
@@ -21,15 +21,15 @@ function changeText(idsql, estado) {
 function resetText(idsql, estado) {
     switch (estado) {
         case 'pendiente':
-            var span = document.querySelector('#status' + idsql + '.btn-status .status-pendiente');
+            var span = document.getElementById('status' + idsql);
             span.textContent = "Pendiente";
-
+            break;
         case 'listo':
-            var span = document.querySelector('#status' + idsql + '.btn-status .status-pendiente');
+            var span = document.getElementById('status' + idsql);
             span.textContent = "Listo";
             break;
         case 'entregado':
-            var span = document.querySelector('#status' + idsql + '.btn-status .status-pendiente');
+            var span = document.getElementById('status' + idsql);
             span.textContent = "Entregado";
             break;
 
