@@ -708,7 +708,10 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/extra.js"></script>
+    <script src="https://geodata.solutions/includes/countrystate.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
