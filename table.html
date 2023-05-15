@@ -128,7 +128,45 @@
                                             <td>No carga</td>
                                             <td>Centro de carga</td>
                                             <td class="pending-cell">
-                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button">Listo</button><button class="btn btn-primary btn-status" type="button">Entregado</button><button class="btn btn-primary btn-status" type="button">Entregado</button></div>
+                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" id="status1" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);"><span class="status-pendiente">Pendiente</span></button></div>
+                                            </td>
+                                            <td>$480</td>
+                                            <td>$200</td>
+                                            <td>Apagado</td>
+                                            <td>cliente.orden@kalicel.com</td>
+                                            <td>2022-12-18</td>
+                                            <td>Luis Enrique</td>
+                                            <td>Se colocó centro de carga adaptado.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Cedric Kelly</td>
+                                            <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                            <td>Motorola<br></td>
+                                            <td>G7 Play</td>
+                                            <td>No carga</td>
+                                            <td>Centro de carga</td>
+                                            <td class="pending-cell">
+                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" id="status2" type="button" onmouseover="javascript:changeText(2, &#39;listo&#39;);" onmouseout="javascript:resetText(2, &#39;listo&#39;);"><span class="status-listo">Listo</span></button></div>
+                                            </td>
+                                            <td>$480</td>
+                                            <td>$200</td>
+                                            <td>Apagado</td>
+                                            <td>cliente.orden@kalicel.com</td>
+                                            <td>2022-12-18</td>
+                                            <td>Luis Enrique</td>
+                                            <td>Se colocó centro de carga adaptado.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Cedric Kelly</td>
+                                            <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
+                                            <td>Motorola<br></td>
+                                            <td>G7 Play</td>
+                                            <td>No carga</td>
+                                            <td>Centro de carga</td>
+                                            <td class="pending-cell">
+                                                <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, &#39;entregado&#39;);" onmouseout="javascript:resetText(3, &#39;entregado&#39;);"><span class="status-entregado">Entregado</span></button></div>
                                             </td>
                                             <td>$480</td>
                                             <td>$200</td>
@@ -189,6 +227,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/extra.js"></script>
     <script src="https://geodata.solutions/includes/countrystate.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>

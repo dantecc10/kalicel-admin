@@ -15,17 +15,17 @@
 }
 
 .btn-alta:hover {
-  box-shadow: 1px 1px rgb(41,147,45);
+  box-shadow: 1px 1px rgb(41, 147, 45);
   background-color: var(--bs-success) !important;
 }
 
 .btn-alta:hover {
   background-color: var(--bs-success);
-  box-shadow: 1px 1px rgb(41,147,45);
+  box-shadow: 1px 1px rgb(41, 147, 45);
 }
 
 .btn-baja:hover {
-  box-shadow: 1px 1px rgb(241,37,37);
+  box-shadow: 1px 1px rgb(241, 37, 37);
   background-color: var(--bs-kalicel-rojo);
 }
 
@@ -95,4 +95,60 @@ element.style {
 .submit-formulario:hover {
   background-color: #e41c1c;
 }
+
+.status-pendiente, .status-listo, .status-entregado {
+  color: white;
+}
+
+.btn-status {
+  height: 100%;
+}
+
+.btn-status:has(.status-pendiente) {
+  background-color: orangered;
+  color: white;
+}
+
+.btn-status:has(.status-pendiente):hover {
+  background-color: green;
+  color: white;
+  content: "¡Listo!";
+}
+
+.btn-status:has(.status-listo) {
+  background-color: green;
+  color: white;
+}
+
+.btn-status:has(.status-listo):hover {
+  background-color: blue;
+  color: white;
+}
+
+.btn-status:has(.status-entregado) {
+  background-color: blue;
+  color: white;
+}
+
+.btn-status:has(.status-entregado):hover {
+  background-color: orangered;
+  color: white;
+}
+
+/* .btn-status:hover .status-pendiente::before {
+  content: "Listo";
+}
+
+button.btn-status:hover span.status-pendiente {
+  color: orangered;
+  background-color: orange;
+
+  button.btn-status:hover span {
+    content: "";
+  }
+
+  button.btn-status:hover:before span.status-pendiente {
+    content: "Listo";
+  }
+} */
 

@@ -40,7 +40,27 @@ function ConstruirTablaCarga()
         echo "<td>" . $columna['status_reparación'] . "</td>";
         echo "<td>" . $columna['trabajo_reparación'] . "</td>";
         echo "<td>" . $columna['estadoPrevio_reparación'] . "</td>";
-        echo "<td>" . $columna['cotización_reparación'] . "</td>";
+
+        echo "<td>";
+
+        switch ($columna['cotización_reparación']) {
+            case 'Pendiente':
+                echo "";
+                break;
+            case 'Listo':
+                echo "";
+                break;
+            case 'Entregado':
+                echo "";
+                break;
+
+            default:
+                echo "Error";
+                break;
+        }
+
+        echo "</td>";
+
         echo "<td>" . $columna['abono_reparación'] . "</td>";
         echo "<td>" . $columna['fecha_recibida_reparación'] . "</td>";
         echo "<td>" . $columna['recibió_reparación'] . "</td>";
