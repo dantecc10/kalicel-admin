@@ -1,8 +1,6 @@
 <?php
 session_start();
 $búsqueda = $_GET['búsqueda'];
-
-
 /*
 <div class='card shadow'>
                         <div class='card-header py-3'>
@@ -230,7 +228,8 @@ function ConstruirTablaBúsqueda($búsqueda)
 
 if ($búsqueda != "" ||  $búsqueda != null) {
     ConstruirTablaBúsqueda($búsqueda);
-} else {
+}/* else {
     ConstruirTablaCarga($búsqueda);
     #echo "Filtro desactivado";
 }
+*/
