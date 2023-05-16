@@ -73,7 +73,7 @@ function ConstruirTablaCarga($status)
             break;
 
         default:
-            # code...
+            echo ("¡Error fatal de flujo en estructura switch!");
             break;
     }
 
