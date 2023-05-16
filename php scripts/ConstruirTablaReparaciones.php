@@ -226,9 +226,10 @@ function ConstruirTablaBúsqueda($búsqueda)
     mysqli_close($conexión);
 }
 
+/*
 if ($búsqueda != "" ||  $búsqueda != null) {
     ConstruirTablaBúsqueda($búsqueda);
-}/* else {
+} else {
     ConstruirTablaCarga($búsqueda);
     #echo "Filtro desactivado";
 }
