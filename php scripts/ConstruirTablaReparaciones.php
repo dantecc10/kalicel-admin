@@ -60,7 +60,7 @@ function ConstruirTablaCarga($status)
 
     switch ($status) {
         case 1:
-            $consulta = "SELECT * FROM `reparaciones`";
+            $consulta = "SELECT * FROM `reparaciones` ORDER BY (`id_reparación`) DESC";
             break;
         case 2:
             $consulta = "SELECT * FROM `reparaciones` WHERE (`status_reparación` = 'Pendiente') ORDER BY (`id_reparación`) DESC";
