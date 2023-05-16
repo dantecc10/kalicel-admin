@@ -25,6 +25,7 @@ include "php scripts/Conexión.php";
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/Application-Form.css">
     <link rel="stylesheet" href="assets/css/extra.css">
+    <script src="assets/js/extra.js"></script>
 </head>
 
 <body id="page-top">
@@ -438,7 +439,7 @@ include "php scripts/Conexión.php";
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/extra.js"></script>
+    
     <script src="https://geodata.solutions/includes/countrystate.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
