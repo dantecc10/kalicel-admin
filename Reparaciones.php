@@ -172,9 +172,9 @@ include "php scripts/Conexión.php";
                             <div>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Todas</a></li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Pendiente</a></li>
+                                    <!--<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Pendiente</a></li>
                                     <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Listo</a></li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Entregado</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Entregado</a></li>-->
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" role="tabpanel" id="tab-1">
@@ -313,6 +313,7 @@ include "php scripts/Conexión.php";
                                             </div>
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="tab-pane" role="tabpanel" id="tab-2">
                                         <div class="row">
                                             <div class="col-md-6 text-nowrap">
@@ -329,8 +330,10 @@ include "php scripts/Conexión.php";
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
                                             <?php
+                                            /*
                                             include "php scripts/ConstruirTablaReparaciones.php";
                                             ConstruirTablaCarga(2);
+                                            */
                                             ?>
                                         </div>
                                         <div class="row">
@@ -366,8 +369,10 @@ include "php scripts/Conexión.php";
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-3" role="grid" aria-describedby="dataTable_info">
                                             <?php
+                                            /*
                                             include "php scripts/ConstruirTablaReparaciones.php";
                                             ConstruirTablaCarga(3);
+                                            */
                                             ?>
                                         </div>
                                         <div class="row">
@@ -403,8 +408,10 @@ include "php scripts/Conexión.php";
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-4" role="grid" aria-describedby="dataTable_info">
                                             <?php
+                                            /*
                                             include "php scripts/ConstruirTablaReparaciones.php";
                                             ConstruirTablaCarga(4);
+                                            */
                                             ?>
                                         </div>
                                         <div class="row">
@@ -424,6 +431,7 @@ include "php scripts/Conexión.php";
                                             </div>
                                         </div>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                         </div>
