@@ -442,6 +442,7 @@ include "php scripts/Conexión.php";
     
     <script src="https://geodata.solutions/includes/countrystate.js"></script>
     <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/extra.css">
 </body>
 
 </html>
