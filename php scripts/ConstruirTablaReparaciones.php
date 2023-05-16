@@ -79,7 +79,7 @@ function ConstruirTablaCarga($status)
 
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
-    echo ("<table class='table my-0' id='dataTable'>
+    echo ("<table class='table my-0' class='dataTable'>
     <thead>
         <tr>
             <th>ID</th>
