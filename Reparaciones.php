@@ -292,7 +292,7 @@ include "php scripts/Conexión.php";
                                             </table>-->
                                             <?php
                                             include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTabla(1);
+                                            ConstruirTablaCarga(1);
                                             ?>
                                         </div>
                                         <div class="row">
@@ -329,7 +329,7 @@ include "php scripts/Conexión.php";
                                         <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
                                             <?php
                                             include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTabla(2);
+                                            ConstruirTablaCarga(2);
                                             ?>
                                         </div>
                                         <div class="row">
@@ -366,7 +366,7 @@ include "php scripts/Conexión.php";
                                         <div class="table-responsive table mt-2" id="dataTable-3" role="grid" aria-describedby="dataTable_info">
                                             <?php
                                             include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTabla(3);
+                                            ConstruirTablaCarga(3);
                                             ?>
                                         </div>
                                         <div class="row">
@@ -403,7 +403,7 @@ include "php scripts/Conexión.php";
                                         <div class="table-responsive table mt-2" id="dataTable-4" role="grid" aria-describedby="dataTable_info">
                                             <?php
                                             include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTabla(4);
+                                            ConstruirTablaCarga(4);
                                             ?>
                                         </div>
                                         <div class="row">
