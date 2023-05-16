@@ -2,11 +2,83 @@
 session_start();
 $búsqueda = $_GET['búsqueda'];
 
-function ConstruirTablaCarga()
+
+/*
+<div class='card shadow'>
+                        <div class='card-header py-3'>
+                            <p class='text-primary m-0 fw-bold'>Información de reparaciones</p>
+                            <div>
+                                <ul class='nav nav-tabs' role="tablist">
+                                    <li class='nav-item' role='presentation'><a class='nav-link active' role='tab' data-bs-toggle='tab' href='#tab-1'>Todas</a></li>
+                                    <li class='nav-item' role='presentation'><a class='nav-link' role='tab' data-bs-toggle='tab' href='#tab-2'>Pendiente</a></li>
+                                    <li class='nav-item' role='presentation'><a class='nav-link' role='tab' data-bs-toggle='tab' href='#tab-3'>Listo</a></li>
+                                    <li class='nav-item' role='presentation'><a class='nav-link' role='tab' data-bs-toggle='tab' href='#tab-4'>Entregado</a></li>
+                                </ul>
+                                <div class='tab-content'>
+                                    <div class='tab-pane active' role='tabpanel' id='tab-1'>
+                                        <div class='row'>
+                                            <div class='col-md-6 text-nowrap'>
+                                                <div id='dataTable_length-1' class='dataTables_length' aria-controls='dataTable'><label class='form-label'>Mostrar<select class='d-inline-block form-select form-select-sm'>
+                                                            <option value='10' selected="">10</option>
+                                                            <option value='25'>25</option>
+                                                            <option value='50'>50</option>
+                                                            <option value='100'>100</option>
+                                                        </select>&nbsp;</label></div>
+                                            </div>
+                                            <div class='col-md-6'>
+                                                <div class='text-md-end dataTables_filter' id='dataTable_filter-1'><label class='form-label'><input type='search' class='form-control form-control-sm' aria-controls='dataTable' placeholder='Search'></label></div>
+                                            </div>
+                                        </div>
+                                        <div class='table-responsive table mt-2' id='dataTable-1' role='grid' aria-describedby='dataTable_info'>
+                                        //////////
+                                        ///////
+                                        /////////
+                                        ///////
+                                        /////////
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-md-6 align-self-center'>
+                                                <p id='dataTable_info-1' class='dataTables_info' role='status' aria-live='polite'>Mostrando de x a y</p>
+                                            </div>
+                                            <div class='col-md-6'>
+                                                <nav class='d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers'>
+                                                    <ul class='pagination'>
+                                                        <li class='page-item disabled'><a class='page-link' aria-label='Previous' href='#'><span aria-hidden='true'>«</span></a></li>
+                                                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                                                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                                                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                                                        <li class='page-item'><a class='page-link' aria-label='Next' href='#'><span aria-hidden='true'>»</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+*/
+
+function ConstruirTablaCarga($status)
 {
     $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
     $comilla = '"';
-    $consulta = "SELECT * FROM `reparaciones`";
+
+    switch ($status) {
+        case 1:
+            $consulta = "SELECT * FROM `reparaciones`";
+            break;
+        case 2:
+            $consulta = "SELECT * FROM `reparaciones` WHERE (`status_reparación` = 'Pendiente') ORDER BY (`id_reparación`) DESC";
+            break;
+        case 3:
+            $consulta = "SELECT * FROM `reparaciones` WHERE (`status_reparación` = 'Listo') ORDER BY (`id_reparación`) DESC";
+            break;
+        case 4:
+            $consulta = "SELECT * FROM `reparaciones` WHERE (`status_reparación` = 'Entregado') ORDER BY (`id_reparación`) DESC";
+            break;
+
+        default:
+            # code...
+            break;
+    }
+
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
     echo ("<table class='table my-0' id='dataTable'>
@@ -29,7 +101,7 @@ function ConstruirTablaCarga()
             <th>Email</th>
         </tr>
     </thead>
-    <tbody id='cuerpoTabla'>");
+    <tbody class='cuerpoTabla'>");
     while ($columna = mysqli_fetch_array($resultado)) {
         echo "<tr>";
         echo "<td>" . $columna['id_reparación'] . "</td>";

@@ -191,7 +191,7 @@ include "php scripts/Conexión.php";
                                             </div>
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                                            <table class="table my-0" id="dataTable">
+                                            <!--<table class="table my-0" id="dataTable">
                                                 <thead>
                                                     <tr>
                                                         <th>Folio</th>
@@ -289,7 +289,11 @@ include "php scripts/Conexión.php";
                                                         <td><strong>Comentarios</strong></td>
                                                     </tr>
                                                 </tfoot>
-                                            </table>
+                                            </table>-->
+                                            <?php
+                                            include "php scripts/ConstruirTablaReparaciones.php";
+                                            ConstruirTabla(1);
+                                            ?>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 align-self-center">
@@ -323,105 +327,10 @@ include "php scripts/Conexión.php";
                                             </div>
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
-                                            <table class="table my-0" id="dataTable">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Folio</th>
-                                                        <th>Nombre</th>
-                                                        <th>Teléfono</th>
-                                                        <th>Marca</th>
-                                                        <th>Modelo</th>
-                                                        <th>Falla</th>
-                                                        <th>Trabajo</th>
-                                                        <th>Status</th>
-                                                        <th>Cotización</th>
-                                                        <th>Abono</th>
-                                                        <th>Estado previo</th>
-                                                        <th>Email</th>
-                                                        <th>Fecha</th>
-                                                        <th>Recibió</th>
-                                                        <th>Comentarios</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, 'pendiente');" onmouseout="javascript:resetText(1, 'pendiente');"><span id="status-1" class="status-pendiente">Pendiente</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, 'listo');" onmouseout="javascript:resetText(2, 'listo');"><span id="status-2" class="status-listo">Listo</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, 'entregado');" onmouseout="javascript:resetText(3, 'entregado');"><span id="status-3" class="status-entregado">Entregado</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td><strong>Folio</strong></td>
-                                                        <td><strong>Nombre</strong></td>
-                                                        <td><strong>Teléfono</strong></td>
-                                                        <td><strong>Email</strong></td>
-                                                        <td><strong>Marca</strong></td>
-                                                        <td>Falla</td>
-                                                        <td><strong>Trabajo</strong></td>
-                                                        <td><strong>Modelo</strong></td>
-                                                        <td><strong>Status</strong></td>
-                                                        <td><strong>Estado previo</strong></td>
-                                                        <td><strong>Cotización</strong></td>
-                                                        <td><strong>Abono</strong></td>
-                                                        <td><strong>Fecha</strong></td>
-                                                        <td><strong>Recibió</strong></td>
-                                                        <td><strong>Comentarios</strong></td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
+                                            <?php
+                                            include "php scripts/ConstruirTablaReparaciones.php";
+                                            ConstruirTabla(2);
+                                            ?>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 align-self-center">
@@ -455,105 +364,10 @@ include "php scripts/Conexión.php";
                                             </div>
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-3" role="grid" aria-describedby="dataTable_info">
-                                            <table class="table my-0" id="dataTable">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Folio</th>
-                                                        <th>Nombre</th>
-                                                        <th>Teléfono</th>
-                                                        <th>Marca</th>
-                                                        <th>Modelo</th>
-                                                        <th>Falla</th>
-                                                        <th>Trabajo</th>
-                                                        <th>Status</th>
-                                                        <th>Cotización</th>
-                                                        <th>Abono</th>
-                                                        <th>Estado previo</th>
-                                                        <th>Email</th>
-                                                        <th>Fecha</th>
-                                                        <th>Recibió</th>
-                                                        <th>Comentarios</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, 'pendiente');" onmouseout="javascript:resetText(1, 'pendiente');"><span id="status-4" class="status-pendiente">Pendiente</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, 'listo');" onmouseout="javascript:resetText(2, 'listo');"><span id="status-5" class="status-listo">Listo</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, 'entregado');" onmouseout="javascript:resetText(3, 'entregado');"><span id="status-6" class="status-entregado">Entregado</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td><strong>Folio</strong></td>
-                                                        <td><strong>Nombre</strong></td>
-                                                        <td><strong>Teléfono</strong></td>
-                                                        <td><strong>Email</strong></td>
-                                                        <td><strong>Marca</strong></td>
-                                                        <td>Falla</td>
-                                                        <td><strong>Trabajo</strong></td>
-                                                        <td><strong>Modelo</strong></td>
-                                                        <td><strong>Status</strong></td>
-                                                        <td><strong>Estado previo</strong></td>
-                                                        <td><strong>Cotización</strong></td>
-                                                        <td><strong>Abono</strong></td>
-                                                        <td><strong>Fecha</strong></td>
-                                                        <td><strong>Recibió</strong></td>
-                                                        <td><strong>Comentarios</strong></td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
+                                            <?php
+                                            include "php scripts/ConstruirTablaReparaciones.php";
+                                            ConstruirTabla(3);
+                                            ?>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 align-self-center">
@@ -587,105 +401,10 @@ include "php scripts/Conexión.php";
                                             </div>
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-4" role="grid" aria-describedby="dataTable_info">
-                                            <table class="table my-0" id="dataTable">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Folio</th>
-                                                        <th>Nombre</th>
-                                                        <th>Teléfono</th>
-                                                        <th>Marca</th>
-                                                        <th>Modelo</th>
-                                                        <th>Falla</th>
-                                                        <th>Trabajo</th>
-                                                        <th>Status</th>
-                                                        <th>Cotización</th>
-                                                        <th>Abono</th>
-                                                        <th>Estado previo</th>
-                                                        <th>Email</th>
-                                                        <th>Fecha</th>
-                                                        <th>Recibió</th>
-                                                        <th>Comentarios</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, 'pendiente');" onmouseout="javascript:resetText(1, 'pendiente');"><span id="status-7" class="status-pendiente">Pendiente</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, 'listo');" onmouseout="javascript:resetText(2, 'listo');"><span id="status-8" class="status-listo">Listo</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, 'entregado');" onmouseout="javascript:resetText(3, 'entregado');"><span id="status-9" class="status-entregado">Entregado</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td><strong>Folio</strong></td>
-                                                        <td><strong>Nombre</strong></td>
-                                                        <td><strong>Teléfono</strong></td>
-                                                        <td><strong>Email</strong></td>
-                                                        <td><strong>Marca</strong></td>
-                                                        <td>Falla</td>
-                                                        <td><strong>Trabajo</strong></td>
-                                                        <td><strong>Modelo</strong></td>
-                                                        <td><strong>Status</strong></td>
-                                                        <td><strong>Estado previo</strong></td>
-                                                        <td><strong>Cotización</strong></td>
-                                                        <td><strong>Abono</strong></td>
-                                                        <td><strong>Fecha</strong></td>
-                                                        <td><strong>Recibió</strong></td>
-                                                        <td><strong>Comentarios</strong></td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
+                                            <?php
+                                            include "php scripts/ConstruirTablaReparaciones.php";
+                                            ConstruirTabla(4);
+                                            ?>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 align-self-center">
