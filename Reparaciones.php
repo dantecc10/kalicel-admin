@@ -1,10 +1,19 @@
+<?php
+session_start();
+if (empty($_SESSION['ID'])) {
+    header("Location: login.php");
+}
+
+include "php scripts/Conexión.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Kalicel</title>
+    <title>Reparaciones - Kalicel</title>
     <meta name="description" content="Sistema de administración web de reparaciones, estados de pedidos, e interacción con el cliente.">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">

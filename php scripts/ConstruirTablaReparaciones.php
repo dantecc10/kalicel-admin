@@ -31,60 +31,58 @@ function ConstruirTablaCarga()
     </thead>
     <tbody id='cuerpoTabla'>");
     while ($columna = mysqli_fetch_array($resultado)) {
-
         echo "<tr>";
         echo "<td>" . $columna['id_reparación'] . "</td>";
         echo "<td>" . $columna['marca_reparación'] . "</td>";
         echo "<td>" . $columna['modelo_reparación'] . "</td>";
         echo "<td>" . $columna['falla_reparación'] . "</td>";
-        echo "<td>" . $columna['status_reparación'] . "</td>";
+        echo ("
+        <td class='pending-cell'>
+            <div class='btn-group' role='group'>
+            <button class='btn btn-primary btn-status' type='button' " .
+            "onmouseover=" . $comilla . "javascript:changeText(" . $columna['id_reparación'] . ", '" . lcfirst($columna['status_reparación']) . "');" . $comilla .
+            " onmouseout=" . $comilla . "javascript:resetText(" . $columna['id_reparación'] . ", '" . lcfirst($columna['status_reparación']) . "');" . $comilla .
+            " <span id='status" . $columna['id_reparación'] . "' class='status-" . lcfirst($columna['status_reparación']) . "'>" . $columna['status_reparación'] .
+            "</span></button></div>
+        </td>");
+
         echo "<td>" . $columna['trabajo_reparación'] . "</td>";
         echo "<td>" . $columna['estadoPrevio_reparación'] . "</td>";
-
-        echo "<td>";
-
-        switch ($columna['cotización_reparación']) {
-            case 'Pendiente':
-                echo "";
-                break;
-            case 'Listo':
-                echo "";
-                break;
-            case 'Entregado':
-                echo "";
-                break;
-
-            default:
-                echo "Error";
-                break;
-        }
-
-        echo "</td>";
-
-        echo "<td>" . $columna['abono_reparación'] . "</td>";
+        echo "<td>$" . $columna['cotización_reparación'] . "</td>";
+        echo "<td>$" . $columna['abono_reparación'] . "</td>";
         echo "<td>" . $columna['fecha_recibida_reparación'] . "</td>";
         echo "<td>" . $columna['recibió_reparación'] . "</td>";
         echo "<td>" . $columna['comentarios_reparación'] . "</td>";
         echo "<td>" . $columna['nombre_reparación'] . "</td>";
-        echo "<td>" . $columna['teléfono_reparación'] . "</td>";
+        echo ("<td>
+            <a href='https://wa.me/" . $columna['teléfono_reparación'] . "' target='_blank'>" .
+            $columna['teléfono_reparación'] .
+            "</a>
+            </td>");
         echo "<td>" . $columna['email_reparación'] . "</td>";
-        echo "<td><button id='baja" . $columna['id_display'] . "' class='btn btn-primary btn-baja' onclick='javascript:bajaAltaCantidad(" . $columna['id_display'] . ", " . $comilla . "baja" . $comilla . ");' type='button'>-</button><span id='cantidad" . $columna['id_display'] .  "'>" . $columna['cantidad_display'] . "</span><button id='alta" . $columna['id_display'] . "' class='btn btn-primary btn-alta' onclick='javascript:bajaAltaCantidad(" . $columna['id_display'] . ", " . $comilla . "alta" . $comilla . ");' type='button'>+</button></td>";
         echo "</tr>";
     }
     echo ("</tbody>
     <tfoot>
         <tr>
-        <td><strong>ID</strong></td>
-            <td><strong>Modelo</strong></td>
+            <td><strong>ID</strong></td>
             <td><strong>Marca</strong></td>
-            <td><strong>Color</strong></td>
-            <td><strong>Cantidad</strong></td>
-            <td><strong>Caja</strong></td>
-            <td>Calidad</td>
-            <td>Versión</td>
-            </tr>
-            </tfoot>
-            </table>");
+            <td><strong>Modelo</strong></td>
+            <td><strong>Falla</strong></td>
+            <td><strong>Status</strong></td>
+            <td><strong>Trabajo</strong></td>
+            <td><strong>Estado</strong></td>
+            <td><strong>Cotización</strong></td>
+            <td><strong>Abono</strong></td>
+            <td><strong>Recibido</strong></td>
+            <td><strong>Recibió</strong></td>
+            <td><strong>Comentarios</strong></td>
+            <td><strong>Nombre</strong></td>
+            <td><strong>Teléfono</strong></td>
+            <td><strong>Email</strong></td>
+        </tr>
+    </tfoot>
+    </table>");
 
     mysqli_close($conexión);
 }
