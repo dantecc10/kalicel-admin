@@ -182,6 +182,8 @@ include "php scripts/Conexión.php";
                                                 <option value="Lenovo">Lenovo</option>
                                                 <option value="M4">M4</option>
                                                 <option value="Lanix">Lanix</option>
+                                                <option value="Vivo">Vivo</option>
+
                                                 <option value="Otra">Otra</option>
                                             </optgroup>
                                         </select>

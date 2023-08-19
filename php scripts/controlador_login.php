@@ -26,4 +26,4 @@ if (!empty($_POST['InicioSesión'])) {
     } else {
         echo "Campos vacíos";
     }
-}#
+}
