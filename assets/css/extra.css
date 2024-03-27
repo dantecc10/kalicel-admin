@@ -152,3 +152,7 @@ button.btn-status:hover span.status-pendiente {
   }
 } */
 
+details-comments {
+  min-width: 400px !important;
+}
+
