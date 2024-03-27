@@ -107,6 +107,7 @@ element.style {
 .btn-status:has(.status-pendiente) {
   background-color: orangered;
   color: white;
+  content: "Pendiente";
 }
 
 .btn-status:has(.status-pendiente):hover {
@@ -118,16 +119,19 @@ element.style {
 .btn-status:has(.status-listo) {
   background-color: green;
   color: white;
+  content: "Listo";
 }
 
 .btn-status:has(.status-listo):hover {
   background-color: blue;
   color: white;
+  content: "¡Entregado!";
 }
 
 .btn-status:has(.status-entregado) {
   background-color: blue;
   color: white;
+  content: "¡Entregado!";
 }
 
 .btn-status:has(.status-entregado):hover {

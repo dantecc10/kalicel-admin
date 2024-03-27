@@ -38,3 +38,9 @@ function resetText(idsql, estado) {
             break;
     }
 }
+
+function restore_animation(element) {
+    span = element.querySelector('span');
+    (span.classList.contains("status-pendiente")) ? span.textContent = "Pendiente" : (span.classList.contains("status-listo")) ? span.textContent = "Listo" : /*(element.classList.contains("entregado")) ? */span.textContent = "Entregado";
+}
+
