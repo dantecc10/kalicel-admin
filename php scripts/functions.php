@@ -332,20 +332,6 @@ $fields = [
     "comments_fix_order"
 ];
 
-$fetched_fix_orders = fetch_fields($table, $fields, null, null);
-print_r($fetched_fix_orders);
-echo ('<br>');
-// Pruebas de validaciones:
-($fetched_fix_orders[0][5] == null) ? $msg = "No se estableció un número telefónico" : $msg = ("Hay un teléfono: " . $fetched_fix_orders[0][5]);
-echo ($msg);
-echo ('<br>');
-($fetched_fix_orders[0][8] == null) ? $msg = "Fecha nula" : $msg = ("Fecha: " . date("d/m/Y", strtotime($fetched_fix_orders[0][8])));
-echo ($msg);
-echo ('<br>');
-($fetched_fix_orders[0][9] == null) ? $msg = "Hora nula" : $msg = ("Hora: " . date("H:i:s", strtotime($fetched_fix_orders[0][9])));
-echo ($msg);
-
-
 $fetched_fix_orders_query = "SELECT 
                                 `id_fix_order`, `brand_fix_order`, `model_fix_order`, `customer_fix_order`, `mobile_fix_order`, `email_fix_order`,
                                 u.`nombre_usuario` AS `receiver_fix_order`,
@@ -358,3 +344,16 @@ $fetched_fix_orders_query = "SELECT
                                 END AS `status_fix_order`,
                                 `fail_fix_order`, `work_fix_order`, `comments_fix_order`
                                 FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario`;";
+
+$fetched_fix_orders = fetch_fields($table, $fields, null, $fetched_fix_orders_query);
+print_r($fetched_fix_orders);
+echo ('<br>');
+// Pruebas de validaciones:
+($fetched_fix_orders[0][5] == null) ? $msg = "No se estableció un número telefónico" : $msg = ("Hay un teléfono: " . $fetched_fix_orders[0][5]);
+echo ($msg);
+echo ('<br>');
+($fetched_fix_orders[0][8] == null) ? $msg = "Fecha nula" : $msg = ("Fecha: " . date("d/m/Y", strtotime($fetched_fix_orders[0][8])));
+echo ($msg);
+echo ('<br>');
+($fetched_fix_orders[0][9] == null) ? $msg = "Hora nula" : $msg = ("Hora: " . date("H:i:s", strtotime($fetched_fix_orders[0][9])));
+echo ($msg);
