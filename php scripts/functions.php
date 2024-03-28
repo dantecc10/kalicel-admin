@@ -344,3 +344,17 @@ echo ($msg);
 echo ('<br>');
 ($fetched_fix_orders[0][9] == null) ? $msg = "Hora nula" : $msg = ("Hora: " . date("H:i:s", strtotime($fetched_fix_orders[0][9])));
 echo ($msg);
+
+
+$fetched_fix_orders_query = "SELECT 
+                                `id_fix_order`, `brand_fix_order`, `model_fix_order`, `customer_fix_order`, `mobile_fix_order`, `email_fix_order`,
+                                u.`nombre_usuario` AS `receiver_fix_order`,
+                                `date_fix_order`, `cost_fix_order`, `paid_amount_fix_order`, 
+                                CASE `status_fix_order`
+                                    WHEN 1 THEN 'Pendiente'
+                                    WHEN 2 THEN 'Listo'
+                                    WHEN 3 THEN 'Entregado'
+                                    ELSE 'Estado Desconocido'
+                                END AS `status_fix_order`,
+                                `fail_fix_order`, `work_fix_order`, `comments_fix_order`
+                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario`;";
