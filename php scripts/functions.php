@@ -335,7 +335,7 @@ $fields = [
 $fetched_fix_orders_query = "SELECT 
                                 `id_fix_order`, `brand_fix_order`, `model_fix_order`, `customer_fix_order`, `mobile_fix_order`, `email_fix_order`,
                                 u.`nombre_usuario` AS `receiver_fix_order`,
-                                `date_fix_order`, `cost_fix_order`, `paid_amount_fix_order`, 
+                                `date_fix_order`, `time_fix_order`, `cost_fix_order`, `paid_amount_fix_order`, 
                                 CASE `status_fix_order`
                                     WHEN 1 THEN 'Pendiente'
                                     WHEN 2 THEN 'Listo'
