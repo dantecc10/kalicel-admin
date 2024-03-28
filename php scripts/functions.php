@@ -332,4 +332,9 @@ $fields = [
     "comments_fix_order"
 ];
 
-print_r(fetch_fields($table, $fields, null, null));
+$fetched_fix_orders = fetch_fields($table, $fields, null, null);
+print_r($fetched_fix_orders);
+echo ('<br>');
+// Pruebas de validaciones:
+($fetched_fix_orders[0][5] == null) ? $msg = "No se estableció un número telefónico" : $msg = ("Hay un teléfono: " . $fetched_fix_orders[0][5]);
+echo ($msg);
