@@ -341,3 +341,6 @@ echo ($msg);
 echo ('<br>');
 ($fetched_fix_orders[0][8] == null) ? $msg = "Fecha nula" : $msg = ("Fecha: " . date("d/m/Y", strtotime($fetched_fix_orders[0][8])));
 echo ($msg);
+echo ('<br>');
+($fetched_fix_orders[0][9] == null) ? $msg = "Hora nula" : $msg = ("Hora: " . date("H:i:s", strtotime($fetched_fix_orders[0][9])));
+echo ($msg);
