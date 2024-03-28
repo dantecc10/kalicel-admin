@@ -338,6 +338,6 @@ echo ('<br>');
 // Pruebas de validaciones:
 ($fetched_fix_orders[0][5] == null) ? $msg = "No se estableció un número telefónico" : $msg = ("Hay un teléfono: " . $fetched_fix_orders[0][5]);
 echo ($msg);
-
-($fetched_fix_orders[0][8] == null) ? $msg = "Fecha nula" : $msg = date("d/m/Y", strtotime($fetched_fix_orders[0][8]));
+echo ('<br>');
+($fetched_fix_orders[0][8] == null) ? $msg = "Fecha nula" : $msg = ("Fecha: " . date("d/m/Y", strtotime($fetched_fix_orders[0][8])));
 echo ($msg);
