@@ -314,20 +314,22 @@ function table_builder($name)
 
 $table = "fix_orders";
 $fields = array();
-$fields = ["id_fix_order",
-           "brand_fix_order",
-           "model_fix_order",
-           "status_fix_order",
-           "customer_fix_order",
-           "mobile_fix_order",
-           "email_fix_order",
-           "receiver_fix_order",
-           "date_fix_order",
-           "time_fix_order",
-           "cost_fix_order",
-           "paid_amount_fix_order",
-           "fail_fix_order",
-           "work_fix_order",
-           "comments_fix_order"];
+$fields = [
+    "id_fix_order",
+    "brand_fix_order",
+    "model_fix_order",
+    "status_fix_order",
+    "customer_fix_order",
+    "mobile_fix_order",
+    "email_fix_order",
+    "receiver_fix_order",
+    "date_fix_order",
+    "time_fix_order",
+    "cost_fix_order",
+    "paid_amount_fix_order",
+    "fail_fix_order",
+    "work_fix_order",
+    "comments_fix_order"
+];
 
-fetch_fields($table, $fields, null, null);
+print_r(fetch_fields($table, $fields, null, null));
