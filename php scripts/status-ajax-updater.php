@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['ID'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
 } else {
     include_once "functions.php";
     include_once "connection.php";
@@ -20,8 +20,7 @@ if (empty($_SESSION['ID'])) {
             $stmt_update = $connection->prepare("UPDATE `fix_orders` SET (`status_fix_order` = ?) WHERE (`id_fix_order` = ?);");
             $status = ($status == 3) ? 1 : $status++;
             $stmt_update->bind_param("ii", $_POST['target_id'], $status);
-            $msg = ($stmt_update->execute()) ? "success" : "error";
-            echo $msg;
+            echo ($stmt_update->execute()) ? "success" : "error";
         } else {
             echo "error";
         }
