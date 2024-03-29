@@ -139,23 +139,6 @@ element.style {
   color: white;
 }
 
-/* .btn-status:hover .status-pendiente::before {
-  content: "Listo";
-}
-
-button.btn-status:hover span.status-pendiente {
-  color: orangered;
-  background-color: orange;
-
-  button.btn-status:hover span {
-    content: "";
-  }
-
-  button.btn-status:hover:before span.status-pendiente {
-    content: "Listo";
-  }
-} */
-
 details-comments {
   min-width: 400px !important;
 }
