@@ -19,7 +19,7 @@ function resetText(idsql, estado) {
     }
 }
 
-function changeText(element) {
+function change_text(element) {
     span = element.querySelector('span');
     (span.classList.contains("status-pendiente")) ? span.innerHTML = "Listo" : (span.classList.contains("status-listo")) ? span.innerHTML = "Entregado" : /*(element.classList.contains("entregado")) ? */span.innerHTML = "Pendiente";
 }
