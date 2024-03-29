@@ -3,7 +3,6 @@ session_start();
 if (empty($_SESSION['ID'])) {
     header("Location: ../login.php");
 } else {
-    include_once "functions.php";
     include_once "connection.php";
 
     $stmt = $connection->prepare("SELECT `status_fix_order` FROM `fix_orders` WHERE `id_fix_order` = ?");
