@@ -109,29 +109,53 @@ function table_builder($name)
                                     WHEN 3 THEN 'Entregado'
                                     ELSE 'Estado Desconocido'
                                 END AS `status_fix_order`, `fail_fix_order`, `work_fix_order`, `comments_fix_order`
-                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario`;");
-
+                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` ORDER BY `id_fix_order` DESC;");
 
     switch ($name) {
         case 'pendiente':
-            $sql_query = "SELECT * FROM `fix_orders` WHERE (`status_fix_order` = 1)";
+            $sql_query = ("SELECT `id_fix_order`, `brand_fix_order`, `model_fix_order`, `customer_fix_order`, `mobile_fix_order`, `email_fix_order`,
+                                u.`nombre_usuario` AS `receiver_fix_order`, `date_fix_order`, `time_fix_order`, `cost_fix_order`, `paid_amount_fix_order`, 
+                                CASE `status_fix_order`
+                                    WHEN 1 THEN 'Pendiente'
+                                    WHEN 2 THEN 'Listo'
+                                    WHEN 3 THEN 'Entregado'
+                                    ELSE 'Estado Desconocido'
+                                END AS `status_fix_order`, `fail_fix_order`, `work_fix_order`, `comments_fix_order`
+                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status` = 'Pendiente') ORDER BY `id_fix_order` DESC;");
             $dom_dynamic_number = 2;
             break;
         case 'listo':
-            $sql_query = "SELECT * FROM `fix_orders` WHERE (`status_fix_order` = 2)";
+            $sql_query = ("SELECT `id_fix_order`, `brand_fix_order`, `model_fix_order`, `customer_fix_order`, `mobile_fix_order`, `email_fix_order`,
+                                u.`nombre_usuario` AS `receiver_fix_order`, `date_fix_order`, `time_fix_order`, `cost_fix_order`, `paid_amount_fix_order`, 
+                                CASE `status_fix_order`
+                                    WHEN 1 THEN 'Pendiente'
+                                    WHEN 2 THEN 'Listo'
+                                    WHEN 3 THEN 'Entregado'
+                                    ELSE 'Estado Desconocido'
+                                END AS `status_fix_order`, `fail_fix_order`, `work_fix_order`, `comments_fix_order`
+                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status` = 'Listo') ORDER BY `id_fix_order` DESC;");
             $dom_dynamic_number = 3;
             break;
         case 'entregado':
-            $sql_query = "SELECT * FROM `fix_orders` WHERE (`status_fix_order` = 3)";
+            $sql_query = ("SELECT `id_fix_order`, `brand_fix_order`, `model_fix_order`, `customer_fix_order`, `mobile_fix_order`, `email_fix_order`,
+                                    u.`nombre_usuario` AS `receiver_fix_order`, `date_fix_order`, `time_fix_order`, `cost_fix_order`, `paid_amount_fix_order`, 
+                                    CASE `status_fix_order`
+                                        WHEN 1 THEN 'Pendiente'
+                                        WHEN 2 THEN 'Listo'
+                                        WHEN 3 THEN 'Entregado'
+                                        ELSE 'Estado Desconocido'
+                                    END AS `status_fix_order`, `fail_fix_order`, `work_fix_order`, `comments_fix_order`
+                                    FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status` = 'Entregado') ORDER BY `id_fix_order` DESC;");
             $dom_dynamic_number = 4;
             break;
         default:
-            $sql_query = "SELECT * FROM `fix_orders`";
-            $fetched_fix_orders = fetch_fields($table, $fields, null, $fetched_fix_orders_query);
+            $sql_query = $fetched_fix_orders_query;
             //print_r($fetched_fix_orders); echo ('<br>'); // Pruebas de validaciones: ($fetched_fix_orders[0][5] == null) ? $msg = "No se estableció un número telefónico" : $msg = ("Hay un teléfono: " . $fetched_fix_orders[0][5]); echo ($msg); echo ('<br>'); ($fetched_fix_orders[0][8] == null) ? $msg = "Fecha nula" : $msg = ("Fecha: " . date("d/m/Y", strtotime($fetched_fix_orders[0][8]))); echo ($msg); echo ('<br>'); ($fetched_fix_orders[0][9] == null) ? $msg = "Hora nula" : $msg = ("Hora: " . date("H:i:s", strtotime($fetched_fix_orders[0][9]))); echo ($msg);
             $dom_dynamic_number = 1;
             break;
     }
+
+    $fetched_fix_orders = fetch_fields($table, $fields, null, $sql_query);
 
     $row_dom = ('
                 <tr class="small align-middle">
