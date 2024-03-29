@@ -43,7 +43,6 @@ function update_status(element) {
 
     // Cabecera para indicar que se está enviando información de formulario
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // La solicitud ha sido completada y la respuesta está lista
@@ -64,13 +63,9 @@ function update_status(element) {
                     }
                 }
             }
-        } else {
-            alert("Se produjo un error al intentar actualizar el status de la reparación.");
         }
-        console.log(xhr.responseText);
     }
 
     // Enviar la solicitud con los parámetros
     xhr.send(params);
-
 }
