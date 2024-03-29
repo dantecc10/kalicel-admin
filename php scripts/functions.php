@@ -121,7 +121,7 @@ function table_builder($name)
                                     WHEN 3 THEN 'Entregado'
                                     ELSE 'Estado Desconocido'
                                 END AS `status_fix_order`, `fail_fix_order`, `work_fix_order`, `comments_fix_order`
-                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status` = 'Pendiente') ORDER BY `id_fix_order` DESC;");
+                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status_fix_order` = 'Pendiente') ORDER BY `id_fix_order` DESC;");
             $dom_dynamic_number = 2;
             break;
         case 'listo':
@@ -133,7 +133,7 @@ function table_builder($name)
                                     WHEN 3 THEN 'Entregado'
                                     ELSE 'Estado Desconocido'
                                 END AS `status_fix_order`, `fail_fix_order`, `work_fix_order`, `comments_fix_order`
-                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status` = 'Listo') ORDER BY `id_fix_order` DESC;");
+                                FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status_fix_order` = 'Listo') ORDER BY `id_fix_order` DESC;");
             $dom_dynamic_number = 3;
             break;
         case 'entregado':
@@ -145,7 +145,7 @@ function table_builder($name)
                                         WHEN 3 THEN 'Entregado'
                                         ELSE 'Estado Desconocido'
                                     END AS `status_fix_order`, `fail_fix_order`, `work_fix_order`, `comments_fix_order`
-                                    FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status` = 'Entregado') ORDER BY `id_fix_order` DESC;");
+                                    FROM `fix_orders` fo INNER JOIN `usuarios` u ON fo.`receiver_fix_order` = u.`id_usuario` WHERE (`status_fix_order` = 'Entregado') ORDER BY `id_fix_order` DESC;");
             $dom_dynamic_number = 4;
             break;
         default:
