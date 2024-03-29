@@ -4,7 +4,8 @@ if (!isset($_SESSION['ID'])) {
     header("Location: ../login.php");
 } else {
 
-    $stmt = $conn->prepare("INSERT INTO `fix_orders` VALUES ('', ?, ?, 1, ?, ?, ?, ?, CURRDATE(), CURRTIME(), ?, ?, ?, ?, ?)");
+    include_once "connection.php";
+    $stmt = $connection->prepare("INSERT INTO `fix_orders` VALUES ('', ?, ?, 1, ?, ?, ?, ?, CURRDATE(), CURRTIME(), ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssiddsss", $_POST["brand"], $_POST["model"], $_POST["customer"], $_POST["mobile"], $_POST["email"], $_SESSION['ID'], $_POST["cost"], $_POST["paid_amount"], $_POST["fail"], $_POST["work"], $_POST["coments"]);
 
     // Ejecutar la consulta preparada
@@ -16,4 +17,5 @@ if (!isset($_SESSION['ID'])) {
 
     // Cerrar la conexión
     $stmt->close();
+    $connection->close();
 }
