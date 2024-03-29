@@ -151,3 +151,13 @@ a[data-bs-toggle="tab"].nav-link:active {
   color: gray !important;
 }
 
+custom-bg {
+  background-color: var(--bs-kalicel-rojo) !important;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    max-width: 80% !important;
+  }
+}
+
