@@ -45,7 +45,7 @@ function update_status(element) {
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText == "success") {
+        if (xhr.readyState == 4 && xhr.status == 200) {
             // La solicitud ha sido completada y la respuesta está lista
             if (element.querySelector('span').classList.contains('status-pendiente')) {
                 element.querySelector('span').classList.remove('status-pendiente');
@@ -60,7 +60,7 @@ function update_status(element) {
                     if (element.querySelector('span').classList.contains('status-entregado')) {
                         element.querySelector('span').classList.remove('status-entregado');
                         element.querySelector('span').classList.add('status-pendiente');
-                        alert("¡Correcto! La orden de reparación #" + target_id + " vuelve a estar pendiente.");
+                        alert("La orden de reparación #" + target_id + " vuelve a estar pendiente.");
                     }
                 }
             }
