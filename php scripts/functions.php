@@ -275,8 +275,8 @@ function table_builder($name)
             </td>
             <td class="p-1">
                 <div class="col">
-                ' . (($temp_data[10] != null) ? ('<div class="row m-0 px-0"><div class="col px-0"><span>$ <input class="col-10 col-lg-6" type="number" value="' . $temp_data[10] . '" disabled /></span></div></div>') : '')
-            . (($temp_data[11] != null) ? ('<div class="row m-0 px-0"><div class="col px-0"><span>$ <input class="col-10 col-lg-6" type="number" value="' . $temp_data[11] . '" disabled /></span></div></div>') : '')
+                ' . (($temp_data[10] != null) ? ('<div class="row m-0 px-0"><div class="col px-0"><span>$ <input class="col-10 col-lg-6 text-center" type="number" value="' . $temp_data[10] . '" disabled /></span></div></div>') : '')
+            . (($temp_data[11] != null) ? ('<div class="row m-0 px-0"><div class="col px-0"><span>$ <input class="col-10 col-lg-6 text-center" type="number" value="' . $temp_data[11] . '" disabled /></span></div></div>') : '')
             . ' </div>
             </td>
             <td class="p-1">
