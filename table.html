@@ -41,8 +41,8 @@
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid"><button class="btn btn-link btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
-                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Buscar">
+                        <form class="d-none d-sm-inline-block my-2 my-md-0 mw-100 navbar-search col-12">
+                            <div class="input-group col-12"><input class="bg-light form-control border-0 small" type="text" placeholder="Buscar">
                                 <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                             </div>
                         </form>
@@ -64,7 +64,7 @@
                     <h3 class="text-dark mb-4">Reparaciones</h3>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Información de reparaciones</p>
+                            <p class="text-primary m-0 fw-bold" style="color: var(--bs-kalicel-rojo) !important;">Información de reparaciones</p>
                             <div>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Todas</a></li>
@@ -99,7 +99,7 @@
                                                     <tr class="small align-middle">
                                                         <td>1</td>
                                                         <td>OPPO Reno 7</td>
-                                                        <td class="pending-cell px-1 py-1">
+                                                        <td class="px-1 py-1">
                                                             <div class="row m-0">
                                                                 <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(1, &#39;listo&#39;);" onmouseout="javascript:restore_animation(this);"><span id="status-1" class="status-listo" style="font-size: smaller;">Listo</span></button></div>
                                                                 <div class="col col-12 p-0"><button class="btn btn-primary btn-status border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);" style="background-color: yellow !important; color: darkgray !important;"><span class="text-nowrap" style="font-size: smaller;line-height: 0 !important;"><i class="fas fa-bell" style="font-size: small;"></i>&nbsp;Notificar</span></button></div>

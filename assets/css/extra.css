@@ -160,3 +160,11 @@ details-comments {
   min-width: 400px !important;
 }
 
+a[data-bs-toggle="tab"].nav-link {
+  color: var(--bs-kalicel-rojo) !important;
+}
+
+a[data-bs-toggle="tab"].nav-link:active {
+  color: gray !important;
+}
+
