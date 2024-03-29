@@ -3,8 +3,9 @@ session_start();
 if (empty($_SESSION['ID'])) {
     header("Location: login.php");
 }
+include_once "php scripts/functions.php";
 
-include "php scripts/Conexión.php";
+//include "php scripts/Conexión.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +14,8 @@ include "php scripts/Conexión.php";
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Reparaciones - Kalicel</title>
-    <meta name="description" content="Sistema de administración web de reparaciones, estados de pedidos, e interacción con el cliente.">
+    <title>Kalicel Admin - Reparaciones</title>
+    <meta name="description" content="Consulta el status de las reparaciones, la información de clientes y diagnósticos.">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
     <link rel="icon" type="image/png" sizes="3264x3264" href="assets/img/ícono-Kalicel.png">
@@ -25,30 +26,20 @@ include "php scripts/Conexión.php";
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/Application-Form.css">
     <link rel="stylesheet" href="assets/css/extra.css">
-    <script src="assets/js/extra.js"></script>
 </head>
 
 <body id="page-top">
-    <script lang="javascript">
-        if (navigator.online) {
-            //Conexión a internet
-        } else {
-            document.getElementById("mainCSS").href = "assets/css/main.css";
-            document.getElementById("funcionesJS").src = "assets/js/Funciones.js";
-            document.getElementById("altasBajasJS").src = "assets/js/AltasBajas.js";
-        }
-    </script>
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: #fe0000;">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: var(--bs-kalicel-rojo);">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                    <div class="visible sidebar-brand-icon" data-bs-toggle="tooltip" data-bss-tooltip=""><img src="assets/img/ícono-Kalicel.png" width="40%"></div>
                     <div class="sidebar-brand-text mx-3"><span>Kalicel</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Panel</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="Reparaciones.php"><i class="fas fa-table"></i><span>Reparaciones</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i><span>Panel</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.php"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="Reparaciones.php"><i class="fas fa-table"></i><span>Reparaciones</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="Inventario.php"><i class="fas fa-mobile-alt"></i><span>Inventario</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php"><i class="far fa-user-circle"></i><span>Inicio de sesión</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Registrarse</span></a></li>
@@ -59,105 +50,20 @@ include "php scripts/Conexión.php";
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
-                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ..."><button class="btn btn-primary py-0" type="button" style="background-color: var(--bs-kalicel-rojo);"><i class="fas fa-search"></i></button></div>
+                    <div class="container-fluid"><button class="btn btn-link btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block my-2 my-md-0 mw-100 navbar-search col-12">
+                            <div class="input-group col-12"><input class="bg-light form-control border-0 small" type="text" placeholder="Buscar">
+                                <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                            </div>
                         </form>
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                                    <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                        </div>
-                                    </form>
-                                </div>
+                            <li class="nav-item dropdown show d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"></a>
+                                <div class="dropdown-menu show dropdown-menu-end p-3 animated--grow-in" data-bs-popper="none" aria-labelledby="searchDropdown"></div>
                             </li>
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 7, 2019</span>
-                                                <p>$290.29 has been deposited into your account!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 2, 2019</span>
-                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
-                                            </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">7</span><i class="fas fa-envelope fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">Operaciones</h6>
-
-                                        <?php
-                                        $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
-
-                                        $consulta = "SELECT * FROM `operaciones` WHERE `autor_operación` != '' ORDER BY `fecha_operación` DESC";
-                                        $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
-
-                                        $contador = 0;
-
-                                        while ($columna = mysqli_fetch_array($resultado)) {
-                                            switch ($columna['autor_operación']) {
-                                                case 'Luis Enrique':
-                                                    $autor = 1;
-                                                    break;
-                                                case 'Rosalba Nazareth':
-                                                    $autor = 2;
-                                                    break;
-                                                case 'Dante':
-                                                    $autor = 3;
-                                                    break;
-                                                default:
-                                                    break;
-                                            }
-                                            echo ("
-                                            <a class='dropdown-item d-flex align-items-center' href='#'>
-                                            <div class='dropdown-list-image me-3'><img class='rounded-circle' src='assets/img/avatars/" . $autor . ".png'>
-                                            <div class='bg-success status-indicator'></div>
-                                            </div>
-                                            <div class='fw-bold'>
-                                                <div class='text-truncate'>
-                                                <span>" . $columna['acción_operación'] . ": " . $columna['descripción_operación'] . "</span>
-                                                </div>
-                                                <p class='small text-gray-500 mb-0'>" . $columna['autor_operación'] . " - " . $columna['fecha_operación'] . "</p>
-                                                </div>
-                                                </a>
-                                            ");
-                                            $contador++;
-                                            if ($contador > 5) {
-                                                break;
-                                            }
-                                        }
-                                        ?>
-
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas las operaciones</a>
-                                    </div>
-                                </div>
-                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
-                            </li>
-                            <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small"><?php echo ($_SESSION['Nombre']); ?></span><img class="rounded-circle img-fluid border img-profile" src="<?php echo ("assets/img/avatars/" . $_SESSION['ID'] . ".png"); ?>"></a>
-                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a><a class="dropdown-item" href="Perfil.php"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Configuraciones</a><a class="dropdown-item" href="Actividad.php"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Actividad</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="php scripts/logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="https://kalicel.castelancarpinteyro.club/admin/login.php" target="_blank"><span class="d-none d-lg-inline me-2 text-gray-600 small">Iniciar sesión&nbsp;<i class="far fa-user"></i></span></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -168,270 +74,303 @@ include "php scripts/Conexión.php";
                     <h3 class="text-dark mb-4">Reparaciones</h3>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Información de reparaciones</p>
+                            <p class="text-primary m-0 fw-bold" style="color: var(--bs-kalicel-rojo) !important;">Información de reparaciones</p>
                             <div>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">Todas</a></li>
-                                    <!--<li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Pendiente</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Pendiente</a></li>
                                     <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Listo</a></li>
-                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Entregado</a></li>-->
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Entregado</a></li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane active" role="tabpanel" id="tab-1">
-                                        <div class="row">
-                                            <div class="col-md-6 text-nowrap">
-                                                <div id="dataTable_length-1" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
-                                                            <option value="10" selected="">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                        </select>&nbsp;</label></div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-1"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                    <?php
+                                    echo (table_builder('todos'));
+                                    ?>
+                                    <div class="tab-pane" role="tabpanel" id="tab-2">
+                                        <div class="row py-2">
+                                            <div class="col align-items-center">
+                                                <div class="input-group col-8"><span class="input-group-text p-1" style="font-size: small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                            <path d="M3.853 54.87C10.47 40.9 24.54 32 40 32H472C487.5 32 501.5 40.9 508.1 54.87C514.8 68.84 512.7 85.37 502.1 97.33L320 320.9V448C320 460.1 313.2 471.2 302.3 476.6C291.5 482 278.5 480.9 268.8 473.6L204.8 425.6C196.7 419.6 192 410.1 192 400V320.9L9.042 97.33C-.745 85.37-2.765 68.84 3.854 54.87L3.853 54.87z"></path>
+                                                        </svg></span><input class="form-control" type="search" placeholder="Buscar reparación"></div>
                                             </div>
                                         </div>
-                                        <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                                            <!--<table class="table my-0" id="dataTable">
+                                        <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
+                                            <table class="table my-0 text-center" id="dataTable">
                                                 <thead>
                                                     <tr>
-                                                        <th>Folio</th>
-                                                        <th>Nombre</th>
-                                                        <th>Teléfono</th>
-                                                        <th>Marca</th>
-                                                        <th>Modelo</th>
-                                                        <th>Falla</th>
-                                                        <th>Trabajo</th>
-                                                        <th>Status</th>
+                                                        <th>#</th>
+                                                        <th>Equipo</th>
+                                                        <th style="min-width: 110px !important;">Status</th>
+                                                        <th class="col-1">Cliente</th>
+                                                        <th>Recepción</th>
                                                         <th>Cotización</th>
-                                                        <th>Abono</th>
-                                                        <th>Estado previo</th>
-                                                        <th>Email</th>
-                                                        <th>Fecha</th>
-                                                        <th>Recibió</th>
-                                                        <th>Comentarios</th>
+                                                        <th style="min-width: 300px !important;">Detalles</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(1, 'pendiente');" onmouseout="javascript:resetText(1, 'pendiente');"><span id="status1" class="status-pendiente">Pendiente</span></button></div>
-                                                        </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <tr class="small align-middle">
                                                         <td>2</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(2, 'listo');" onmouseout="javascript:resetText(2, 'listo');"><span id="status2" class="status-listo">Listo</span></button></div>
+                                                        <td>LG K22+</td>
+                                                        <td class="pending-cell px-1 py-1">
+                                                            <div class="row m-0">
+                                                                <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(2, &#39;pendiente&#39;);" onmouseout="javascript:restore_animation(this);" onclick="javascript:get_service_id(this);"><span id="status-10" class="status-pendiente" style="font-size: smaller;">Pendiente</span></button></div>
+                                                                <div class="col col-12 p-0"><button class="btn btn-primary btn-status border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);" style="background-color: yellow !important; color: darkgray !important;"><span class="text-nowrap" style="font-size: smaller;line-height: 0 !important;"><i class="fas fa-bell" style="font-size: small;"></i>&nbsp;Notificar</span></button></div>
+                                                            </div>
                                                         </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Cedric Kelly</td>
-                                                        <td><a href="https://wa.me/522411352236" target="_blank">241 135 22 36</a></td>
-                                                        <td>Motorola<br></td>
-                                                        <td>G7 Play</td>
-                                                        <td>No carga</td>
-                                                        <td>Centro de carga</td>
-                                                        <td class="pending-cell">
-                                                            <div class="btn-group" role="group"><button class="btn btn-primary btn-status" type="button" onmouseover="javascript:changeText(3, 'entregado');" onmouseout="javascript:resetText(3, 'entregado');"><span id="status3" class="status-entregado">Entregado</span></button></div>
+                                                        <td class="px-3">
+                                                            <div class="col">
+                                                                <div class="row">
+                                                                    <div class="col px-0"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" color="#25d366">
+                                                                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                                                <path d="M224 122.8c-72.7 0-131.8 59.1-131.9 131.8 0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6 49.9-13.1 4.8 2.9c20.2 12 43.4 18.4 67.1 18.4h.1c72.6 0 133.3-59.1 133.3-131.8 0-35.2-15.2-68.3-40.1-93.2-25-25-58-38.7-93.2-38.7zm77.5 188.4c-3.3 9.3-19.1 17.7-26.7 18.8-12.6 1.9-22.4.9-47.5-9.9-39.7-17.2-65.7-57.2-67.7-59.8-2-2.6-16.2-21.5-16.2-41s10.2-29.1 13.9-33.1c3.6-4 7.9-5 10.6-5 2.6 0 5.3 0 7.6.1 2.4.1 5.7-.9 8.9 6.8 3.3 7.9 11.2 27.4 12.2 29.4s1.7 4.3.3 6.9c-7.6 15.2-15.7 14.6-11.6 21.6 15.3 26.3 30.6 35.4 53.9 47.1 4 2 6.3 1.7 8.6-1 2.3-2.6 9.9-11.6 12.5-15.5 2.6-4 5.3-3.3 8.9-2 3.6 1.3 23.1 10.9 27.1 12.9s6.6 3 7.6 4.6c.9 1.9.9 9.9-2.4 19.1zM400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM223.9 413.2c-26.6 0-52.7-6.7-75.8-19.3L64 416l22.5-82.2c-13.9-24-21.2-51.3-21.2-79.3C65.4 167.1 136.5 96 223.9 96c42.4 0 82.2 16.5 112.2 46.5 29.9 30 47.9 69.8 47.9 112.2 0 87.4-72.7 158.5-160.1 158.5z"></path>
+                                                                            </svg>&nbsp;<a href="https://wa.me/527971227810">Edith Carpinteyro López</a></span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="fas fa-phone-square-alt" style="color: orange"></i>&nbsp;<a href="tel:7971227810" target="_blank">7971227810</a></span></div>
+                                                                </div>
+                                                                <div class="row px-0 mx-0">
+                                                                    <div class="col px-1"><span class="text-truncate text-nowrap text-xs"><i class="fas fa-envelope-square" style="color: #1a9ce2; font-size: small !important;"></i>&nbsp;<a href="mailto:edithcarpinteyro@yahoo.com.mx" target="_blank">edithcarpinteyro@yahoo.com.mx</a></span></div>
+                                                                </div>
+                                                            </div>
                                                         </td>
-                                                        <td>$480</td>
-                                                        <td>$200</td>
-                                                        <td>Apagado</td>
-                                                        <td>cliente.orden@kalicel.com</td>
-                                                        <td>2022-12-18</td>
-                                                        <td>Luis Enrique</td>
-                                                        <td>Se colocó centro de carga adaptado.</td>
+                                                        <td>
+                                                            <div class="col">
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                                                <path d="M336 64h-53.88C268.9 26.8 233.7 0 192 0S115.1 26.8 101.9 64H48C21.5 64 0 85.48 0 112v352C0 490.5 21.5 512 48 512h288c26.5 0 48-21.48 48-48v-352C384 85.48 362.5 64 336 64zM192 64c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S160 113.7 160 96C160 78.33 174.3 64 192 64zM192 192c35.35 0 64 28.65 64 64s-28.65 64-64 64S128 291.3 128 256S156.7 192 192 192zM288 448H96c-8.836 0-16-7.164-16-16C80 387.8 115.8 352 160 352h64c44.18 0 80 35.82 80 80C304 440.8 296.8 448 288 448z"></path>
+                                                                            </svg>&nbsp;Luis Enrique</span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="far fa-calendar-alt"></i>&nbsp;2024-15-03</span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="far fa-clock"></i>&nbsp;13:05:45</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-1">
+                                                            <div class="col">
+                                                                <div class="row m-0 px-0">
+                                                                    <div class="col px-0"><span>$&nbsp;<input type="number" class="col-10 col-lg-6" disabled=""></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-1">
+                                                            <div class="row">
+                                                                <div class="col col-6 col-lg-5 align-items-center align-self-center px-1" style="min-width: 70px;"><span>Display estrellado</span>
+                                                                    <hr class="m-0"><span>Cambio de display</span>
+                                                                </div>
+                                                                <div class="col col-6 col-lg-7 px-1" style="max-height: 100% !important; overflow-y: auto !important;"><span>Esperando refacción (touch)</span></div>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <td><strong>Folio</strong></td>
-                                                        <td><strong>Nombre</strong></td>
-                                                        <td><strong>Teléfono</strong></td>
-                                                        <td><strong>Email</strong></td>
-                                                        <td><strong>Marca</strong></td>
-                                                        <td>Falla</td>
-                                                        <td><strong>Trabajo</strong></td>
-                                                        <td><strong>Modelo</strong></td>
-                                                        <td><strong>Status</strong></td>
-                                                        <td><strong>Estado previo</strong></td>
+                                                        <td><strong>#</strong></td>
+                                                        <td><strong>Equipo</strong></td>
+                                                        <td style="min-width: 110px !important;"><strong>Status</strong></td>
+                                                        <td class="col-1"><strong>Cliente</strong></td>
+                                                        <td><strong>Recepción</strong></td>
                                                         <td><strong>Cotización</strong></td>
-                                                        <td><strong>Abono</strong></td>
-                                                        <td><strong>Fecha</strong></td>
-                                                        <td><strong>Recibió</strong></td>
-                                                        <td><strong>Comentarios</strong></td>
+                                                        <td style="min-width: 300px !important;"><strong>Detalles</strong></td>
                                                     </tr>
                                                 </tfoot>
-                                            </table>-->
-                                            <?php
-                                            include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTablaCarga(1);
-                                            ?>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 align-self-center">
-                                                <p id="dataTable_info-1" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                                    <ul class="pagination">
-                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--
-                                    <div class="tab-pane" role="tabpanel" id="tab-2">
-                                        <div class="row">
-                                            <div class="col-md-6 text-nowrap">
-                                                <div id="dataTable_length-2" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
-                                                            <option value="10" selected="">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                        </select>&nbsp;</label></div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-2"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
-                                            </div>
-                                        </div>
-                                        <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
-                                            <?php
-                                            /*
-                                            include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTablaCarga(2);
-                                            */
-                                            ?>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 align-self-center">
-                                                <p id="dataTable_info-2" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                                    <ul class="pagination">
-                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
+                                            </table>
                                         </div>
                                     </div>
                                     <div class="tab-pane" role="tabpanel" id="tab-3">
-                                        <div class="row">
-                                            <div class="col-md-6 text-nowrap">
-                                                <div id="dataTable_length-3" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
-                                                            <option value="10" selected="">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                        </select>&nbsp;</label></div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-3"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                        <div class="row py-2">
+                                            <div class="col align-items-center">
+                                                <div class="input-group col-8"><span class="input-group-text p-1" style="font-size: small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                            <path d="M3.853 54.87C10.47 40.9 24.54 32 40 32H472C487.5 32 501.5 40.9 508.1 54.87C514.8 68.84 512.7 85.37 502.1 97.33L320 320.9V448C320 460.1 313.2 471.2 302.3 476.6C291.5 482 278.5 480.9 268.8 473.6L204.8 425.6C196.7 419.6 192 410.1 192 400V320.9L9.042 97.33C-.745 85.37-2.765 68.84 3.854 54.87L3.853 54.87z"></path>
+                                                        </svg></span><input class="form-control" type="search" placeholder="Buscar reparación"></div>
                                             </div>
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-3" role="grid" aria-describedby="dataTable_info">
-                                            <?php
-                                            /*
-                                            include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTablaCarga(3);
-                                            */
-                                            ?>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 align-self-center">
-                                                <p id="dataTable_info-3" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                                    <ul class="pagination">
-                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
+                                            <table class="table my-0 text-center" id="dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Equipo</th>
+                                                        <th style="min-width: 110px !important;">Status</th>
+                                                        <th class="col-1">Cliente</th>
+                                                        <th>Recepción</th>
+                                                        <th>Cotización</th>
+                                                        <th style="min-width: 300px !important;">Detalles</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="small align-middle">
+                                                        <td>1</td>
+                                                        <td>OPPO Reno 7</td>
+                                                        <td class="pending-cell px-1 py-1">
+                                                            <div class="row m-0">
+                                                                <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(1, &#39;listo&#39;);" onmouseout="javascript:restore_animation(this);"><span id="status-4" class="status-listo" style="font-size: smaller;">Listo</span></button></div>
+                                                                <div class="col col-12 p-0"><button class="btn btn-primary btn-status border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);" style="background-color: yellow !important; color: darkgray !important;"><span class="text-nowrap" style="font-size: smaller;line-height: 0 !important;"><i class="fas fa-bell" style="font-size: small;"></i>&nbsp;Notificar</span></button></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-3">
+                                                            <div class="col">
+                                                                <div class="row">
+                                                                    <div class="col px-0"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" color="#25d366">
+                                                                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                                                <path d="M224 122.8c-72.7 0-131.8 59.1-131.9 131.8 0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6 49.9-13.1 4.8 2.9c20.2 12 43.4 18.4 67.1 18.4h.1c72.6 0 133.3-59.1 133.3-131.8 0-35.2-15.2-68.3-40.1-93.2-25-25-58-38.7-93.2-38.7zm77.5 188.4c-3.3 9.3-19.1 17.7-26.7 18.8-12.6 1.9-22.4.9-47.5-9.9-39.7-17.2-65.7-57.2-67.7-59.8-2-2.6-16.2-21.5-16.2-41s10.2-29.1 13.9-33.1c3.6-4 7.9-5 10.6-5 2.6 0 5.3 0 7.6.1 2.4.1 5.7-.9 8.9 6.8 3.3 7.9 11.2 27.4 12.2 29.4s1.7 4.3.3 6.9c-7.6 15.2-15.7 14.6-11.6 21.6 15.3 26.3 30.6 35.4 53.9 47.1 4 2 6.3 1.7 8.6-1 2.3-2.6 9.9-11.6 12.5-15.5 2.6-4 5.3-3.3 8.9-2 3.6 1.3 23.1 10.9 27.1 12.9s6.6 3 7.6 4.6c.9 1.9.9 9.9-2.4 19.1zM400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM223.9 413.2c-26.6 0-52.7-6.7-75.8-19.3L64 416l22.5-82.2c-13.9-24-21.2-51.3-21.2-79.3C65.4 167.1 136.5 96 223.9 96c42.4 0 82.2 16.5 112.2 46.5 29.9 30 47.9 69.8 47.9 112.2 0 87.4-72.7 158.5-160.1 158.5z"></path>
+                                                                            </svg>&nbsp;<a href="https://wa.me/527971227810">Dante Castelán Carpinteyro</a></span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="fas fa-phone-square-alt" style="color: orange"></i>&nbsp;<a href="tel:7971227810" target="_blank">7979773095</a></span></div>
+                                                                </div>
+                                                                <div class="row px-0 mx-0">
+                                                                    <div class="col px-1"><span class="text-truncate text-nowrap text-xs"><i class="fas fa-envelope-square" style="color: #1a9ce2; font-size: small !important;"></i>&nbsp;<a href="mailto:edithcarpinteyro@yahoo.com.mx" target="_blank">dante@castelancarpinteyro.com</a></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="col">
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                                                <path d="M336 64h-53.88C268.9 26.8 233.7 0 192 0S115.1 26.8 101.9 64H48C21.5 64 0 85.48 0 112v352C0 490.5 21.5 512 48 512h288c26.5 0 48-21.48 48-48v-352C384 85.48 362.5 64 336 64zM192 64c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S160 113.7 160 96C160 78.33 174.3 64 192 64zM192 192c35.35 0 64 28.65 64 64s-28.65 64-64 64S128 291.3 128 256S156.7 192 192 192zM288 448H96c-8.836 0-16-7.164-16-16C80 387.8 115.8 352 160 352h64c44.18 0 80 35.82 80 80C304 440.8 296.8 448 288 448z"></path>
+                                                                            </svg>&nbsp;Rosalba Nazareth</span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="far fa-calendar-alt"></i>&nbsp;2024-15-03</span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="far fa-clock"></i>&nbsp;13:05:45</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-1">
+                                                            <div class="col">
+                                                                <div class="row m-0 px-0">
+                                                                    <div class="col px-0"><span>$&nbsp;<input type="number" class="col-10 col-lg-6" disabled="" value="300"></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-1">
+                                                            <div class="row">
+                                                                <div class="col col-6 col-lg-5 align-items-center align-self-center px-1" style="min-width: 70px;"><span>Mantenimiento</span>
+                                                                    <hr class="m-0"><span>Limpieza</span>
+                                                                </div>
+                                                                <div class="col col-6 col-lg-7 px-1" style="max-height: 100% !important; overflow-y: auto !important;"><span>No se han añadido comentarios</span></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td><strong>#</strong></td>
+                                                        <td><strong>Equipo</strong></td>
+                                                        <td style="min-width: 110px !important;"><strong>Status</strong></td>
+                                                        <td class="col-1"><strong>Cliente</strong></td>
+                                                        <td><strong>Recepción</strong></td>
+                                                        <td><strong>Cotización</strong></td>
+                                                        <td style="min-width: 300px !important;"><strong>Detalles</strong></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
                                         </div>
                                     </div>
                                     <div class="tab-pane" role="tabpanel" id="tab-4">
-                                        <div class="row">
-                                            <div class="col-md-6 text-nowrap">
-                                                <div id="dataTable_length-4" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Mostrar<select class="d-inline-block form-select form-select-sm">
-                                                            <option value="10" selected="">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                        </select>&nbsp;</label></div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="text-md-end dataTables_filter" id="dataTable_filter-4"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                        <div class="row py-2">
+                                            <div class="col align-items-center">
+                                                <div class="input-group col-8"><span class="input-group-text p-1" style="font-size: small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                            <path d="M3.853 54.87C10.47 40.9 24.54 32 40 32H472C487.5 32 501.5 40.9 508.1 54.87C514.8 68.84 512.7 85.37 502.1 97.33L320 320.9V448C320 460.1 313.2 471.2 302.3 476.6C291.5 482 278.5 480.9 268.8 473.6L204.8 425.6C196.7 419.6 192 410.1 192 400V320.9L9.042 97.33C-.745 85.37-2.765 68.84 3.854 54.87L3.853 54.87z"></path>
+                                                        </svg></span><input class="form-control" type="search" placeholder="Buscar reparación"></div>
                                             </div>
                                         </div>
                                         <div class="table-responsive table mt-2" id="dataTable-4" role="grid" aria-describedby="dataTable_info">
-                                            <?php
-                                            /*
-                                            include "php scripts/ConstruirTablaReparaciones.php";
-                                            ConstruirTablaCarga(4);
-                                            */
-                                            ?>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 align-self-center">
-                                                <p id="dataTable_info-4" class="dataTables_info" role="status" aria-live="polite">Mostrando de x a y</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                                    <ul class="pagination">
-                                                        <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
-                                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                        <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
+                                            <table class="table my-0 text-center" id="dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Equipo</th>
+                                                        <th style="min-width: 110px !important;">Status</th>
+                                                        <th class="col-1">Cliente</th>
+                                                        <th>Recepción</th>
+                                                        <th>Cotización</th>
+                                                        <th style="min-width: 300px !important;">Detalles</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="small align-middle">
+                                                        <td>3</td>
+                                                        <td>Motorola G81</td>
+                                                        <td class="pending-cell px-1 py-1">
+                                                            <div class="row m-0">
+                                                                <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(3, &#39;entregado&#39;);" onmouseout="javascript:restore_animation(this);"><span id="status-5" class="status-entregado" style="font-size: smaller;">Entregado</span></button></div>
+                                                                <div class="col col-12 p-0"><button class="btn btn-primary btn-status border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);" style="background-color: yellow !important; color: darkgray !important;"><span class="text-nowrap" style="font-size: smaller;line-height: 0 !important;"><i class="fas fa-bell" style="font-size: small;"></i>&nbsp;Notificar</span></button></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="px-3">
+                                                            <div class="col">
+                                                                <div class="row">
+                                                                    <div class="col px-0"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" color="#25d366">
+                                                                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                                                <path d="M224 122.8c-72.7 0-131.8 59.1-131.9 131.8 0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6 49.9-13.1 4.8 2.9c20.2 12 43.4 18.4 67.1 18.4h.1c72.6 0 133.3-59.1 133.3-131.8 0-35.2-15.2-68.3-40.1-93.2-25-25-58-38.7-93.2-38.7zm77.5 188.4c-3.3 9.3-19.1 17.7-26.7 18.8-12.6 1.9-22.4.9-47.5-9.9-39.7-17.2-65.7-57.2-67.7-59.8-2-2.6-16.2-21.5-16.2-41s10.2-29.1 13.9-33.1c3.6-4 7.9-5 10.6-5 2.6 0 5.3 0 7.6.1 2.4.1 5.7-.9 8.9 6.8 3.3 7.9 11.2 27.4 12.2 29.4s1.7 4.3.3 6.9c-7.6 15.2-15.7 14.6-11.6 21.6 15.3 26.3 30.6 35.4 53.9 47.1 4 2 6.3 1.7 8.6-1 2.3-2.6 9.9-11.6 12.5-15.5 2.6-4 5.3-3.3 8.9-2 3.6 1.3 23.1 10.9 27.1 12.9s6.6 3 7.6 4.6c.9 1.9.9 9.9-2.4 19.1zM400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM223.9 413.2c-26.6 0-52.7-6.7-75.8-19.3L64 416l22.5-82.2c-13.9-24-21.2-51.3-21.2-79.3C65.4 167.1 136.5 96 223.9 96c42.4 0 82.2 16.5 112.2 46.5 29.9 30 47.9 69.8 47.9 112.2 0 87.4-72.7 158.5-160.1 158.5z"></path>
+                                                                            </svg>&nbsp;<a href="https://wa.me/527971227810">Emiliano Castelán Carpinteyro</a></span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="fas fa-phone-square-alt" style="color: orange"></i>&nbsp;<a href="tel:7971227810" target="_blank">7971196751</a></span></div>
+                                                                </div>
+                                                                <div class="row px-0 mx-0">
+                                                                    <div class="col px-1"><span class="text-truncate text-nowrap text-xs"><i class="fas fa-envelope-square" style="color: #1a9ce2; font-size: small !important;"></i>&nbsp;<a href="mailto:edithcarpinteyro@yahoo.com.mx" target="_blank">emicc1000@gmail.com</a></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="col">
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                                                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                                                <path d="M336 64h-53.88C268.9 26.8 233.7 0 192 0S115.1 26.8 101.9 64H48C21.5 64 0 85.48 0 112v352C0 490.5 21.5 512 48 512h288c26.5 0 48-21.48 48-48v-352C384 85.48 362.5 64 336 64zM192 64c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S160 113.7 160 96C160 78.33 174.3 64 192 64zM192 192c35.35 0 64 28.65 64 64s-28.65 64-64 64S128 291.3 128 256S156.7 192 192 192zM288 448H96c-8.836 0-16-7.164-16-16C80 387.8 115.8 352 160 352h64c44.18 0 80 35.82 80 80C304 440.8 296.8 448 288 448z"></path>
+                                                                            </svg>&nbsp;Luis Enrique</span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="far fa-calendar-alt"></i>&nbsp;2024-15-03</span></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col"><span class="text-nowrap"><i class="far fa-clock"></i>&nbsp;13:05:45</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-1">
+                                                            <div class="col">
+                                                                <div class="row m-0 px-0">
+                                                                    <div class="col px-0"><span>$&nbsp;<input type="number" class="col-10 col-lg-6" disabled=""></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-1">
+                                                            <div class="row">
+                                                                <div class="col col-6 col-lg-5 align-items-center align-self-center px-1" style="min-width: 70px;"><span>Dispositivo mojado</span>
+                                                                    <hr class="m-0"><span>Secado y reparación</span>
+                                                                </div>
+                                                                <div class="col col-6 col-lg-7 px-1" style="max-height: 100% !important; overflow-y: auto !important;"><span>Se reconstruyeron líneas en corto</span></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td><strong>#</strong></td>
+                                                        <td><strong>Equipo</strong></td>
+                                                        <td style="min-width: 110px !important;"><strong>Status</strong></td>
+                                                        <td class="col-1"><strong>Cliente</strong></td>
+                                                        <td><strong>Recepción</strong></td>
+                                                        <td><strong>Cotización</strong></td>
+                                                        <td style="min-width: 300px !important;"><strong>Detalles</strong></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
                                         </div>
                                     </div>
-                                    -->
                                 </div>
                             </div>
                         </div>
@@ -440,17 +379,16 @@ include "php scripts/Conexión.php";
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Kalicel 2023</span></div>
+                    <div class="text-center my-auto copyright"><span>Copyright © Kalicel 2024</span></div>
                 </div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
-    
+    <script src="assets/js/extra.js"></script>
     <script src="https://geodata.solutions/includes/countrystate.js"></script>
     <script src="assets/js/theme.js"></script>
-    <link rel="stylesheet" href="assets/css/extra.css">
 </body>
 
 </html>
