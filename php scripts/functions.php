@@ -239,7 +239,7 @@ function table_builder($name)
             <td>' . $temp_data[1] . ' ' . $temp_data[2] . '</td>
             <td class="px-1 py-1">
                 <div class="row m-0">
-                    <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:change_text(this);" onmouseout="javascript:restore_animation(this);"><span class="status-' . lcfirst($temp_data[3]) . '" style="font-size: smaller;">' . $temp_data[3] . '</span></button></div>
+                    <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:change_text(this);" onmouseout="javascript:restore_animation(this);" onclick="javascript:update_status(this);"><span class="status-' . lcfirst($temp_data[3]) . '" style="font-size: smaller;">' . $temp_data[3] . '</span></button></div>
                     <div class="col col-12 p-0"><button class="btn btn-primary btn-status border-0 col-12 py-0" type="button" style="background-color: yellow !important;color: darkgray !important;" onmouseover="javascript:changeText(1, &#39;pendiente&#39;);" onmouseout="javascript:resetText(1, &#39;pendiente&#39;);"><span class="text-nowrap" style="font-size: smaller;line-height: 0 !important;"><i class="fas fa-bell" style="font-size: small;"></i> Notificar</span></button></div>
                 </div>
             </td>
