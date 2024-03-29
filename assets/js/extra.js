@@ -41,7 +41,7 @@ function resetText(idsql, estado) {
 
 function restore_animation(element) {
     span = element.querySelector('span');
-    (span.classList.contains("status-pendiente")) ? span.textContent = "Pendiente" : (span.classList.contains("status-listo")) ? span.textContent = "Listo" : /*(element.classList.contains("entregado")) ? */span.textContent = "Entregado";
+    (span.classList.contains("status-pendiente")) ? span.innerHTML = "Pendiente" : (span.classList.contains("status-listo")) ? span.innerHTML = "Listo" : /*(element.classList.contains("entregado")) ? */span.innerHTML = "Entregado";
 }
 
 function get_service_id(element) {
