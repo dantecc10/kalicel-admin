@@ -10,9 +10,10 @@ if (!isset($_SESSION['ID'])) {
 
     // Ejecutar la consulta preparada
     if ($stmt->execute()) {
-        echo "Inserción exitosa";
+        //echo "Inserción exitosa";
+        header("Location: ../Reparaciones.php")
     } else {
-        echo "Error al insertar datos: " . $stmt->error;
+        //echo "Error al insertar datos: " . $stmt->error;
     }
 
     // Cerrar la conexión
