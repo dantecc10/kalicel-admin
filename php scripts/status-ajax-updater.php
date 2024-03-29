@@ -18,7 +18,7 @@ if (empty($_SESSION['ID'])) {
             $status = $row['status_fix_order'];
 
             $stmt_update = $connection->prepare("UPDATE `fix_orders` SET (`status_fix_order` = ?) WHERE (`id_fix_order` = ?);");
-            $status = ($status == 3) ? 1 : $status++;
+            $status = ($status == 3) ? 1 : ++$status;
             $stmt_update->bind_param("ii", $_POST['target_id'], $status);
             echo ($stmt_update->execute()) ? "success" : "error";
         } else {

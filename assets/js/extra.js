@@ -45,7 +45,7 @@ function update_status(element) {
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
+        if (xhr.readyState == 4 && xhr.status == 200 && xhr.responseText == "success") {
             // La solicitud ha sido completada y la respuesta está lista
             if (element.querySelector('span').classList.contains('status-pendiente')) {
                 element.querySelector('span').classList.remove('status-pendiente');
@@ -64,8 +64,10 @@ function update_status(element) {
                     }
                 }
             }
-            console.log(xhr.responseText);
+        } else {
+            alert("Se produjo un error al intentar actualizar el status de la reparación.");
         }
+        console.log(xhr.responseText);
     }
 
     // Enviar la solicitud con los parámetros
