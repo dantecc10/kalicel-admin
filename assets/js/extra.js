@@ -29,13 +29,17 @@ function restore_animation(element) {
 }
 
 function get_service_id(element) {
-    var position = -1;
-    buttons = document.querySelectorAll('btn.btn-status');
-    for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i] == element) {
-            position = i;
-            break;
-        }
-    }
-    console.log("El id de reparación de esa fila es: " + document.getElementsByClassName('id-container')[i].outerHTML);
+    var fila = element.closest('tr');
+    var id = fila.querySelectorAll('td')[0].innerHTML;
+
+    //var position = -1;
+    //buttons = document.querySelectorAll('btn.btn-status');
+    //for (var i = 0; i < buttons.length; i++) {
+    //    if (buttons[i] == element) {
+    //        position = i;
+    //        break;
+    //    }
+    //}
+    //console.log("El id de reparación de esa fila es: " + document.getElementsByClassName('id-container')[i].outerHTML);
+    console.log("El id de reparación de esa fila es: " + id);
 }
