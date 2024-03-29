@@ -1,24 +1,4 @@
 
-function changeText(idsql, estado) {
-    switch (estado) {
-        case 'pendiente':
-            var span = document.getElementById('status-' + idsql);
-            span.textContent = "Listo";
-            span.setAttribute("onmouseout", "restaurarValor()");
-            break;
-        case 'listo':
-            var span = document.getElementById('status-' + idsql);
-            span.textContent = "Entregado";
-            break;
-        case 'entregado':
-            var span = document.getElementById('status-' + idsql);
-            span.textContent = "Pendiente";
-            break;
-
-        default:
-            break;
-    }
-}
 function resetText(idsql, estado) {
     switch (estado) {
         case 'pendiente':
@@ -39,6 +19,10 @@ function resetText(idsql, estado) {
     }
 }
 
+function changeText(element) {
+    span = element.querySelector('span');
+    (span.classList.contains("status-pendiente")) ? span.innerHTML = "Listo" : (span.classList.contains("status-listo")) ? span.innerHTML = "Entregado" : /*(element.classList.contains("entregado")) ? */span.innerHTML = "Pendiente";
+}
 function restore_animation(element) {
     span = element.querySelector('span');
     (span.classList.contains("status-pendiente")) ? span.innerHTML = "Pendiente" : (span.classList.contains("status-listo")) ? span.innerHTML = "Listo" : /*(element.classList.contains("entregado")) ? */span.innerHTML = "Entregado";
