@@ -20,12 +20,12 @@ if (empty($_SESSION['ID'])) {
             $stmt_update = $connection->prepare("UPDATE `fix_orders` SET `status_fix_order` = ? WHERE `id_fix_order` = ?");
             $status = ($status == 3) ? 1 : ++$status;
             $stmt_update->bind_param("ii", $status, $_POST['target_id']);
-            echo ($stmt_update->execute()) ? "success" : "error";
+            ($stmt_update->execute()) ? http_response_code(200) : http_response_code(117);
         } else {
-            echo "error";
+            http_response_code(117);
         }
     } else {
-        echo "error";
+        http_response_code(117);
     }
 
     // Cerrar la conexión
