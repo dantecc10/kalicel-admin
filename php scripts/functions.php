@@ -291,3 +291,5 @@ function table_builder($name)
     $table_dom_var .= ($tableCont[1] . $supCont[1]);
     return $table_dom_var;
 }
+
+echo (table_builder("todo"));
