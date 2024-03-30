@@ -162,7 +162,7 @@ function table_builder($name)
     $row_dom = ('
                 <tr class="small align-middle">
                     <td>FLAG</td>
-                    <td><span>FLAG</span> <span>FLAG</span></td>
+                    <td><span class="brand-span">FLAG</span> <span class="model-span">FLAG</span></td>
                     <td class="px-1 py-1">
                         <div class="row m-0">
                             <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:changeText(1, &#39;listo&#39;);" onmouseout="javascript:restore_animation(this);"><span class="status-FLAG" style="font-size: smaller;">FLAG</span></button></div>
