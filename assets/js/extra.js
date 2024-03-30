@@ -72,5 +72,8 @@ function update_status(element) {
 
 function notify(element) {
     var marca = element.closest('tr').querySelectorAll('td')[1].querySelectorAll('span')[0].textContent;
-    alert("La marca es: " + marca)
+    var modelo = element.closest('tr').querySelectorAll('td')[1].querySelectorAll('span')[1].textContent;
+    var mobile = element.closest('tr').querySelectorAll('td')[3].querySelector('.col .text-nowrap a')[1].textContent;
+    alert("El número es: " + mobile);
+    "https://wa.me/?text=Estimado%20cliente%2C%20le%20informamos%20que%20hemos%20recibido%20su%20%F0%9F%93%B1%20_OPPO%20*Reno7*_%20para%20darle%20servicio%20por%20*pantalla%20rota*.%0A%0A%C2%A1Gracias%20por%20su%20preferencia!%0A_Kalicel%3A%20*Nosotros%20reparamos*_%F0%9F%9B%A0%EF%B8%8F"
 }
