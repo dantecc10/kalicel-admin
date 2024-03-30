@@ -71,9 +71,15 @@ function update_status(element) {
 }
 
 function notify(element) {
-    var marca = element.closest('tr').querySelectorAll('td')[1].querySelectorAll('span')[0].textContent;
-    var modelo = element.closest('tr').querySelectorAll('td')[1].querySelectorAll('span')[1].textContent;
-    var mobile = element.closest('tr').querySelectorAll('td')[3].querySelector('.col .text-nowrap a')[1].textContent;
-    alert("El número es: " + mobile);
-    "https://wa.me/?text=Estimado%20cliente%2C%20le%20informamos%20que%20hemos%20recibido%20su%20%F0%9F%93%B1%20_OPPO%20*Reno7*_%20para%20darle%20servicio%20por%20*pantalla%20rota*.%0A%0A%C2%A1Gracias%20por%20su%20preferencia!%0A_Kalicel%3A%20*Nosotros%20reparamos*_%F0%9F%9B%A0%EF%B8%8F"
+    var mobile_link = element.closest('tr').querySelectorAll('td')[3].querySelectorAll('a')[0].href;
+
+    var brand = encodeURIComponent(element.closest('tr').querySelectorAll('td')[1].querySelectorAll('span')[0].textContent);
+    var model = encodeURIComponent(element.closest('tr').querySelectorAll('td')[1].querySelectorAll('span')[1].textContent);
+    var fail = encodeURIComponent(element.closest('tr').querySelectorAll('td')[6].querySelectorAll('span')[0].textContent);
+    var status = (element.closest('tr').querySelectorAll('td')[2].querySelectorAll('span')[0].classList.contains('status-pendiente')) ? "Pendiente" : ((element.closest('tr').querySelectorAll('td')[2].querySelectorAll('span')[0].classList.contains('status-listo')) ? "Listo" : "Entregado");
+    //window.open(mobile_link, "_blank");
+    var msg = (status == "Pendiente") ? ("?text=Estimado%20cliente%2C%20le%20informamos%20que%20hemos%20recibido%20su%20%F0%9F%93%B1%20_" + brand + "%20*" + model + "*_%20para%20darle%20servicio%20por%20*" + fail + "*.%0A%0A%C2%A1Gracias%20por%20su%20preferencia!%0A_Kalicel%3A%20*Nosotros%20reparamos*_%F0%9F%9B%A0%EF%B8%8F") : (status == "Listo") ? ("?text=Estimado%20cliente%2C%20le%20informamos%20que%20su%20dispositivo%20%F0%9F%93%B1%20_" + brand + "%20*" + model + "*_%2C%20el%20cual%20nos%20trajo%20por%20*" + fail + "*%20est%C3%A1%20listo%2C%20y%20puede%20pasar%20a%20recogerlo.%0A%0A%C2%A1Gracias%20por%20su%20preferencia!%0AKalicel%3A%20Nosotros%C2%A0reparamos%20%F0%9F%9B%A0") : ("?text=Estimado%20cliente%2C%20le%20confirmarmos%20que%20su%20dispositivo%20%F0%9F%93%B1%20_" + brand + "%20*" + model + "*_%2C%20el%20cual%20nos%20trajo%20por%20*" + fail + "*%20fue%20entregado%20%E2%9C%85.%0A%0A%C2%A1Gracias%20por%20su%20preferencia!%0AKalicel%3A%20Nosotros%C2%A0reparamos%20%F0%9F%9B%A0");
+    var link = (mobile_link + msg);
+
+    alert(link);
 }
