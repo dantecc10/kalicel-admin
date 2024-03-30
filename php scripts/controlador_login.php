@@ -4,7 +4,7 @@ if (!empty($_POST['InicioSesión'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
         #include "php scripts/Conexión.php";
-        $conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel"); 
+        $conexión = new mysqli("localhost", "kalicel", "kalicelrepair", "kalicel");
         $sql = $conexión->query("SELECT * FROM `usuarios` WHERE `email_usuario`='$email' AND `contraseña_usuario`='$password'");
         if ($datos = $sql->fetch_object()) {
             session_start();
@@ -24,6 +24,6 @@ if (!empty($_POST['InicioSesión'])) {
             #header("location: mailto:dantecc10@gmail.com");
         }
     } else {
-        echo "Campos vacíos";
+        header("Location: ../login.php");
     }
 }
