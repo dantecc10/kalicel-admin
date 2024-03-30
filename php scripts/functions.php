@@ -281,10 +281,10 @@ function table_builder($name)
             </td>
             <td class="p-1">
                 <div class="row">
-                    <div class="col col-6 col-lg-5 align-items-center align-self-center px-1" style="min-width: 70px;">' . (($temp_data[12] != null) ? ('<span>' . $temp_data[12] . '</span>') : (''))
-            . (($temp_data[12] != null && $temp_data[13] != null) ? ('<hr class="m-0" />') : ('')) . (($temp_data[13] != null) ? ('<span>' . $temp_data[13] . '</span>') : (''))
+                    <div class="col col-6 col-lg-5 align-items-center align-self-center px-1" style="min-width: 70px;">' . (($temp_data[12] != null && $temp_data[12] != "") ? ('<span>' . $temp_data[12] . '</span>') : (''))
+            . (($temp_data[12] != null && $temp_data[12] != "" && $temp_data[13] != null && $temp_data[13] != "") ? ('<hr class="m-0" />') : ('')) . (($temp_data[13] != null && $temp_data[13] != "") ? ('<span>' . $temp_data[13] . '</span>') : (''))
             . '</div>
-                    <div class="col col-6 col-lg-7 px-1" style="max-height: 100% !important;overflow-y: auto !important;">' . (($temp_data[14] != null) ? ('<span>' . $temp_data[14] . '</span>') : ('')) . '</div>
+                    <div class="col col-6 col-lg-7 px-1" style="max-height: 100% !important;overflow-y: auto !important;">' . (($temp_data[14] != null && $temp_data[14] != "") ? ('<span>' . $temp_data[14] . '</span>') : ('')) . '</div>
                 </div>
             </td>
         </tr>');
