@@ -236,7 +236,7 @@ function table_builder($name)
 
         $table_dom_var .= ('<tr class="small align-middle">
             <td>' . $temp_data[0] . '</td>
-            <td>' . $temp_data[1] . ' ' . $temp_data[2] . '</td>
+            <td><span class="brand-span">' . $temp_data[1] . '</span><span class="model-span">' . $temp_data[2] . '</span></td>
             <td class="px-1 py-1">
                 <div class="row m-0">
                     <div class="col col-12 mb-1 border-0 p-0"><button class="btn btn-primary btn-status px-1 border-0 col-12 py-0" type="button" onmouseover="javascript:change_text(this);" onmouseout="javascript:restore_animation(this);" onclick="javascript:update_status(this);"><span class="status-' . lcfirst($temp_data[3]) . '" style="font-size: smaller;">' . $temp_data[3] . '</span></button></div>
