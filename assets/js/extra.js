@@ -69,3 +69,8 @@ function update_status(element) {
     // Enviar la solicitud con los parámetros
     xhr.send(params);
 }
+
+function notify(element) {
+    var marca = element.closest('tr').querySelectorAll('td')[1].querySelectorAll('span')[0].textContent;
+    alert("La marca es: " + marca)
+}
