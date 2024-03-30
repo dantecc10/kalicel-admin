@@ -596,6 +596,7 @@ include_once "php scripts/functions.php";
     <?php
     if (isset($_SESSION['added-id'])) {
         echo ($_SESSION == 0) ? "" : ("<script>auto_notify(" . $_SESSION['added-id'] . ");</script>");
+        unset($_SESSION['added-id']);
     }
     ?>
 </body>
