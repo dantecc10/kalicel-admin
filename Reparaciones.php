@@ -593,6 +593,11 @@ include_once "php scripts/functions.php";
     <script src="assets/js/extra.js"></script>
     <script src="https://geodata.solutions/includes/countrystate.js"></script>
     <script src="assets/js/theme.js"></script>
+    <?php
+    if (isset($_SESSION['added-id'])) {
+        echo ($_SESSION == 0) ? "" : ("<script>auto_notify(" . $_SESSION['added-id'] . ");</script>");
+    }
+    ?>
 </body>
 
 </html>

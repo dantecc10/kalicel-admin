@@ -11,6 +11,7 @@ if (!isset($_SESSION['ID'])) {
     // Ejecutar la consulta preparada
     if ($stmt->execute()) {
         //echo "Inserción exitosa";
+        $_SESSION['added-id'] = $connection->insert_id;
         header("Location: ../Reparaciones.php");
     } else {
         //echo "Error al insertar datos: " . $stmt->error;

@@ -83,3 +83,14 @@ function notify(element) {
 
     window.open(link, "_blank");
 }
+
+function auto_notify(id) {
+    var target_table = document.querySelectorAll('table')[0].querySelectorAll('tbody')[0]; // Get the first table
+    var rows = target_table.querySelectorAll('tr');
+    for (var i = 0; i < rows.length(); i++) {
+        if (rows[i].querySelectorAll('tr')[0].textContent == id){
+            rows[i].querySelectorAll('tr')[2].querySelectorAll('button')[1].click();
+            break;
+        }
+    }
+}
