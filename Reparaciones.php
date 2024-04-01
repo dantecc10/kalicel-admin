@@ -482,7 +482,7 @@ include_once "php scripts/functions.php";
                             <form action="php scripts/add-fix-order.php" method="post" name="add-fix-order">
                                 <div class="row m-0">
                                     <div class="col col-12">
-                                        <label class="form-label my-1 py-0" for="customer"><i class="fas fa-user-tag"></i>&nbsp;Cliente&nbsp;<span class="text-danger">*</span></label><input class="form-control p-1" type="text" name="customer" required="" placeholder="Nombre completo del cliente" />
+                                        <label class="form-label my-1 py-0" for="customer"><i class="fas fa-user-tag"></i>&nbsp;Cliente&nbsp;<span class="text-danger">*</span></label><input class="form-control p-1" type="text" autocomplete="off" name="customer" required="" placeholder="Nombre completo del cliente" />
                                     </div>
                                     <div class="col col-12">
                                         <label class="form-label my-1 py-0" for="brand">Marca&nbsp;<span class="text-danger">*</span></label><select name="brand" class="form-select p-1" required>
@@ -509,7 +509,7 @@ include_once "php scripts/functions.php";
                                         </select>
                                     </div>
                                     <div class="col col-12">
-                                        <label class="form-label my-1 py-0" for="model">Modelo&nbsp;<span class="text-danger">*</span></label><input class="form-control p-1" type="text" name="model" required="" placeholder="Especifica el dispositivo (modelo)" />
+                                        <label class="form-label my-1 py-0" for="model">Modelo&nbsp;<span class="text-danger">*</span></label><input class="form-control p-1" type="text" name="model" autocomplete="off" required="" placeholder="Especifica el dispositivo (modelo)" />
                                     </div>
                                     <div class="col col-12 col-md-6">
                                         <label class="form-label my-1 py-0 d-flex align-items-center" for="mobile">Número telefónico (<svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
@@ -518,13 +518,13 @@ include_once "php scripts/functions.php";
                                             </svg>+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
                                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                 <path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"></path>
-                                            </svg>)&nbsp;<span class="text-danger">*</span></label><input class="form-control p-1" type="tel" name="mobile" required="" placeholder="Teléfono" />
+                                            </svg>)&nbsp;<span class="text-danger">*</span></label><input class="form-control p-1" type="tel" name="mobile" autocomplete="off" required="" placeholder="Teléfono" />
                                     </div>
                                     <div class="col col-12 col-md-6 visually-hidden">
                                         <label class="form-label my-1 py-0 d-flex align-items-center" for="email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
                                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                 <path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"></path>
-                                            </svg>&nbsp;Correo electrónico&nbsp;</label><input class="form-control p-1 disabled" type="email" name="email" placeholder="correo@kalicel.com" disabled="" />
+                                            </svg>&nbsp;Correo electrónico&nbsp;</label><input class="form-control p-1 disabled" type="email" name="email" autocomplete="off" placeholder="correo@kalicel.com" disabled="" />
                                     </div>
                                     <div class="col col-12 col-sm-6">
                                         <label class="form-label my-1 py-0 align-items-center text-center col-12" for="cost"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -32 576 576" width="1em" height="1em" fill="currentColor">
@@ -536,7 +536,7 @@ include_once "php scripts/functions.php";
                                                 <span class="m-0 p-0">$</span>
                                             </div>
                                             <div class="col col-6 ps-0">
-                                                <input class="form-control p-1 text-center" type="number" name="cost" placeholder="Precio" step=".01" />
+                                                <input class="form-control p-1 text-center" autocomplete="off" type="number" name="cost" placeholder="Precio" step=".01" />
                                             </div>
                                         </div>
                                     </div>
@@ -550,7 +550,7 @@ include_once "php scripts/functions.php";
                                                 <span class="m-0 p-0">$</span>
                                             </div>
                                             <div class="col col-6 ps-0">
-                                                <input class="form-control p-1 text-center disabled" type="number" name="paid_amount" placeholder="Abono" step=".01" disabled="" />
+                                                <input class="form-control p-1 text-center disabled" autocomplete="off" type="number" name="paid_amount" placeholder="Abono" step=".01" disabled="" />
                                             </div>
                                         </div>
                                     </div>
