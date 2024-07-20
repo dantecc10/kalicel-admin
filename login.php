@@ -32,7 +32,10 @@
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Bienvenido</h4>
                                     </div>
-                                    <form class="user" action="php scripts/controlador_login.php" method="POST">
+                                    <!-- 
+                                    action="php scripts/controlador_login.php"
+                                    -->
+                                    <form class="user" method="POST">
                                         <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingrese su email" name="email"></div>
                                         <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Contraseña" name="password" value="current-password"></div>
                                         <div class="mb-3">
@@ -43,7 +46,7 @@
                                         <hr><a class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button"><i class="fab fa-google"></i>&nbsp; Login with Google</a><a class="btn btn-primary d-block btn-facebook btn-user w-100" role="button"><i class="fab fa-facebook-f"></i>&nbsp; Login with Facebook</a>
                                         <hr>
                                         <?php
-                                        //include "php scripts/controlador_login.php";
+                                        include "php scripts/controlador_login.php";
                                         ?>
                                     </form>
                                     <div class="text-center"><a class="small" href="forgot.php">¿Olvidaste la contraseña?</a></div>
