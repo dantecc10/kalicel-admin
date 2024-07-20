@@ -13,7 +13,7 @@ if (!empty($_POST['InicioSesión'])) {
             $_SESSION['Apellidos'] = $datos->apellidos_usuario;
             #$_SESSION['Privilegios'] = $datos->Privilegios;
             $_SESSION['Email'] = $datos->email_usuario;
-            header("location: Inventario.php");
+            header("Location: Inventario.php");
         } else {
             $mensajeDante = ("Hola Dante, he intentado iniciar con las siguientes credenciales al administrador de Kalicel y no he podido ingresar; ¿son correctas?:
             - Usuario: $email
