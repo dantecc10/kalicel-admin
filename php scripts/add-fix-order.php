@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['ID'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
 } else {
 
     include_once "connection.php";
@@ -12,7 +12,7 @@ if (!isset($_SESSION['ID'])) {
     if ($stmt->execute()) {
         //echo "Inserción exitosa";
         $_SESSION['added-id'] = $connection->insert_id;
-        header("Location: ../Reparaciones.php");
+        header("Location: Reparaciones.php");
     } else {
         //echo "Error al insertar datos: " . $stmt->error;
     }
