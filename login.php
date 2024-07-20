@@ -35,14 +35,14 @@
                                     <!-- 
                                     action="php scripts/controlador_login.php"
                                     -->
-                                    <form class="user" method="POST" action="controlador_login.php">
+                                    <form class="user" method="POST" action="php scripts/controlador_login.php">
                                         <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingrese su email" name="email"></div>
                                         <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Contraseña" name="password" value="current-password"></div>
                                         <div class="mb-3">
                                             <div class="custom-control custom-checkbox small">
                                                 <div class="form-check"><input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1"><label class="form-check-label custom-control-label" for="formCheck-1">Recuérdame</label></div>
                                             </div>
-                                        </div><input name="InicioSesión" class="btn btn-primary d-block btn-user w-100" type="submit" value="Iniciar sesión">
+                                        </div><input name="InicioSesión" controlador_login.phpclass="btn btn-primary d-block btn-user w-100" type="submit" value="Iniciar sesión">
                                         <hr><a class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button"><i class="fab fa-google"></i>&nbsp; Login with Google</a><a class="btn btn-primary d-block btn-facebook btn-user w-100" role="button"><i class="fab fa-facebook-f"></i>&nbsp; Login with Facebook</a>
                                         <hr>
                                         <?php
