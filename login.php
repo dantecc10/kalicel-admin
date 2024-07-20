@@ -35,7 +35,7 @@
                                     <!-- 
                                     action="php scripts/controlador_login.php"
                                     -->
-                                    <form class="user" method="POST" action="php scripts/controlador_login.php">
+                                    <form class="user" method="POST" action="controlador_login.php">
                                         <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingrese su email" name="email"></div>
                                         <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Contraseña" name="password" value="current-password"></div>
                                         <div class="mb-3">
