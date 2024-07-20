@@ -24,6 +24,6 @@ if (!empty($_POST['InicioSesión'])) {
             #header("location: mailto:dantecc10@gmail.com");
         }
     } else {
-        header("Location: ../login.php");
+        //header("Location: ../login.php");
     }
 }
