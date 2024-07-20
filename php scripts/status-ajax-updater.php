@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['ID'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
 } else {
     include_once "connection.php";
 
