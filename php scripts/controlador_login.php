@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['InicioSesión'])) {
-    if (!empty($_POST['email']) and !empty($_POST['password'])) {
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
         #include "php scripts/Conexión.php";
