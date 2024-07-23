@@ -135,7 +135,7 @@ class Renderer extends AbstractRenderer
                     if ($node->getAttribute("type") === "text/php" ||
                         $node->getAttribute("language") === "php"
                     ) {
-                        // Evaluate embedded php scripts
+                        // Evaluate embedded php-scripts
                         $this->_render_frame("php", $frame);
                     } elseif ($node->getAttribute("type") === "text/javascript" ||
                         $node->getAttribute("language") === "javascript"

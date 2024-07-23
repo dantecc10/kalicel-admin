@@ -4,7 +4,7 @@ if (empty($_SESSION['ID'])) {
     header("Location: login.php");
 }
 
-include "php scripts/Conexión.php";
+include "php-scripts/Conexión.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -143,7 +143,7 @@ include "php scripts/Conexión.php";
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small"><?php echo ($_SESSION['Nombre']); ?></span><img class="rounded-circle img-fluid border img-profile" src="<?php echo ("assets/img/avatars/" . $_SESSION['ID'] . ".png"); ?>"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a><a class="dropdown-item" href="Perfil.php"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Configuraciones</a><a class="dropdown-item" href="Actividad.php"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Actividad</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="php scripts/logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="php-scripts/logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -156,7 +156,7 @@ include "php scripts/Conexión.php";
                 <section>
                     <h1 class="text-center text-capitalize">Displays</h1>
                     <div class="container">
-                        <form id="application-form" action="php scripts/registrarDisplay.php" method="post">
+                        <form id="application-form" action="php-scripts/registrarDisplay.php" method="post">
                             <div class="form-group mb-3">
                                 <div class="row">
                                     <div class="col">

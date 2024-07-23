@@ -37,7 +37,7 @@ function update_status(element) {
     var target_id = get_service_id(element);
 
     var xhr = new XMLHttpRequest();
-    var url = "php scripts/status-ajax-updater.php";
+    var url = "php-scripts/status-ajax-updater.php";
     var params = ("target_id=" + target_id);
     xhr.open("POST", url, true);
 

@@ -10,7 +10,7 @@ function bajaAltaCantidad(claveObjetivo, operación) {
         var cantidad = cantidadActual;
 
         if (id != "" || id != null) {
-            var urlCompuesta, urlVariables = ("?id=" + id + "&cantidad=" + cantidad + "&operación=" + operación), uriPHP = "php scripts/AltasBajas.php";
+            var urlCompuesta, urlVariables = ("?id=" + id + "&cantidad=" + cantidad + "&operación=" + operación), uriPHP = "php-scripts/AltasBajas.php";
             urlCompuesta = (uriPHP + urlVariables);
 
             //Petición AJAX

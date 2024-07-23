@@ -33,7 +33,7 @@ function buscarDisplays() {
     console.log("Se busca: '" + búsqueda + "'");
     if (búsqueda != "" || búsqueda != null) {
         var urlCompuesta, urlVariables = "", uriPHP, filtro = true;
-        uriPHP = "php scripts/ConstruirTablaRefacciones.php";
+        uriPHP = "php-scripts/ConstruirTablaRefacciones.php";
         urlVariables = ("?búsqueda=" + búsqueda + "&filtro=" + filtro);
         urlCompuesta = (uriPHP + urlVariables);
 
@@ -56,8 +56,8 @@ function buscarDisplays() {
                 document.getElementById("dataTable").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "php scripts/ConstruirTablaRefacciones.php", true);
-        console.log("URL: " + "php scripts/ConstruirTablaRefacciones.php" + "\nURL Variables: " + "Nada");
+        xmlhttp.open("GET", "php-scripts/ConstruirTablaRefacciones.php", true);
+        console.log("URL: " + "php-scripts/ConstruirTablaRefacciones.php" + "\nURL Variables: " + "Nada");
         //console.log("ModoFiltro: " + ModoFiltro);
         xmlhttp.send();
         return;

@@ -3,9 +3,9 @@ session_start();
 if (empty($_SESSION['ID'])) {
     header("Location: login.php");
 }
-include_once "php scripts/functions.php";
+include_once "php-scripts/functions.php";
 
-//include "php scripts/Conexión.php";
+//include "php-scripts/Conexión.php";
 ?>
 
 <!DOCTYPE html>
@@ -479,7 +479,7 @@ include_once "php scripts/functions.php";
                                 Llena el formulario para registrar la operación. Los campos
                                 marcados con un (*) son obligatorios.
                             </p>
-                            <form action="php scripts/add-fix-order.php" method="post" name="add-fix-order">
+                            <form action="php-scripts/add-fix-order.php" method="post" name="add-fix-order">
                                 <div class="row m-0">
                                     <div class="col col-12">
                                         <label class="form-label my-1 py-0" for="customer"><i class="fas fa-user-tag"></i>&nbsp;Cliente&nbsp;<span class="text-danger">*</span></label><input class="form-control p-1" type="text" autocomplete="off" name="customer" required="" placeholder="Nombre completo del cliente" />

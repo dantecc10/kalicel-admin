@@ -4,7 +4,7 @@ function opcionesModelos(modo) {
 
         if (Marca != "" || Marca != null) {
             var urlCompuesta, urlVariables = "", uriPHP;
-            uriPHP = "php scripts/Modelos.php";
+            uriPHP = "php-scripts/Modelos.php";
             urlVariables = ("?Marca=" + Marca);
             urlCompuesta = (uriPHP + urlVariables);
 
@@ -33,7 +33,7 @@ function opcionesModelos(modo) {
 
         if ((Modelo != "" || Modelo != null) && (Marca != "" || Marca != null)) {
             var urlCompuesta, urlVariables = "", uriPHP;
-            uriPHP = "php scripts/Modelos.php";
+            uriPHP = "php-scripts/Modelos.php";
             urlVariables = ("?Marca=" + Marca + "&Modelo=" + Modelo);
             urlCompuesta = (uriPHP + urlVariables);
 
@@ -64,7 +64,7 @@ function opcionesModelos() {
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "php scripts/Modelos.php";
+        uriPHP = "php-scripts/Modelos.php";
         urlVariables = ("?Marca=" + Marca);
         urlCompuesta = (uriPHP + urlVariables);
 
@@ -94,7 +94,7 @@ function filtrarMarca() {
 
     if (Marca != "" || Marca != null) {
         var urlCompuesta, urlVariables = "", uriPHP;
-        uriPHP = "php scripts/FiltrarMarca.php";
+        uriPHP = "php-scripts/FiltrarMarca.php";
         urlVariables = ("?Marca=" + Marca);
         urlCompuesta = (uriPHP + urlVariables);
 
