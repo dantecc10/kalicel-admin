@@ -23,6 +23,7 @@ function ConstruirTablaCarga()
             </tr>
             </thead>
     <tbody id='cuerpoTabla'>");
+    
     while ($columna = mysqli_fetch_array($resultado)) {
         echo "<tr>";
         echo "<td>" . $columna['id_display'] . "</td>";
