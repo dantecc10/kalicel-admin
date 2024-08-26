@@ -73,7 +73,7 @@ function ConstruirTablaBúsqueda($búsqueda)
     $where .= ")";
 
 
-    $consulta = "SELECT * FROM `displays` $where ORDER BY (`marca_display`) ASC, ORDER BY (`cantidad_display`) DESC";
+    $consulta = "SELECT * FROM `displays` $where";
     #echo $consulta;
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
