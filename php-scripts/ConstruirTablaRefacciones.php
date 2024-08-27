@@ -6,7 +6,7 @@ function ConstruirTablaCarga()
 {
     $conexión = mysqli_connect("localhost", "kalicel", "kalicelrepair", "kalicel");
     $comilla = '"';
-    $consulta = "SELECT * FROM `displays`";
+    $consulta = "SELECT * FROM `displays` ORDER BY `marca_display` ASC, `cantidad_display` DESC;";
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
     echo ("<table class='table my-0' id='dataTable'>
@@ -73,8 +73,7 @@ function ConstruirTablaBúsqueda($búsqueda)
     $where .= ")";
 
 
-
-    $consulta = "SELECT * FROM `displays` $where";
+    $consulta = "SELECT * FROM `displays` $where ORDER BY (`marca_display`) ASC, ORDER BY (`cantidad_display`) DESC";
     #echo $consulta;
     $resultado = mysqli_query($conexión, $consulta) or die("Error en la consulta a la base de datos");
 
