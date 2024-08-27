@@ -70,7 +70,7 @@ function ConstruirTablaBúsqueda($búsqueda)
         $where .= $columnas[$i] . " LIKE '%" . $búsqueda . "%' OR ";
     }
     $where = substr_replace($where, "", -3);
-    $where .= ")";
+    $where .= " AND `cantidad_display` <> 0)";
 
 
     $consulta = "SELECT * FROM `displays` $where ORDER BY (`marca_display`) ASC, ORDER BY (`cantidad_display`) DESC";
