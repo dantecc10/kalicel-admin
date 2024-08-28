@@ -201,7 +201,7 @@ include "php-scripts/Conexión.php";
                                         <p><strong>Caja&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" required="" name="caja">
                                     </div>
                                     <div class="col">
-                                        <p><strong>Cantidad&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" required="" name="cantidad">
+                                        <p><strong>Cantidad&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" value="1" required="" name="cantidad">
                                     </div>
                                 </div>
                             </div>
