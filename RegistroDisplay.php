@@ -169,7 +169,7 @@ include "php-scripts/Conexión.php";
                                     <div class="col">
                                         <p><strong>Marca</strong>&nbsp;<span class="text-danger">*</span></p>
                                         <select class="form-select" name="marca" required="">
-                                            <optgroup label="This is a group">
+                                            <optgroup label="Marcas disponibles">
                                                 <option value="Motorola" selected="">Motorola</option>
                                                 <option value="Xiaomi">Xiaomi</option>
                                                 <option value="Poco">Poco</option>
