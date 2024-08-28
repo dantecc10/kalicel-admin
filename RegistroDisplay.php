@@ -50,7 +50,7 @@ include "php-scripts/Conexión.php";
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid">
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                        <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="me-auto navbar-search w-100">
                                         <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
@@ -182,6 +182,7 @@ include "php-scripts/Conexión.php";
                                                 <option value="Lenovo">Lenovo</option>
                                                 <option value="M4">M4</option>
                                                 <option value="Lanix">Lanix</option>
+                                                <option value="OPPO">OPPO</option>
                                                 <option value="Vivo">Vivo</option>
 
                                                 <option value="Otra">Otra</option>
