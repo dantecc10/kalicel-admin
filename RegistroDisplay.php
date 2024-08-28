@@ -177,8 +177,8 @@ include "php-scripts/Conexión.php";
                                                 <option value="Samsung">Samsung</option>
                                                 <option value="ZTE">ZTE</option>
                                                 <option value="Huawei">Huawei</option>
-                                                <option value="Alcatel"></option>
-                                                <option value="Ulefón"></option>
+                                                <option value="Alcatel">Alcatel</option>
+                                                <option value="Ulefón">Ulefón</option>
                                                 <option value="Nokia">Nokia</option>
                                                 <option value="Lenovo">Lenovo</option>
                                                 <option value="M4">M4</option>
