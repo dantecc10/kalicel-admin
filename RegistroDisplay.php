@@ -182,12 +182,21 @@ include "php-scripts/Conexión.php";
                                                 <option value="Nokia">Nokia</option>
                                                 <option value="Lenovo">Lenovo</option>
                                                 <option value="M4">M4</option>
+                                                <option value="Google">Google</option>
                                                 <option value="Lanix">Lanix</option>
                                                 <option value="OPPO">OPPO</option>
                                                 <option value="Vivo">Vivo</option>
                                                 <option value="Tecno">Tecno</option>
+                                                <option value="Sony">Sony</option>
+                                                <option value="OnePlus">OnePlus</option>
+                                                <option value="Realme">Realme</option>
+                                                <option value="Asus">Asus</option>
+                                                <option value="HTC">HTC</option>
+                                                <option value="LG">LG</option>
+                                                <option value="Blackberry">Blackberry</option>
+                                                <option value="Meizu">Meizu</option>
 
-                                                <option value="Otra">Otra</option>
+                                                <option value="Otra">Otra marca</option>
                                             </optgroup>
                                         </select>
                                     </div>
