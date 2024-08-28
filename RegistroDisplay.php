@@ -167,7 +167,8 @@ include "php-scripts/Conexión.php";
                             <div class="form-group mb-3">
                                 <div class="row">
                                     <div class="col">
-                                        <p><strong>Marca</strong>&nbsp;<span class="text-danger">*</span></p><select class="form-select" name="marca" required="">
+                                        <p><strong>Marca</strong>&nbsp;<span class="text-danger">*</span></p>
+                                        <select class="form-select" name="marca" required="">
                                             <optgroup label="This is a group">
                                                 <option value="Motorola" selected="">Motorola</option>
                                                 <option value="Xiaomi">Xiaomi</option>
@@ -207,7 +208,13 @@ include "php-scripts/Conexión.php";
                             <div class="form-group mb-3">
                                 <div class="row">
                                     <div class="col">
-                                        <p><strong>Calidad</strong></p><input class="form-control" type="text" name="calidad" placeholder="AAA">
+                                        <p><strong>Calidad</strong></p>
+                                        <select class="form-select" name="calidad" required="">
+                                            <optgroup>
+                                                <option value="Original">Original</option>
+                                                <option value="Genérico">Genérico</option>
+                                            </optgroup>
+                                        </select>
                                     </div>
                                     <div class="col">
                                         <p><strong>Versión</strong></p><input class="form-control" type="text" name="versión" placeholder="2 / Pro / 3.4">
