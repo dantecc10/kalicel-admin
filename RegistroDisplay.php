@@ -185,6 +185,7 @@ include "php-scripts/Conexión.php";
                                                 <option value="Lanix">Lanix</option>
                                                 <option value="OPPO">OPPO</option>
                                                 <option value="Vivo">Vivo</option>
+                                                <option value="Tecno">Tecno</option>
 
                                                 <option value="Otra">Otra</option>
                                             </optgroup>
