@@ -7,7 +7,7 @@ function onload_table()
     include_once "connection.php";
     $table_dom = "";
     $comilla = '"';
-    $data_query = "SELECT * FROM `displays` WHERE (`cantidad_display` <> 0);";
+    $data_query = "SELECT * FROM `displays` WHERE ((`cantidad_display` <> 0));";
 
     $table_dom .= ("
     <table class='table my-0' id='dataTable'>
