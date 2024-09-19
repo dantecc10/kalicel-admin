@@ -51,7 +51,7 @@ function search_displays($query)
     $n = "";
     $queries_array = [];
     foreach ($columnas as $columna) {
-        $where .= "`$columna` LIKE '%?%' OR ";
+        $where .= "`$columna` LIKE '%$query%' OR ";
         $n .= "s";
         $queries_array[] = $query;
     }
@@ -60,7 +60,7 @@ function search_displays($query)
     $sql_query .= $where;
     echo $sql_query;
     $stmt = $connection->prepare($sql_query);
-    $stmt->bind_param($n, $queries_array);
+    //$stmt->bind_param($n, $queries_array);
     $stmt->execute();
     $result = $stmt->get_result();
 
