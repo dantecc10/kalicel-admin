@@ -40,6 +40,9 @@ function onload_table()
 # ConstruirTablaCarga();
 function search_displays($query)
 {
+    if ($query == "") {
+        return onload_table();
+    }
     include_once "connection.php";
     $comilla = '"';
     //$columnas = ["id_display", "modelo_display", "marca_display", "color_display", "cantidad_display", "calidad_display", "versión_display", "caja_display"];
