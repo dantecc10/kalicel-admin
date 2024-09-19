@@ -48,14 +48,18 @@ function search_displays($query)
     // Diseño de lógica de filtros
     $sql_query = "SELECT * FROM `displays` ";
     $where = "WHERE (";
+    $n = "";
+    $queries_array = [];
     foreach ($columnas as $columna) {
         $where .= "`$columna` LIKE '%?%' OR ";
+        $n .= "s";
+        $queries_array[] = $query;
     }
     $where = substr($where, 0, -3) . ");";
 
     $sql_query .= $where;
     $stmt = $connection->prepare($sql_query);
-    $stmt->bind_param("s", $query);
+    $stmt->bind_param("s", $queries_array);
     $stmt->execute();
     $result = $stmt->get_result();
 
