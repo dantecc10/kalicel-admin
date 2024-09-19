@@ -106,4 +106,4 @@ function search_displays($query)
     return $table_dom;
 }
 
-echo (isset($_GET['query'])) ? search_displays($query) : onload_table();
+echo (isset($_GET['query'])) ? search_displays($_GET['query']) : onload_table();
